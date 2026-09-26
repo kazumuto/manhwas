@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#141413" />
+    <meta name="google-adsense-account" content="ca-pub-9672720678512933" />
+    <link rel="icon" type="image/png" href="/logo1.png" />
+    <title>Manhwa Updates — Page 32 — Latest Chapters | MANHWAS</title>
+    <link rel="canonical" href="https://manhwas.site/updates/page/32" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Cover CDN: every card/hero cover loads from here — preconnect removes
+         a full mobile TLS+DNS round-trip from the LCP image (the homepage
+         hero cover IS the LCP element; field data showed ~6s on mobile) -->
+    <link rel="preconnect" href="https://cdn.manhwas.site" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.manhwas.site">
+    <!-- Non-blocking font CSS: text paints in system-ui immediately and
+         swaps to Inter when loaded (the face uses font-display: swap).
+         The prerendered #seo-content block already uses system-ui, so the
+         crawler-visible content never waits on fonts. -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    </noscript>
+    <!-- critical pre-hydration styles: prevents white flash before React mounts -->
+    <style>
+      body { margin: 0; background: #141413; }
+      #seo-content {
+        padding: 24px;
+        color: #d8d5d1;
+        font-family: system-ui, sans-serif;
+        line-height: 1.5;
+        max-width: 1240px;
+        margin: 0 auto;
+        overflow-wrap: break-word;
+      }
+      #seo-content a { color: #e06a55; text-decoration: underline; }
+      #seo-content ul,
+      #seo-content nav { list-style: none; margin: 0; padding: 0; }
+      #seo-content h1 { font-size: 1.75rem; font-weight: 700; color: #f0efeb; margin: 0 0 8px; }
+      #seo-content h2 { font-size: 1.125rem; font-weight: 600; color: #f0efeb; margin: 24px 0 8px; }
+      #seo-content p { margin: 0 0 12px; color: #b3b1a8; }
+      #seo-content .seo-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 12px;
+      }
+    </style>
+    <!-- Popunder partner script. async: must NOT block HTML parsing —
+         a synchronous script here delays first paint AND React mount by the
+         ad network's full response time (worst case seconds on mobile),
+         which used to leave the whole page (hero + Trending + Updates) blank.
+         The script self-injects its anchors when it eventually runs, so the
+         popunder behavior is unchanged; only its start becomes non-blocking. -->
+    <script async src="https://pl31102147.profitableratecpmnetwork.com/c8/ce/72/c8ce72a5a8e626dad922ab986b7f329d.js"></script>
+    <!-- Ad frequency cap: ONE visual ad per page view. When the visitor closes
+         it, every further body-level fixed ad iframe is removed until the next
+         page view (SPA route change or refresh). Never touches anything inside
+         #root — the app itself renders no fixed iframes. -->
+    <script>
+      (function () {
+        try {
+          var state = { shown: false, suppressed: false };
+          function isAdIframe(el) {
+            if (!el || el.tagName !== 'IFRAME') return false;
+            if (el.closest && el.closest('#root')) return false;
+            try {
+              if (getComputedStyle(el).position !== 'fixed') return false;
+            } catch (e) {
+              return false;
+            }
+            return true;
+          }
+          function scan() {
+            var iframes = document.querySelectorAll('body iframe');
+            for (var i = 0; i < iframes.length; i++) {
+              var f = iframes[i];
+              if (!isAdIframe(f)) continue;
+              if (state.suppressed) {
+                f.remove();
+                continue;
+              }
+              if (!state.shown) {
+                state.shown = true;
+                // enforce "only one": drop any sibling ad layers present in
+                // the same batch so a single page view shows a single ad
+                for (var j = 0; j < iframes.length; j++) {
+                  if (j !== i && isAdIframe(iframes[j])) iframes[j].remove();
+                }
+                watchForClose(f);
+                break;
+              }
+            }
+            hideAdHoverUrls();
+            sweepOverlays();
+          }
+
+          // The popunder script injects an invisible full-page anchor, so
+          // the browser status bar shows its long tracking URL whenever the
+          // mouse is anywhere over a page. Neutralize the HOVER DISPLAY
+          // without touching ad behavior: the href is stripped (no status
+          // text) and restored on mousedown/touchstart, so the actual click
+          // still goes through the ad's own anchor with its original URL,
+          // target and listeners — revenue path unchanged. Internal links
+          // are never touched.
+          function hideAdHoverUrls() {
+            var anchors = document.getElementsByTagName('a');
+            for (var k = 0; k < anchors.length; k++) {
+              var a = anchors[k];
+              if (a.dataset.hoverLocked === '1') continue;
+              var href = a.getAttribute('href') || '';
+              if (href.length > 80 && a.hostname !== location.hostname) {
+                a.dataset.hoverLocked = '1';
+                a.dataset.keepHref = href;
+                var show = function () {
+                  if (this.dataset.keepHref) this.setAttribute('href', this.dataset.keepHref);
+                };
+                var hide = function () { this.removeAttribute('href'); };
+                a.addEventListener('mousedown', show);
+                a.addEventListener('touchstart', show, { passive: true });
+                a.addEventListener('focus', show);
+                a.addEventListener('mouseleave', hide);
+                a.addEventListener('blur', hide);
+                a.removeAttribute('href');
+              }
+            }
+          }
+          // "Have to press twice" fix: the popunder injects an invisible
+          // full-viewport anchor that keeps swallowing taps after its pop
+          // attempt (especially when the popup is blocked — nothing visible
+          // happens, so the page feels stuck). The FIRST interaction still
+          // goes through the ad's own anchor (revenue path unchanged); every
+          // later pointer event passes through to the real UI.
+          function defuseFullPageAnchor(a) {
+            if (a.dataset.overlayDefused === '1') return;
+            a.dataset.overlayDefused = '1';
+            var pass = function () {
+              setTimeout(function () { a.style.pointerEvents = 'none'; }, 0);
+            };
+            a.addEventListener('pointerdown', pass, { capture: true, passive: true });
+            a.addEventListener('click', pass, { capture: true });
+          }
+          function sweepOverlays() {
+            var links = document.getElementsByTagName('a');
+            var vw = window.innerWidth, vh = window.innerHeight;
+            for (var m = 0; m < links.length; m++) {
+              var a = links[m];
+              if (a.dataset.overlayDefused === '1') continue;
+              if (a.closest && a.closest('#root')) continue;
+              var href = a.getAttribute('href') || '';
+              if (href.length <= 80 && a.hostname === location.hostname) continue;
+              var r = a.getBoundingClientRect();
+              if (r.width * r.height < 0.8 * vw * vh) continue;
+              try {
+                var pos = getComputedStyle(a).position;
+                if (pos !== 'fixed' && pos !== 'absolute') continue;
+              } catch (e) { continue; }
+              defuseFullPageAnchor(a);
+            }
+          }
+          function watchForClose(el) {
+            var mo = new MutationObserver(function () {
+              if (!document.documentElement.contains(el)) {
+                mo.disconnect();
+                suppress();
+              }
+            });
+            mo.observe(document.documentElement, { childList: true, subtree: true });
+          }
+          function suppress() {
+            state.suppressed = true;
+            document.documentElement.setAttribute('data-adcap', '1');
+            scan();
+          }
+          // one ad per PAGE VIEW: navigating to another page re-arms the cap
+          function reset() {
+            state.suppressed = false;
+            state.shown = false;
+            document.documentElement.removeAttribute('data-adcap');
+          }
+          var push = history.pushState;
+          history.pushState = function () {
+            var r = push.apply(this, arguments);
+            reset();
+            return r;
+          };
+          window.addEventListener('popstate', reset);
+          // rAF-coalesced: a page mount triggers dozens of mutation batches,
+          // and scan() queries every body iframe each time — one scan per
+          // frame keeps the cap behavior while cutting SPA navigation cost
+          var scanQueued = false;
+          var queueScan = function () {
+            if (scanQueued) return;
+            scanQueued = true;
+            requestAnimationFrame(function () {
+              scanQueued = false;
+              scan();
+            });
+          };
+          new MutationObserver(queueScan).observe(document.documentElement, { childList: true, subtree: true });
+          document.addEventListener('DOMContentLoaded', scan);
+        } catch (e) {}
+      })();
+    </script>
+    <script type="module" crossorigin src="/assets/index-DryuG25J.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DABcpq0e.css">
+    <meta name="description" content="See which manhwa and manhua updated recently — page 32 of 36, every new chapter as it drops, free to read." />
+    <meta name="robots" content="index,follow" />
+    <meta property="og:title" content="Manhwa Updates — Page 32 — Latest Chapters | MANHWAS" />
+    <meta property="og:description" content="See which manhwa and manhua updated recently — page 32 of 36, every new chapter as it drops, free to read." />
+    <meta property="og:url" content="https://manhwas.site/updates/page/32" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="MANHWAS" />
+    <script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://manhwas.site/"},{"@type":"ListItem","position":2,"name":"Latest Updates","item":"https://manhwas.site/updates"},{"@type":"ListItem","position":3,"name":"Page 32","item":"https://manhwas.site/updates/page/32"}]}]</script>
+  </head>
+  <body class="antialiased selection:bg-[#D95743] selection:text-white">
+    <div id="root"><div id="seo-content"><main>
+      <nav aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/updates">Latest Updates</a> › Page 32</nav>
+      <h1>Manhwa Updates — Page 32</h1>
+      <p>2126 updated series in total — page 32 of 36.</p>
+      <section><h2>Recently updated</h2><ul class="seo-grid"><li><a href="/manhwa/not-for-the-faint-of-heart"><strong>Not for the Faint of Heart</strong><span>Bopul</span><span>Comedy, Supernatural, Drama</span></a><span class="seo-chapters"><a href="/read/not-for-the-faint-of-heart/chapter-12.5">Chapter 12.5 — 2019-01-20</a><a href="/read/not-for-the-faint-of-heart/chapter-12">Chapter 12 — 2019-01-06</a><a href="/read/not-for-the-faint-of-heart/chapter-11">Chapter 11 — 2018-12-29</a></span></li><li><a href="/manhua/wangpai-xiao-cao"><strong>Wangpai Xiao Cao</strong><span>Chengdu Gu Qiang</span><span>Comedy, Romance, Slice of Life</span></a><span class="seo-chapters"><a href="/read/wangpai-xiao-cao/chapter-5">Chapter 5 — 2019-01-19</a><a href="/read/wangpai-xiao-cao/chapter-4">Chapter 4 — 2019-01-19</a><a href="/read/wangpai-xiao-cao/chapter-3">Chapter 3 — 2019-01-19</a></span></li><li><a href="/manhua/the-girl-with-horns"><strong>The Girl With Horns</strong><span>Dream.Demon</span><span>Action, Comedy, Slice of Life</span></a><span class="seo-chapters"><a href="/read/the-girl-with-horns/chapter-10">Chapter 10 — 2019-01-18</a><a href="/read/the-girl-with-horns/chapter-9">Chapter 9 — 2018-10-06</a><a href="/read/the-girl-with-horns/chapter-8">Chapter 8 — 2018-06-16</a></span></li><li><a href="/manhwa/king-of-hell"><strong>King of Hell</strong><span>Ra In-Soo</span><span>Action, Comedy, Adventure</span></a><span class="seo-chapters"><a href="/read/king-of-hell/chapter-372">Chapter 372 — 2019-01-12</a><a href="/read/king-of-hell/chapter-371">Chapter 371 — 2019-01-12</a><a href="/read/king-of-hell/chapter-370">Chapter 370 — 2019-01-12</a></span></li><li><a href="/manhwa/badao-zhong-quan-zun-aiji"><strong>Badao Zhong Quan Zun Aiji</strong><span>2-dimensional anime</span><span>Fantasy, Romance, Supernatural</span></a><span class="seo-chapters"><a href="/read/badao-zhong-quan-zun-aiji/chapter-37">Chapter 37 — 2019-01-12</a><a href="/read/badao-zhong-quan-zun-aiji/chapter-36">Chapter 36 — 2018-12-20</a><a href="/read/badao-zhong-quan-zun-aiji/chapter-35">Chapter 35 — 2018-11-29</a></span></li><li><a href="/manhua/magical-boys"><strong>Magical Boys</strong><span>Zhao Hua She</span><span>Slice of Life</span></a><span class="seo-chapters"><a href="/read/magical-boys/chapter-3">Chapter 3 — 2019-01-11</a><a href="/read/magical-boys/chapter-2">Chapter 2 — 2018-08-26</a><a href="/read/magical-boys/chapter-1">Chapter 1 — 2018-08-26</a></span></li><li><a href="/manhwa/super-secret"><strong>Super Secret</strong><span>Eon</span><span>Comedy, Drama, Romance</span></a><span class="seo-chapters"><a href="/read/super-secret/chapter-143">Chapter 143 — 2019-01-09</a><a href="/read/super-secret/chapter-142">Chapter 142 — 2019-01-02</a><a href="/read/super-secret/chapter-141">Chapter 141 — 2019-01-02</a></span></li><li><a href="/manhwa/noblesse"><strong>Noblesse</strong><span>Son Je Ho</span><span>Action, Comedy, Drama</span></a><span class="seo-chapters"><a href="/read/noblesse/chapter-545">Chapter 545 — 2019-01-08</a><a href="/read/noblesse/chapter-544">Chapter 544 — 2019-01-01</a><a href="/read/noblesse/chapter-543">Chapter 543 — 2018-12-25</a></span></li><li><a href="/manhua/immortal-merchant"><strong>Immortal Merchant</strong><span>Liuhua Man Chuang Tu</span><span>Comedy, Romance, Adventure</span></a><span class="seo-chapters"><a href="/read/immortal-merchant/chapter-25">Chapter 25 — 2019-01-08</a><a href="/read/immortal-merchant/chapter-24">Chapter 24 — 2018-11-25</a><a href="/read/immortal-merchant/chapter-23">Chapter 23 — 2018-11-20</a></span></li><li><a href="/manhua/the-legend-of-ancient-soul"><strong>The Legend of Ancient Soul</strong><span>Liu Chong</span><span>Supernatural, Action, Adventure</span></a><span class="seo-chapters"><a href="/read/the-legend-of-ancient-soul/chapter-0">Chapter 0 — 2019-01-06</a></span></li><li><a href="/manhwa/nano-list"><strong>Nano List</strong><span>Song Ah Min</span><span>Action, Comedy, Drama</span></a><span class="seo-chapters"><a href="/read/nano-list/chapter-146.5">Chapter 146.5 — 2019-01-04</a><a href="/read/nano-list/chapter-146">Chapter 146 — 2018-12-14</a><a href="/read/nano-list/chapter-145">Chapter 145 — 2018-12-07</a></span></li><li><a href="/manhua/cate-land"><strong>Cate Land</strong><span>Doris</span><span>Slice of Life, Fantasy, Adventure</span></a><span class="seo-chapters"><a href="/read/cate-land/chapter-24">Chapter 24 — 2019-01-01</a><a href="/read/cate-land/chapter-23">Chapter 23 — 2019-01-01</a><a href="/read/cate-land/chapter-22">Chapter 22 — 2018-10-11</a></span></li><li><a href="/manhua/mad-maid-with-odd-powers"><strong>Mad Maid with Odd Powers</strong><span>Mushi Ji</span><span>Supernatural, Action, Comedy</span></a><span class="seo-chapters"><a href="/read/mad-maid-with-odd-powers/chapter-41">Chapter 41 — 2018-12-30</a><a href="/read/mad-maid-with-odd-powers/chapter-40">Chapter 40 — 2018-12-30</a><a href="/read/mad-maid-with-odd-powers/chapter-39">Chapter 39 — 2018-12-30</a></span></li><li><a href="/manhwa/hive"><strong>Hive</strong><span>Kim Gyu-Sam (김규삼)</span><span>Action, Horror, Psychological</span></a><span class="seo-chapters"><a href="/read/hive/chapter-243">Chapter 243 — 2018-12-13</a><a href="/read/hive/chapter-242">Chapter 242 — 2018-11-26</a><a href="/read/hive/chapter-241">Chapter 241 — 2018-11-19</a></span></li><li><a href="/manhua/tian-mei-de-yao-hen"><strong>Tian Mei De Yao Hen</strong><span>Rui Si</span><span>Drama, Romance, Supernatural</span></a><span class="seo-chapters"><a href="/read/tian-mei-de-yao-hen/chapter-19">Chapter 19 — 2018-12-13</a><a href="/read/tian-mei-de-yao-hen/chapter-18">Chapter 18 — 2018-11-08</a><a href="/read/tian-mei-de-yao-hen/chapter-17">Chapter 17 — 2018-10-27</a></span></li><li><a href="/manhwa/shall-we-have-dinner-tonight"><strong>Shall We Have Dinner Tonight?</strong><span>Park See-In</span><span>Comedy, Drama, Romance</span></a><span class="seo-chapters"><a href="/read/shall-we-have-dinner-tonight/chapter-46">Chapter 46 — 2018-12-11</a><a href="/read/shall-we-have-dinner-tonight/chapter-45">Chapter 45 — 2018-12-11</a><a href="/read/shall-we-have-dinner-tonight/chapter-44">Chapter 44 — 2018-12-11</a></span></li><li><a href="/manhwa/pride-complex"><strong>Pride Complex</strong><span>Heyum (헤윰)</span><span>Romance, Comedy, Drama</span></a><span class="seo-chapters"><a href="/read/pride-complex/chapter-30">Chapter 30 — 2018-11-30</a><a href="/read/pride-complex/chapter-29">Chapter 29 — 2018-02-08</a><a href="/read/pride-complex/chapter-28.2">Chapter 28.2 — 2018-02-08</a></span></li><li><a href="/manhwa/the-language-of-god"><strong>The Language of God</strong><span>Rae Hyuk Jang</span><span>Comedy, Slice of Life, Supernatural</span></a><span class="seo-chapters"><a href="/read/the-language-of-god/chapter-70">Chapter 70 — 2018-11-26</a><a href="/read/the-language-of-god/chapter-69">Chapter 69 — 2018-11-26</a><a href="/read/the-language-of-god/chapter-68">Chapter 68 — 2018-11-17</a></span></li><li><a href="/manhua/yue-shang"><strong>Yue Shang</strong><span>Ai Qing</span><span>Fantasy, Action, Romance</span></a><span class="seo-chapters"><a href="/read/yue-shang/chapter-6">Chapter 6 — 2018-11-25</a><a href="/read/yue-shang/chapter-5">Chapter 5 — 2018-11-25</a><a href="/read/yue-shang/chapter-4">Chapter 4 — 2018-11-25</a></span></li><li><a href="/manhua/secret-order"><strong>Secret Order</strong><span>Quing Yi Shao</span><span>Drama, Action</span></a><span class="seo-chapters"><a href="/read/secret-order/chapter-38">Chapter 38 — 2018-11-25</a><a href="/read/secret-order/chapter-37">Chapter 37 — 2018-10-22</a><a href="/read/secret-order/chapter-36">Chapter 36 — 2018-10-22</a></span></li><li><a href="/manhwa/royal-servant"><strong>Royal Servant</strong><span>Master Gin</span><span>Drama, Romance, Supernatural</span></a><span class="seo-chapters"><a href="/read/royal-servant/chapter-70">Chapter 70 — 2018-11-23</a><a href="/read/royal-servant/chapter-69">Chapter 69 — 2018-11-13</a><a href="/read/royal-servant/chapter-68">Chapter 68 — 2018-11-13</a></span></li><li><a href="/manhua/a-lonesome-fragrance-waiting-to-be-appreciated"><strong>A Lonesome Fragrance Waiting To Be Appreciated</strong><span>鄙木鱼</span><span>Drama, Historical, Romance</span></a><span class="seo-chapters"><a href="/read/a-lonesome-fragrance-waiting-to-be-appreciated/chapter-8">Chapter 8 — 2018-11-19</a><a href="/read/a-lonesome-fragrance-waiting-to-be-appreciated/chapter-7">Chapter 7 — 2018-11-19</a><a href="/read/a-lonesome-fragrance-waiting-to-be-appreciated/chapter-6">Chapter 6 — 2018-10-30</a></span></li><li><a href="/manhua/dragon-and-the-phoenix"><strong>Dragon and the Phoenix</strong><span>Jie Jie</span><span>Comedy, Fantasy, Romance</span></a><span class="seo-chapters"><a href="/read/dragon-and-the-phoenix/chapter-9">Chapter 9 — 2018-11-18</a><a href="/read/dragon-and-the-phoenix/chapter-8">Chapter 8 — 2018-09-02</a><a href="/read/dragon-and-the-phoenix/chapter-7">Chapter 7 — 2018-08-13</a></span></li><li><a href="/manhua/lost-in-zombie-city"><strong>Lost in Zombie City</strong><span>宅男neinei</span><span>Supernatural, Action, Adventure</span></a><span class="seo-chapters"><a href="/read/lost-in-zombie-city/chapter-12">Chapter 12 — 2018-11-18</a><a href="/read/lost-in-zombie-city/chapter-11">Chapter 11 — 2018-11-18</a><a href="/read/lost-in-zombie-city/chapter-10">Chapter 10 — 2018-10-27</a></span></li><li><a href="/manhwa/serenity-film"><strong>Serenity Film</strong><span>Pina</span><span>Comedy, Romance, Slice of Life</span></a><span class="seo-chapters"><a href="/read/serenity-film/chapter-45">Chapter 45 — 2018-11-16</a><a href="/read/serenity-film/chapter-44">Chapter 44 — 2018-11-16</a><a href="/read/serenity-film/chapter-43">Chapter 43 — 2018-11-16</a></span></li><li><a href="/manhwa/why-did-men-stop-wearing-high-heels"><strong>Why Did Men Stop Wearing High Heels?</strong><span>Kim Jimmy</span><span>Comedy, Romance, Slice of Life</span></a><span class="seo-chapters"><a href="/read/why-did-men-stop-wearing-high-heels/chapter-62.5">Chapter 62.5 — 2018-11-06</a><a href="/read/why-did-men-stop-wearing-high-heels/chapter-62">Chapter 62 — 2018-11-06</a><a href="/read/why-did-men-stop-wearing-high-heels/chapter-61">Chapter 61 — 2018-09-02</a></span></li><li><a href="/manhua/world-of-immortals"><strong>World of Immortals</strong><span>Unknown</span><span>Action, Adventure, Fantasy</span></a><span class="seo-chapters"><a href="/read/world-of-immortals/chapter-23">Chapter 23 — 2018-11-06</a><a href="/read/world-of-immortals/chapter-22">Chapter 22 — 2018-10-10</a><a href="/read/world-of-immortals/chapter-21">Chapter 21 — 2018-09-25</a></span></li><li><a href="/manhua/tiger-and-sharp-claws"><strong>Tiger and Sharp Claws</strong><span>Hei Muo Shen</span><span>Action, Adventure, Comedy</span></a><span class="seo-chapters"><a href="/read/tiger-and-sharp-claws/chapter-21">Chapter 21 — 2018-11-05</a><a href="/read/tiger-and-sharp-claws/chapter-20">Chapter 20 — 2018-06-02</a><a href="/read/tiger-and-sharp-claws/chapter-19">Chapter 19 — 2018-06-02</a></span></li><li><a href="/manhwa/dream-of-a-girl"><strong>Dream of a Girl</strong><span>NachoGirl</span><span>Fantasy, Historical, Romance</span></a><span class="seo-chapters"><a href="/read/dream-of-a-girl/chapter-36">Chapter 36 — 2018-11-04</a><a href="/read/dream-of-a-girl/chapter-35">Chapter 35 — 2018-11-04</a><a href="/read/dream-of-a-girl/chapter-34">Chapter 34 — 2018-11-04</a></span></li><li><a href="/manhwa/island"><strong>Island</strong><span>Youn In-wan</span><span>Action, Horror, Supernatural</span></a><span class="seo-chapters"><a href="/read/island/chapter-46">Chapter 46 — 2018-11-04</a><a href="/read/island/chapter-45">Chapter 45 — 2018-11-04</a><a href="/read/island/chapter-44">Chapter 44 — 2018-11-04</a></span></li><li><a href="/manhua/feng-shen-ji"><strong>Feng Shen Ji</strong><span>Zheng Jian He</span><span>Action, Adventure, Fantasy</span></a><span class="seo-chapters"><a href="/read/feng-shen-ji/chapter-182">Chapter 182 — 2018-10-31</a><a href="/read/feng-shen-ji/chapter-181">Chapter 181 — 2018-10-31</a><a href="/read/feng-shen-ji/chapter-180">Chapter 180 — 2018-10-31</a></span></li><li><a href="/manhwa/transparent-cohabitation"><strong>Transparent Cohabitation</strong><span>Jungsuh</span><span>Drama, Psychological, Romance</span></a><span class="seo-chapters"><a href="/read/transparent-cohabitation/chapter-48">Chapter 48 — 2018-10-30</a><a href="/read/transparent-cohabitation/chapter-47">Chapter 47 — 2018-10-30</a><a href="/read/transparent-cohabitation/chapter-46">Chapter 46 — 2018-10-30</a></span></li><li><a href="/manhwa/he-was-cool"><strong>He was cool</strong><span>Gui Yeoni</span><span>Romance</span></a><span class="seo-chapters"><a href="/read/he-was-cool/chapter-18">Chapter 18 — 2018-10-30</a><a href="/read/he-was-cool/chapter-17">Chapter 17 — 2018-10-30</a><a href="/read/he-was-cool/chapter-16">Chapter 16 — 2018-10-30</a></span></li><li><a href="/manhua/tianxia-diji"><strong>Tianxia Diji</strong><span>Chouzhixiaojin</span><span>Action, Comedy, Drama</span></a><span class="seo-chapters"><a href="/read/tianxia-diji/chapter-28">Chapter 28 — 2018-10-30</a><a href="/read/tianxia-diji/chapter-27">Chapter 27 — 2018-10-30</a><a href="/read/tianxia-diji/chapter-26">Chapter 26 — 2018-10-30</a></span></li><li><a href="/manhwa/real-purple"><strong>Real Purple</strong><span>Park So Hee</span><span>Drama, Romance, Slice of Life</span></a><span class="seo-chapters"><a href="/read/real-purple/chapter-13">Chapter 13 — 2018-10-29</a><a href="/read/real-purple/chapter-12">Chapter 12 — 2018-10-29</a><a href="/read/real-purple/chapter-11">Chapter 11 — 2018-10-29</a></span></li><li><a href="/manhwa/crazy-girl-shin-bia"><strong>Crazy Girl Shin Bia</strong><span>Hwang Mi-ri</span><span>Action, Adventure, Comedy</span></a><span class="seo-chapters"><a href="/read/crazy-girl-shin-bia/chapter-85">Chapter 85 — 2018-10-27</a><a href="/read/crazy-girl-shin-bia/chapter-84">Chapter 84 — 2018-10-27</a><a href="/read/crazy-girl-shin-bia/chapter-83">Chapter 83 — 2018-10-27</a></span></li><li><a href="/manhwa/hyullas-clan"><strong>Hyulla's Clan</strong><span>Tamlin (탐린)</span><span>Romance, Comedy, Fantasy</span></a><span class="seo-chapters"><a href="/read/hyullas-clan/chapter-57.2">Chapter 57.2 — 2018-10-16</a><a href="/read/hyullas-clan/chapter-57.1">Chapter 57.1 — 2018-10-10</a><a href="/read/hyullas-clan/chapter-56.2">Chapter 56.2 — 2018-10-02</a></span></li><li><a href="/manhua/transfer-student-romance"><strong>Transfer Student Romance</strong><span>阮小容</span><span>Comedy, Romance, Slice of Life</span></a><span class="seo-chapters"><a href="/read/transfer-student-romance/chapter-5">Chapter 5 — 2018-10-16</a><a href="/read/transfer-student-romance/chapter-4">Chapter 4 — 2018-10-16</a><a href="/read/transfer-student-romance/chapter-3">Chapter 3 — 2018-10-16</a></span></li><li><a href="/manhua/red-spirit"><strong>Red Spirit</strong><span>Huan Ma Qun</span><span>Adventure, Historical, Romance</span></a><span class="seo-chapters"><a href="/read/red-spirit/chapter-78">Chapter 78 — 2018-10-15</a><a href="/read/red-spirit/chapter-77">Chapter 77 — 2018-10-14</a><a href="/read/red-spirit/chapter-76">Chapter 76 — 2018-10-14</a></span></li><li><a href="/manhwa/happy-if-you-died"><strong>Happy if You Died</strong><span>Gold Kiwi Bird</span><span>Comedy, Drama, Romance</span></a><span class="seo-chapters"><a href="/read/happy-if-you-died/chapter-61.5">Chapter 61.5 — 2018-10-10</a><a href="/read/happy-if-you-died/chapter-61">Chapter 61 — 2018-10-10</a><a href="/read/happy-if-you-died/chapter-60">Chapter 60 — 2018-10-10</a></span></li><li><a href="/manhua/wei-ming-shen-dou"><strong>Wei Ming Shen Dou</strong><span>Shen Man</span><span>Adventure, Fantasy, Romance</span></a><span class="seo-chapters"><a href="/read/wei-ming-shen-dou/chapter-7">Chapter 7 — 2018-10-09</a><a href="/read/wei-ming-shen-dou/chapter-6">Chapter 6 — 2018-10-05</a><a href="/read/wei-ming-shen-dou/chapter-5">Chapter 5 — 2018-10-03</a></span></li><li><a href="/manhwa/the-breaker-new-waves"><strong>The Breaker: New Waves</strong><span>Jeon Geuk-jin</span><span>Action, Comedy, Drama</span></a><span class="seo-chapters"><a href="/read/the-breaker-new-waves/chapter-201.5">Chapter 201.5 — 2018-10-07</a><a href="/read/the-breaker-new-waves/chapter-201">Chapter 201 — 2018-10-07</a><a href="/read/the-breaker-new-waves/chapter-200">Chapter 200 — 2018-10-07</a></span></li><li><a href="/manhua/princess-agent"><strong>Princess Agent</strong><span>Xiao Xiang Dong Er</span><span>Action, Adventure, Drama</span></a><span class="seo-chapters"><a href="/read/princess-agent/chapter-3.6">Chapter 3.6 — 2018-10-07</a><a href="/read/princess-agent/chapter-3.5">Chapter 3.5 — 2018-10-07</a><a href="/read/princess-agent/chapter-3.4">Chapter 3.4 — 2018-10-07</a></span></li><li><a href="/manhwa/one-step-from-the-end"><strong>One Step From The End</strong><span>Pyo Ryu</span><span>Drama, Romance</span></a><span class="seo-chapters"><a href="/read/one-step-from-the-end/chapter-15">Chapter 15 — 2018-10-06</a><a href="/read/one-step-from-the-end/chapter-14">Chapter 14 — 2018-07-21</a><a href="/read/one-step-from-the-end/chapter-13">Chapter 13 — 2018-07-19</a></span></li><li><a href="/manhua/the-night-crow"><strong>The Night Crow</strong><span>Ju Fan</span><span>Action, Mystery, Supernatural</span></a><span class="seo-chapters"><a href="/read/the-night-crow/chapter-3">Chapter 3 — 2018-10-05</a><a href="/read/the-night-crow/chapter-2">Chapter 2 — 2018-08-19</a><a href="/read/the-night-crow/chapter-1">Chapter 1 — 2018-08-19</a></span></li><li><a href="/manhwa/h-campus"><strong>H-Campus</strong><span>Putaro</span><span>Comedy, Romance, Slice of Life</span></a><span class="seo-chapters"><a href="/read/h-campus/chapter-71">Chapter 71 — 2018-09-29</a><a href="/read/h-campus/chapter-70">Chapter 70 — 2018-09-29</a><a href="/read/h-campus/chapter-69">Chapter 69 — 2018-09-29</a></span></li><li><a href="/manhua/the-hunter-g"><strong>The Hunter G</strong><span>You Yi Hu Yu</span><span>Action, Comedy, Fantasy</span></a><span class="seo-chapters"><a href="/read/the-hunter-g/chapter-41.3">Chapter 41.3 — 2018-09-29</a><a href="/read/the-hunter-g/chapter-41.2">Chapter 41.2 — 2018-09-29</a><a href="/read/the-hunter-g/chapter-41.1">Chapter 41.1 — 2018-09-29</a></span></li><li><a href="/manhua/daisaiyuuki-bokuhi-seiden-the-story-of-a-very-handsome-man"><strong>Daisaiyuuki Bokuhi Seiden - The Story of a Very Handsome Man</strong><span>Bokuhi</span><span>Action, Adventure, Comedy</span></a><span class="seo-chapters"><a href="/read/daisaiyuuki-bokuhi-seiden-the-story-of-a-very-handsome-man/chapter-30">Chapter 30 — 2018-09-26</a><a href="/read/daisaiyuuki-bokuhi-seiden-the-story-of-a-very-handsome-man/chapter-29">Chapter 29 — 2018-09-26</a><a href="/read/daisaiyuuki-bokuhi-seiden-the-story-of-a-very-handsome-man/chapter-28">Chapter 28 — 2019-06-04</a></span></li><li><a href="/manhwa/the-concours"><strong>The Concours</strong><span>Jeong Seol Hwa</span><span>Drama, Psychological</span></a><span class="seo-chapters"><a href="/read/the-concours/chapter-5">Chapter 5 — 2018-09-24</a><a href="/read/the-concours/chapter-4">Chapter 4 — 2018-09-05</a><a href="/read/the-concours/chapter-3">Chapter 3 — 2018-04-23</a></span></li><li><a href="/manhwa/perfect-honeymoon"><strong>Perfect Honeymoon</strong><span>Hua-ryu Dongpung</span><span>Comedy, Drama, Romance</span></a><span class="seo-chapters"><a href="/read/perfect-honeymoon/chapter-27">Chapter 27 — 2018-09-24</a><a href="/read/perfect-honeymoon/chapter-26">Chapter 26 — 2018-09-24</a><a href="/read/perfect-honeymoon/chapter-25">Chapter 25 — 2018-09-20</a></span></li><li><a href="/manhua/road-to-the-end-of-the-world"><strong>Road to the End of the World</strong><span>He Yi Fan</span><span>Drama, Action, Horror</span></a><span class="seo-chapters"><a href="/read/road-to-the-end-of-the-world/chapter-3">Chapter 3 — 2018-09-24</a><a href="/read/road-to-the-end-of-the-world/chapter-2">Chapter 2 — 2018-09-14</a><a href="/read/road-to-the-end-of-the-world/chapter-1">Chapter 1 — 2018-09-08</a></span></li><li><a href="/manhwa/my-wife-is-a-gangster"><strong>My Wife is a Gangster</strong><span>Somtudio</span><span>Action, Comedy, Romance</span></a><span class="seo-chapters"><a href="/read/my-wife-is-a-gangster/chapter-65">Chapter 65 — 2018-09-22</a><a href="/read/my-wife-is-a-gangster/chapter-64">Chapter 64 — 2018-09-22</a><a href="/read/my-wife-is-a-gangster/chapter-63">Chapter 63 — 2018-09-22</a></span></li><li><a href="/manhwa/dangu"><strong>Dangu</strong><span>PARK Joong Gi</span><span>Action, Adventure, Drama</span></a><span class="seo-chapters"><a href="/read/dangu/chapter-44">Chapter 44 — 2018-09-19</a><a href="/read/dangu/chapter-43">Chapter 43 — 2018-09-19</a><a href="/read/dangu/chapter-42">Chapter 42 — 2018-09-19</a></span></li><li><a href="/manhwa/jogswae-du-nammae-iyagi"><strong>Jogswae - Du Nammae Iyagi</strong><span>Song Ah Min (Min Song A)</span><span>Drama, Mystery, Psychological</span></a><span class="seo-chapters"><a href="/read/jogswae-du-nammae-iyagi/chapter-4">Chapter 4 — 2018-09-16</a><a href="/read/jogswae-du-nammae-iyagi/chapter-3">Chapter 3 — 2018-05-23</a><a href="/read/jogswae-du-nammae-iyagi/chapter-2">Chapter 2 — 2018-05-23</a></span></li><li><a href="/manhwa/sage"><strong>Sage</strong><span>Unknown</span><span>Action, Adventure</span></a><span class="seo-chapters"><a href="/read/sage/chapter-1">Chapter 1 — 2018-09-15</a></span></li><li><a href="/manhwa/abduction-school"><strong>Abduction School</strong><span>Ara (아라)</span><span>Horror, Mystery, Psychological</span></a><span class="seo-chapters"><a href="/read/abduction-school/chapter-6">Chapter 6 — 2018-09-12</a><a href="/read/abduction-school/chapter-5">Chapter 5 — 2018-08-19</a><a href="/read/abduction-school/chapter-4">Chapter 4 — 2018-06-09</a></span></li><li><a href="/manhwa/lime-odyssey-the-chronicles-of-orta"><strong>Lime Odyssey: The Chronicles of ORTA</strong><span>Glpi</span><span>Drama, Adventure</span></a><span class="seo-chapters"><a href="/read/lime-odyssey-the-chronicles-of-orta/chapter-45">Chapter 45 — 2018-09-10</a><a href="/read/lime-odyssey-the-chronicles-of-orta/chapter-44">Chapter 44 — 2018-09-10</a><a href="/read/lime-odyssey-the-chronicles-of-orta/chapter-43">Chapter 43 — 2018-09-10</a></span></li><li><a href="/manhwa/family-size"><strong>Family Size</strong><span>Ji-eun Nam</span><span>Comedy, Slice of Life, Drama</span></a><span class="seo-chapters"><a href="/read/family-size/chapter-17">Chapter 17 — 2018-09-10</a><a href="/read/family-size/chapter-16">Chapter 16 — 2018-03-05</a><a href="/read/family-size/chapter-15">Chapter 15 — 2018-03-05</a></span></li><li><a href="/manhwa/a-girl-in-the-clouds"><strong>A Girl In The Clouds</strong><span>Jeong Gi-lim</span><span>Fantasy</span></a><span class="seo-chapters"><a href="/read/a-girl-in-the-clouds/chapter-12">Chapter 12 — 2018-09-08</a><a href="/read/a-girl-in-the-clouds/chapter-11">Chapter 11 — 2018-09-08</a><a href="/read/a-girl-in-the-clouds/chapter-10">Chapter 10 — 2018-09-08</a></span></li><li><a href="/manhua/even-lunatics-need-love"><strong>Even Lunatics Need Love</strong><span>Bing Ya</span><span>Comedy, Romance, Slice of Life</span></a><span class="seo-chapters"><a href="/read/even-lunatics-need-love/chapter-1">Chapter 1 — 2018-09-06</a><a href="/read/even-lunatics-need-love/chapter-0">Chapter 0 — 2018-08-30</a></span></li></ul></section>
+      <p><a href="/updates/page/31" rel="prev">← Page 31</a> · <a href="/updates/page/33" rel="next">Page 33 →</a></p>
+    <p style="margin:24px 0;text-align:center;font-size:13px"><a href="https://www.profitableratecpmnetwork.com/rwke4e7k?key=2b2a096dea78bd8cb7bdc2b9ee370110" target="_blank" rel="noopener nofollow sponsored">Sponsored</a></p></main></div></div>
+    <script src="https://pl31102148.profitableratecpmnetwork.com/a4/a1/fe/a4a1fe30d63892bdc56fb6286e4439c3.js"></script>
+  </body>
+</html>

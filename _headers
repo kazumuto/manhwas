@@ -1,0 +1,30 @@
+# Cloudflare Pages headers — mirrors vercel.json (both stacks deploy the
+# same dist/; Vercel ignores this file, Pages uses it).
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+# Chapter-bearing JSON gets SHORT edge caches (2026-09-16): these carry the
+# chapter counts and latest-chapter numbers users see. The old 6h edge TTL
+# (s-maxage=21600) meant a freshly-uploaded snapshot could take 6+ hours to
+# reach visitors — the "I don't see today's chapters" report. With 30 min
+# edge / 5 min browser, a new snapshot is visible within minutes of the
+# 2-hourly refresh; stale-while-revalidate keeps responses instant while
+# the edge revalidates.
+/catalog.json
+  Cache-Control: public, max-age=300, s-maxage=1800, stale-while-revalidate=86400
+/catalog-full.json
+  Cache-Control: public, max-age=900, s-maxage=7200, stale-while-revalidate=86400
+/catalog-mk-meta.json
+  Cache-Control: public, max-age=300, s-maxage=1800, stale-while-revalidate=86400
+/mk-chapters/*
+  Cache-Control: public, max-age=600, s-maxage=3600, stale-while-revalidate=86400
+# Security headers site-wide (2026-09-23 SEO audit: HSTS et al. were absent).
+# Deliberately CSP-free: the two ad networks inject scripts/iframes from
+# changing origins — a real CSP would need unsafe-inline/unsafe-* and give
+# false assurance without breaking the ad contract (§13n: ads are
+# load-bearing). Headers that carry real security value without touching ads:
+/*
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()

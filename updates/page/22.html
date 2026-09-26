@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#141413" />
+    <meta name="google-adsense-account" content="ca-pub-9672720678512933" />
+    <link rel="icon" type="image/png" href="/logo1.png" />
+    <title>Manhwa Updates — Page 22 — Latest Chapters | MANHWAS</title>
+    <link rel="canonical" href="https://manhwas.site/updates/page/22" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Cover CDN: every card/hero cover loads from here — preconnect removes
+         a full mobile TLS+DNS round-trip from the LCP image (the homepage
+         hero cover IS the LCP element; field data showed ~6s on mobile) -->
+    <link rel="preconnect" href="https://cdn.manhwas.site" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.manhwas.site">
+    <!-- Non-blocking font CSS: text paints in system-ui immediately and
+         swaps to Inter when loaded (the face uses font-display: swap).
+         The prerendered #seo-content block already uses system-ui, so the
+         crawler-visible content never waits on fonts. -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    </noscript>
+    <!-- critical pre-hydration styles: prevents white flash before React mounts -->
+    <style>
+      body { margin: 0; background: #141413; }
+      #seo-content {
+        padding: 24px;
+        color: #d8d5d1;
+        font-family: system-ui, sans-serif;
+        line-height: 1.5;
+        max-width: 1240px;
+        margin: 0 auto;
+        overflow-wrap: break-word;
+      }
+      #seo-content a { color: #e06a55; text-decoration: underline; }
+      #seo-content ul,
+      #seo-content nav { list-style: none; margin: 0; padding: 0; }
+      #seo-content h1 { font-size: 1.75rem; font-weight: 700; color: #f0efeb; margin: 0 0 8px; }
+      #seo-content h2 { font-size: 1.125rem; font-weight: 600; color: #f0efeb; margin: 24px 0 8px; }
+      #seo-content p { margin: 0 0 12px; color: #b3b1a8; }
+      #seo-content .seo-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 12px;
+      }
+    </style>
+    <!-- Popunder partner script. async: must NOT block HTML parsing —
+         a synchronous script here delays first paint AND React mount by the
+         ad network's full response time (worst case seconds on mobile),
+         which used to leave the whole page (hero + Trending + Updates) blank.
+         The script self-injects its anchors when it eventually runs, so the
+         popunder behavior is unchanged; only its start becomes non-blocking. -->
+    <script async src="https://pl31102147.profitableratecpmnetwork.com/c8/ce/72/c8ce72a5a8e626dad922ab986b7f329d.js"></script>
+    <!-- Ad frequency cap: ONE visual ad per page view. When the visitor closes
+         it, every further body-level fixed ad iframe is removed until the next
+         page view (SPA route change or refresh). Never touches anything inside
+         #root — the app itself renders no fixed iframes. -->
+    <script>
+      (function () {
+        try {
+          var state = { shown: false, suppressed: false };
+          function isAdIframe(el) {
+            if (!el || el.tagName !== 'IFRAME') return false;
+            if (el.closest && el.closest('#root')) return false;
+            try {
+              if (getComputedStyle(el).position !== 'fixed') return false;
+            } catch (e) {
+              return false;
+            }
+            return true;
+          }
+          function scan() {
+            var iframes = document.querySelectorAll('body iframe');
+            for (var i = 0; i < iframes.length; i++) {
+              var f = iframes[i];
+              if (!isAdIframe(f)) continue;
+              if (state.suppressed) {
+                f.remove();
+                continue;
+              }
+              if (!state.shown) {
+                state.shown = true;
+                // enforce "only one": drop any sibling ad layers present in
+                // the same batch so a single page view shows a single ad
+                for (var j = 0; j < iframes.length; j++) {
+                  if (j !== i && isAdIframe(iframes[j])) iframes[j].remove();
+                }
+                watchForClose(f);
+                break;
+              }
+            }
+            hideAdHoverUrls();
+            sweepOverlays();
+          }
+
+          // The popunder script injects an invisible full-page anchor, so
+          // the browser status bar shows its long tracking URL whenever the
+          // mouse is anywhere over a page. Neutralize the HOVER DISPLAY
+          // without touching ad behavior: the href is stripped (no status
+          // text) and restored on mousedown/touchstart, so the actual click
+          // still goes through the ad's own anchor with its original URL,
+          // target and listeners — revenue path unchanged. Internal links
+          // are never touched.
+          function hideAdHoverUrls() {
+            var anchors = document.getElementsByTagName('a');
+            for (var k = 0; k < anchors.length; k++) {
+              var a = anchors[k];
+              if (a.dataset.hoverLocked === '1') continue;
+              var href = a.getAttribute('href') || '';
+              if (href.length > 80 && a.hostname !== location.hostname) {
+                a.dataset.hoverLocked = '1';
+                a.dataset.keepHref = href;
+                var show = function () {
+                  if (this.dataset.keepHref) this.setAttribute('href', this.dataset.keepHref);
+                };
+                var hide = function () { this.removeAttribute('href'); };
+                a.addEventListener('mousedown', show);
+                a.addEventListener('touchstart', show, { passive: true });
+                a.addEventListener('focus', show);
+                a.addEventListener('mouseleave', hide);
+                a.addEventListener('blur', hide);
+                a.removeAttribute('href');
+              }
+            }
+          }
+          // "Have to press twice" fix: the popunder injects an invisible
+          // full-viewport anchor that keeps swallowing taps after its pop
+          // attempt (especially when the popup is blocked — nothing visible
+          // happens, so the page feels stuck). The FIRST interaction still
+          // goes through the ad's own anchor (revenue path unchanged); every
+          // later pointer event passes through to the real UI.
+          function defuseFullPageAnchor(a) {
+            if (a.dataset.overlayDefused === '1') return;
+            a.dataset.overlayDefused = '1';
+            var pass = function () {
+              setTimeout(function () { a.style.pointerEvents = 'none'; }, 0);
+            };
+            a.addEventListener('pointerdown', pass, { capture: true, passive: true });
+            a.addEventListener('click', pass, { capture: true });
+          }
+          function sweepOverlays() {
+            var links = document.getElementsByTagName('a');
+            var vw = window.innerWidth, vh = window.innerHeight;
+            for (var m = 0; m < links.length; m++) {
+              var a = links[m];
+              if (a.dataset.overlayDefused === '1') continue;
+              if (a.closest && a.closest('#root')) continue;
+              var href = a.getAttribute('href') || '';
+              if (href.length <= 80 && a.hostname === location.hostname) continue;
+              var r = a.getBoundingClientRect();
+              if (r.width * r.height < 0.8 * vw * vh) continue;
+              try {
+                var pos = getComputedStyle(a).position;
+                if (pos !== 'fixed' && pos !== 'absolute') continue;
+              } catch (e) { continue; }
+              defuseFullPageAnchor(a);
+            }
+          }
+          function watchForClose(el) {
+            var mo = new MutationObserver(function () {
+              if (!document.documentElement.contains(el)) {
+                mo.disconnect();
+                suppress();
+              }
+            });
+            mo.observe(document.documentElement, { childList: true, subtree: true });
+          }
+          function suppress() {
+            state.suppressed = true;
+            document.documentElement.setAttribute('data-adcap', '1');
+            scan();
+          }
+          // one ad per PAGE VIEW: navigating to another page re-arms the cap
+          function reset() {
+            state.suppressed = false;
+            state.shown = false;
+            document.documentElement.removeAttribute('data-adcap');
+          }
+          var push = history.pushState;
+          history.pushState = function () {
+            var r = push.apply(this, arguments);
+            reset();
+            return r;
+          };
+          window.addEventListener('popstate', reset);
+          // rAF-coalesced: a page mount triggers dozens of mutation batches,
+          // and scan() queries every body iframe each time — one scan per
+          // frame keeps the cap behavior while cutting SPA navigation cost
+          var scanQueued = false;
+          var queueScan = function () {
+            if (scanQueued) return;
+            scanQueued = true;
+            requestAnimationFrame(function () {
+              scanQueued = false;
+              scan();
+            });
+          };
+          new MutationObserver(queueScan).observe(document.documentElement, { childList: true, subtree: true });
+          document.addEventListener('DOMContentLoaded', scan);
+        } catch (e) {}
+      })();
+    </script>
+    <script type="module" crossorigin src="/assets/index-DryuG25J.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DABcpq0e.css">
+    <meta name="description" content="See which manhwa and manhua updated recently — page 22 of 36, every new chapter as it drops, free to read." />
+    <meta name="robots" content="index,follow" />
+    <meta property="og:title" content="Manhwa Updates — Page 22 — Latest Chapters | MANHWAS" />
+    <meta property="og:description" content="See which manhwa and manhua updated recently — page 22 of 36, every new chapter as it drops, free to read." />
+    <meta property="og:url" content="https://manhwas.site/updates/page/22" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="MANHWAS" />
+    <script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://manhwas.site/"},{"@type":"ListItem","position":2,"name":"Latest Updates","item":"https://manhwas.site/updates"},{"@type":"ListItem","position":3,"name":"Page 22","item":"https://manhwas.site/updates/page/22"}]}]</script>
+  </head>
+  <body class="antialiased selection:bg-[#D95743] selection:text-white">
+    <div id="root"><div id="seo-content"><main>
+      <nav aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/updates">Latest Updates</a> › Page 22</nav>
+      <h1>Manhwa Updates — Page 22</h1>
+      <p>2126 updated series in total — page 22 of 36.</p>
+      <section><h2>Recently updated</h2><ul class="seo-grid"><li><a href="/manhwa/i-dont-want-this-kind-of-hero"><strong>I Don't Want This Kind of Hero</strong><span>Samchon</span><span>Action, Comedy, Fantasy</span></a><span class="seo-chapters"><a href="/read/i-dont-want-this-kind-of-hero/chapter-295">Chapter 295 — 2021-08-27</a><a href="/read/i-dont-want-this-kind-of-hero/chapter-294">Chapter 294 — 2021-08-27</a><a href="/read/i-dont-want-this-kind-of-hero/chapter-293">Chapter 293 — 2021-08-27</a></span></li><li><a href="/manhua/born-to-be-rich"><strong>Born To Be Rich</strong><span>Boar Knight Comics</span><span>Action, Fantasy, Sci-Fi</span></a><span class="seo-chapters"><a href="/read/born-to-be-rich/chapter-53">Chapter 53 — 2021-08-27</a><a href="/read/born-to-be-rich/chapter-52">Chapter 52 — 2021-07-30</a><a href="/read/born-to-be-rich/chapter-51">Chapter 51 — 2021-07-30</a></span></li><li><a href="/manhwa/dont-call-javotte-an-evil-stepsister"><strong>Don't Call Javotte an Evil Stepsister</strong><span>Ra-Dol</span><span>Historical, Romance, Drama</span></a><span class="seo-chapters"><a href="/read/dont-call-javotte-an-evil-stepsister/chapter-18">Chapter 18 — 2021-08-24</a><a href="/read/dont-call-javotte-an-evil-stepsister/chapter-17">Chapter 17 — 2021-08-11</a><a href="/read/dont-call-javotte-an-evil-stepsister/chapter-16">Chapter 16 — 2021-07-08</a></span></li><li><a href="/manhwa/do-it-one-more-time"><strong>Do It One More Time</strong><span>Miti</span><span>Comedy, Drama, Romance</span></a><span class="seo-chapters"><a href="/read/do-it-one-more-time/chapter-68">Chapter 68 — 2021-08-24</a><a href="/read/do-it-one-more-time/chapter-67">Chapter 67 — 2021-08-24</a><a href="/read/do-it-one-more-time/chapter-66">Chapter 66 — 2021-08-24</a></span></li><li><a href="/manhua/lord-it-doesnt-matter"><strong>Lord, It Doesn't Matter</strong><span>SF light novel</span><span>Action, Adventure, Comedy</span></a><span class="seo-chapters"><a href="/read/lord-it-doesnt-matter/chapter-109">Chapter 109 — 2021-08-23</a><a href="/read/lord-it-doesnt-matter/chapter-108">Chapter 108 — 2021-07-25</a><a href="/read/lord-it-doesnt-matter/chapter-107">Chapter 107 — 2021-05-18</a></span></li><li><a href="/manhua/legend-of-the-tyrant-empress"><strong>Legend of the Tyrant Empress</strong><span>Hehe</span><span>Action, Adventure, Fantasy</span></a><span class="seo-chapters"><a href="/read/legend-of-the-tyrant-empress/chapter-89">Chapter 89 — 2021-08-17</a><a href="/read/legend-of-the-tyrant-empress/chapter-88">Chapter 88 — 2021-08-17</a><a href="/read/legend-of-the-tyrant-empress/chapter-87">Chapter 87 — 2021-07-24</a></span></li><li><a href="/manhwa/mookhyang-the-origin"><strong>MookHyang - The Origin</strong><span>SILVA</span><span>Action, Drama</span></a><span class="seo-chapters"><a href="/read/mookhyang-the-origin/chapter-47">Chapter 47 — 2021-08-16</a><a href="/read/mookhyang-the-origin/chapter-46">Chapter 46 — 2021-08-07</a><a href="/read/mookhyang-the-origin/chapter-45">Chapter 45 — 2021-08-03</a></span></li><li><a href="/manhwa/celebgram"><strong>Celebgram</strong><span>Jellyfish</span><span>Romance, Comedy, Drama</span></a><span class="seo-chapters"><a href="/read/celebgram/chapter-102">Chapter 102 — 2021-08-15</a><a href="/read/celebgram/chapter-101">Chapter 101 — 2021-08-15</a><a href="/read/celebgram/chapter-100">Chapter 100 — 2021-07-29</a></span></li><li><a href="/manhwa/light-and-shadow"><strong>Light and Shadow</strong><span>Ryu Hyang</span><span>Historical, Romance, Comedy</span></a><span class="seo-chapters"><a href="/read/light-and-shadow/chapter-103">Chapter 103 — 2021-08-15</a><a href="/read/light-and-shadow/chapter-102">Chapter 102 — 2021-08-15</a><a href="/read/light-and-shadow/chapter-101">Chapter 101 — 2021-08-15</a></span></li><li><a href="/manhua/my-phoenixs-on-top"><strong>My Phoenix's on Top</strong><span>Ao Xiao Ze</span><span>Drama, Fantasy, Historical</span></a><span class="seo-chapters"><a href="/read/my-phoenixs-on-top/chapter-108">Chapter 108 — 2021-08-14</a><a href="/read/my-phoenixs-on-top/chapter-107">Chapter 107 — 2021-07-19</a><a href="/read/my-phoenixs-on-top/chapter-106">Chapter 106 — 2021-07-19</a></span></li><li><a href="/manhwa/the-reason-why-raeliana-ended-up-at-the-dukes-mansion"><strong>The Reason Why Raeliana Ended up at the Duke's Mansion</strong><span>Milcha</span><span>Comedy, Fantasy, Mystery</span></a><span class="seo-chapters"><a href="/read/the-reason-why-raeliana-ended-up-at-the-dukes-mansion/chapter-158">Chapter 158 — 2021-08-09</a><a href="/read/the-reason-why-raeliana-ended-up-at-the-dukes-mansion/chapter-157">Chapter 157 — 2021-06-25</a><a href="/read/the-reason-why-raeliana-ended-up-at-the-dukes-mansion/chapter-156">Chapter 156 — 2021-06-22</a></span></li><li><a href="/manhua/the-gateway-of-revolution"><strong>The Gateway of Revolution</strong><span>Zhi Bai</span><span>Action, Comedy, Adventure</span></a><span class="seo-chapters"><a href="/read/the-gateway-of-revolution/chapter-40">Chapter 40 — 2021-08-08</a><a href="/read/the-gateway-of-revolution/chapter-39">Chapter 39 — 2021-08-08</a><a href="/read/the-gateway-of-revolution/chapter-38">Chapter 38 — 2021-08-08</a></span></li><li><a href="/manhua/the-record-of-unusual-creatures"><strong>The Record of Unusual Creatures</strong><span>Yuan Tong</span><span>Supernatural, Comedy, Romance</span></a><span class="seo-chapters"><a href="/read/the-record-of-unusual-creatures/chapter-70">Chapter 70 — 2021-08-07</a><a href="/read/the-record-of-unusual-creatures/chapter-69">Chapter 69 — 2021-08-07</a><a href="/read/the-record-of-unusual-creatures/chapter-68">Chapter 68 — 2021-08-07</a></span></li><li><a href="/manhwa/the-sword-of-glory"><strong>The Sword of Glory</strong><span>Dogado</span><span>Action, Adventure, Historical</span></a><span class="seo-chapters"><a href="/read/the-sword-of-glory/chapter-96">Chapter 96 — 2021-08-04</a><a href="/read/the-sword-of-glory/chapter-95">Chapter 95 — 2021-08-04</a><a href="/read/the-sword-of-glory/chapter-94">Chapter 94 — 2021-08-02</a></span></li><li><a href="/manhwa/inattentional-blindness"><strong>Inattentional Blindness</strong><span>Manubi</span><span>Romance, Drama, Fantasy</span></a><span class="seo-chapters"><a href="/read/inattentional-blindness/chapter-10">Chapter 10 — 2021-08-02</a><a href="/read/inattentional-blindness/chapter-9">Chapter 9 — 2021-02-13</a><a href="/read/inattentional-blindness/chapter-8">Chapter 8 — 2021-01-22</a></span></li><li><a href="/manhwa/dice-the-cube-that-changes-everything"><strong>DICE: The Cube That Changes Everything</strong><span>Yun Hyeonseok (윤현석)</span><span>Action, Psychological, Romance</span></a><span class="seo-chapters"><a href="/read/dice-the-cube-that-changes-everything/chapter-388">Chapter 388 — 2021-07-29</a><a href="/read/dice-the-cube-that-changes-everything/chapter-387">Chapter 387 — 2021-07-27</a><a href="/read/dice-the-cube-that-changes-everything/chapter-386">Chapter 386 — 2021-07-20</a></span></li><li><a href="/manhua/supreme-spirit-master"><strong>Supreme Spirit Master</strong><span>Unknown</span><span>Action, Romance, Adventure</span></a><span class="seo-chapters"><a href="/read/supreme-spirit-master/chapter-37">Chapter 37 — 2021-07-26</a><a href="/read/supreme-spirit-master/chapter-36">Chapter 36 — 2021-07-26</a><a href="/read/supreme-spirit-master/chapter-35">Chapter 35 — 2021-07-26</a></span></li><li><a href="/manhwa/do-you-know-a-fairy"><strong>Do You Know a Fairy?</strong><span>Yayami</span><span>Fantasy, Supernatural</span></a><span class="seo-chapters"><a href="/read/do-you-know-a-fairy/chapter-10">Chapter 10 — 2021-07-25</a><a href="/read/do-you-know-a-fairy/chapter-9">Chapter 9 — 2021-07-25</a><a href="/read/do-you-know-a-fairy/chapter-8">Chapter 8 — 2021-07-25</a></span></li><li><a href="/manhwa/an-uncomfortable-truth"><strong>An Uncomfortable Truth</strong><span>I Ireon</span><span>Drama, Mystery, Slice of Life</span></a><span class="seo-chapters"><a href="/read/an-uncomfortable-truth/chapter-74">Chapter 74 — 2021-07-20</a><a href="/read/an-uncomfortable-truth/chapter-73">Chapter 73 — 2021-07-20</a><a href="/read/an-uncomfortable-truth/chapter-72">Chapter 72 — 2021-07-20</a></span></li><li><a href="/manhwa/transfer-student"><strong>Transfer Student</strong><span>5hoo (5후)</span><span>Slice of Life</span></a><span class="seo-chapters"><a href="/read/transfer-student/chapter-64">Chapter 64 — 2021-07-18</a><a href="/read/transfer-student/chapter-63">Chapter 63 — 2021-07-09</a><a href="/read/transfer-student/chapter-62">Chapter 62 — 2021-07-09</a></span></li><li><a href="/manhua/xian-ni"><strong>Xian Ni</strong><span>Ergen</span><span>Action, Adventure, Fantasy</span></a><span class="seo-chapters"><a href="/read/xian-ni/chapter-167">Chapter 167 — 2021-07-18</a><a href="/read/xian-ni/chapter-166">Chapter 166 — 2021-07-11</a><a href="/read/xian-ni/chapter-165">Chapter 165 — 2021-07-11</a></span></li><li><a href="/manhwa/love-in-the-underworld"><strong>Love in the Underworld</strong><span>Ari (아리)</span><span>Romance, Fantasy</span></a><span class="seo-chapters"><a href="/read/love-in-the-underworld/chapter-41">Chapter 41 — 2021-07-16</a><a href="/read/love-in-the-underworld/chapter-40">Chapter 40 — 2021-07-16</a><a href="/read/love-in-the-underworld/chapter-39">Chapter 39 — 2021-07-16</a></span></li><li><a href="/manhwa/the-blue-guardian-of-the-princess"><strong>The Blue Guardian of the Princess</strong><span>Heosua</span><span>Historical, Romance, Adventure</span></a><span class="seo-chapters"><a href="/read/the-blue-guardian-of-the-princess/chapter-13">Chapter 13 — 2021-07-16</a><a href="/read/the-blue-guardian-of-the-princess/chapter-12">Chapter 12 — 2021-07-16</a><a href="/read/the-blue-guardian-of-the-princess/chapter-11">Chapter 11 — 2021-07-16</a></span></li><li><a href="/manhwa/the-vampires-flower"><strong>The Vampire's Flower</strong><span>Bul-sa</span><span>Sci-Fi, Romance, Fantasy</span></a><span class="seo-chapters"><a href="/read/the-vampires-flower/chapter-52">Chapter 52 — 2021-07-13</a><a href="/read/the-vampires-flower/chapter-51">Chapter 51 — 2021-07-13</a><a href="/read/the-vampires-flower/chapter-50">Chapter 50 — 2021-07-13</a></span></li><li><a href="/manhwa/the-maid-and-the-vampire"><strong>The Maid and the Vampire</strong><span>Yujeong Ju</span><span>Fantasy, Romance, Supernatural</span></a><span class="seo-chapters"><a href="/read/the-maid-and-the-vampire/chapter-76">Chapter 76 — 2021-07-12</a><a href="/read/the-maid-and-the-vampire/chapter-75">Chapter 75 — 2021-07-12</a><a href="/read/the-maid-and-the-vampire/chapter-74">Chapter 74 — 2021-07-12</a></span></li><li><a href="/manhwa/gatabutata"><strong>Gatabutata</strong><span>Sungeo (숭어)</span><span>Comedy, Drama, Romance</span></a><span class="seo-chapters"><a href="/read/gatabutata/chapter-69">Chapter 69 — 2021-07-10</a><a href="/read/gatabutata/chapter-68">Chapter 68 — 2021-07-10</a><a href="/read/gatabutata/chapter-67">Chapter 67 — 2021-07-10</a></span></li><li><a href="/manhua/death-field"><strong>Death Field</strong><span>Little Bones</span><span>Horror, Mystery, Supernatural</span></a><span class="seo-chapters"><a href="/read/death-field/chapter-86">Chapter 86 — 2021-07-10</a><a href="/read/death-field/chapter-85">Chapter 85 — 2021-07-09</a><a href="/read/death-field/chapter-84">Chapter 84 — 2021-07-09</a></span></li><li><a href="/manhwa/four-daughters-of-armian"><strong>Four Daughters of Armian</strong><span>Shin Il-suk</span><span>Adventure, Drama, Fantasy</span></a><span class="seo-chapters"><a href="/read/four-daughters-of-armian/chapter-22">Chapter 22 — 2021-07-09</a><a href="/read/four-daughters-of-armian/chapter-21">Chapter 21 — 2021-07-09</a><a href="/read/four-daughters-of-armian/chapter-20">Chapter 20 — 2021-07-09</a></span></li><li><a href="/manhua/blood-and-steel"><strong>Blood and Steel</strong><span>Qiao Jingfu</span><span>Action, Adventure, Drama</span></a><span class="seo-chapters"><a href="/read/blood-and-steel/chapter-87">Chapter 87 — 2021-07-08</a><a href="/read/blood-and-steel/chapter-86">Chapter 86 — 2021-03-10</a><a href="/read/blood-and-steel/chapter-85">Chapter 85 — 2021-01-17</a></span></li><li><a href="/manhua/ao-shi-jiu-chong-tian"><strong>Ao Shi Jiu Chong Tian</strong><span>Feng Ling Tianxia</span><span>Action, Adventure, Comedy</span></a><span class="seo-chapters"><a href="/read/ao-shi-jiu-chong-tian/chapter-25.2">Chapter 25.2 — 2021-07-08</a><a href="/read/ao-shi-jiu-chong-tian/chapter-25.1">Chapter 25.1 — 2021-07-08</a><a href="/read/ao-shi-jiu-chong-tian/chapter-24.4">Chapter 24.4 — 2021-03-10</a></span></li><li><a href="/manhua/demon-spirit-seed-manual"><strong>Demon Spirit Seed Manual</strong><span>Dazui</span><span>Action, Adventure, Comedy</span></a><span class="seo-chapters"><a href="/read/demon-spirit-seed-manual/chapter-275">Chapter 275 — 2021-07-08</a><a href="/read/demon-spirit-seed-manual/chapter-274">Chapter 274 — 2021-07-08</a><a href="/read/demon-spirit-seed-manual/chapter-273">Chapter 273 — 2021-07-08</a></span></li><li><a href="/manhua/hidden-surface-town"><strong>Hidden Surface Town</strong><span>Chong Chong Jia Jia</span><span>Romance, Supernatural, Drama</span></a><span class="seo-chapters"><a href="/read/hidden-surface-town/chapter-53">Chapter 53 — 2021-07-08</a><a href="/read/hidden-surface-town/chapter-52">Chapter 52 — 2021-07-08</a><a href="/read/hidden-surface-town/chapter-51">Chapter 51 — 2021-07-08</a></span></li><li><a href="/manhwa/this-villainess-wants-a-divorce"><strong>This Villainess Wants a Divorce!</strong><span>Nokki</span><span>Fantasy, Romance, Adventure</span></a><span class="seo-chapters"><a href="/read/this-villainess-wants-a-divorce/chapter-95">Chapter 95 — 2021-07-07</a><a href="/read/this-villainess-wants-a-divorce/chapter-93">Chapter 93 — 2021-07-07</a><a href="/read/this-villainess-wants-a-divorce/chapter-92">Chapter 92 — 2021-07-10</a></span></li><li><a href="/manhwa/rpg"><strong>RPG</strong><span>Unknown</span><span>Action, Adventure, Comedy</span></a><span class="seo-chapters"><a href="/read/rpg/chapter-185.5">Chapter 185.5 — 2021-06-28</a><a href="/read/rpg/chapter-185">Chapter 185 — 2021-06-28</a><a href="/read/rpg/chapter-184">Chapter 184 — 2021-06-28</a></span></li><li><a href="/manhwa/circle-zeros-otherworldly-hero-business-reboot"><strong>Circle Zero's Otherworldly Hero Business: Reboot</strong><span>Im Dal-young</span><span>Comedy, Adventure, Drama</span></a><span class="seo-chapters"><a href="/read/circle-zeros-otherworldly-hero-business-reboot/chapter-74">Chapter 74 — 2021-06-26</a><a href="/read/circle-zeros-otherworldly-hero-business-reboot/chapter-73">Chapter 73 — 2021-06-26</a><a href="/read/circle-zeros-otherworldly-hero-business-reboot/chapter-72">Chapter 72 — 2021-06-26</a></span></li><li><a href="/manhwa/gosu"><strong>Gosu</strong><span>Ryu Ki-woon</span><span>Action, Adventure, Comedy</span></a><span class="seo-chapters"><a href="/read/gosu/chapter-232">Chapter 232 — 2021-06-20</a><a href="/read/gosu/chapter-231">Chapter 231 — 2021-06-13</a><a href="/read/gosu/chapter-230">Chapter 230 — 2021-06-06</a></span></li><li><a href="/manhua/haomen-qifu-de-chuntian"><strong>Haomen Qifu de Chuntian</strong><span>You Lu Wen Hua</span><span>Romance, Drama</span></a><span class="seo-chapters"><a href="/read/haomen-qifu-de-chuntian/chapter-300">Chapter 300 — 2021-06-18</a><a href="/read/haomen-qifu-de-chuntian/chapter-299">Chapter 299 — 2021-06-18</a><a href="/read/haomen-qifu-de-chuntian/chapter-298">Chapter 298 — 2021-06-18</a></span></li><li><a href="/manhua/across-the-dangerous-ocean"><strong>Across The Dangerous Ocean</strong><span>Extreme Culture</span><span>Romance, Drama</span></a><span class="seo-chapters"><a href="/read/across-the-dangerous-ocean/chapter-156">Chapter 156 — 2021-06-12</a><a href="/read/across-the-dangerous-ocean/chapter-155">Chapter 155 — 2021-06-12</a><a href="/read/across-the-dangerous-ocean/chapter-154">Chapter 154 — 2021-06-12</a></span></li><li><a href="/manhwa/how-far-have-you-gone"><strong>How Far Have You Gone?</strong><span>Bibi</span><span>Comedy, Romance, Drama</span></a><span class="seo-chapters"><a href="/read/how-far-have-you-gone/chapter-100.5">Chapter 100.5 — 2021-06-08</a><a href="/read/how-far-have-you-gone/chapter-100">Chapter 100 — 2021-06-08</a><a href="/read/how-far-have-you-gone/chapter-99">Chapter 99 — 2021-06-08</a></span></li><li><a href="/manhua/douluo-dalu-3-the-legend-of-the-dragon-king"><strong>Douluo Dalu 3: The Legend of the Dragon King</strong><span>Tang Jia San Shao</span><span>Action, Adventure, Comedy</span></a><span class="seo-chapters"><a href="/read/douluo-dalu-3-the-legend-of-the-dragon-king/chapter-148">Chapter 148 — 2021-05-30</a><a href="/read/douluo-dalu-3-the-legend-of-the-dragon-king/chapter-147">Chapter 147 — 2021-05-30</a><a href="/read/douluo-dalu-3-the-legend-of-the-dragon-king/chapter-146">Chapter 146 — 2021-03-15</a></span></li><li><a href="/manhwa/abide-in-the-wind"><strong>Abide in the Wind</strong><span>Shin Weol</span><span>Action, Adventure, Drama</span></a><span class="seo-chapters"><a href="/read/abide-in-the-wind/chapter-154">Chapter 154 — 2021-05-22</a><a href="/read/abide-in-the-wind/chapter-153">Chapter 153 — 2021-05-20</a><a href="/read/abide-in-the-wind/chapter-152">Chapter 152 — 2021-05-20</a></span></li><li><a href="/manhwa/the-horizon"><strong>The Horizon</strong><span>Jeong Ji-Hoon</span><span>Drama, Psychological, Romance</span></a><span class="seo-chapters"><a href="/read/the-horizon/chapter-21">Chapter 21 — 2021-05-18</a><a href="/read/the-horizon/chapter-20">Chapter 20 — 2021-05-18</a><a href="/read/the-horizon/chapter-19">Chapter 19 — 2021-05-18</a></span></li><li><a href="/manhua/i-just-want-to-be-a-useless-dukes-daughter"><strong>I Just Want to Be a Useless Duke's Daughter</strong><span>Doreda</span><span>Comedy, Fantasy, Historical</span></a><span class="seo-chapters"><a href="/read/i-just-want-to-be-a-useless-dukes-daughter/chapter-91">Chapter 91 — 2021-05-17</a><a href="/read/i-just-want-to-be-a-useless-dukes-daughter/chapter-90">Chapter 90 — 2021-05-17</a><a href="/read/i-just-want-to-be-a-useless-dukes-daughter/chapter-89">Chapter 89 — 2021-05-17</a></span></li><li><a href="/manhwa/i-found-somebody-to-love"><strong>I Found Somebody to Love</strong><span>Daya</span><span>Drama, Romance, Slice of Life</span></a><span class="seo-chapters"><a href="/read/i-found-somebody-to-love/chapter-88">Chapter 88 — 2021-05-15</a><a href="/read/i-found-somebody-to-love/chapter-87">Chapter 87 — 2021-05-15</a><a href="/read/i-found-somebody-to-love/chapter-86">Chapter 86 — 2021-05-15</a></span></li><li><a href="/manhwa/the-wanderer"><strong>The Wanderer</strong><span>Soon Tae Kim</span><span>Action, Adventure, Drama</span></a><span class="seo-chapters"><a href="/read/the-wanderer/chapter-71">Chapter 71 — 2021-05-09</a><a href="/read/the-wanderer/chapter-70">Chapter 70 — 2021-04-15</a><a href="/read/the-wanderer/chapter-69">Chapter 69 — 2021-04-08</a></span></li><li><a href="/manhwa/you-at-first-sight"><strong>You At First Sight</strong><span>Icchae</span><span>Mystery, Romance, Slice of Life</span></a><span class="seo-chapters"><a href="/read/you-at-first-sight/chapter-97">Chapter 97 — 2021-04-09</a><a href="/read/you-at-first-sight/chapter-96">Chapter 96 — 2021-04-09</a><a href="/read/you-at-first-sight/chapter-95">Chapter 95 — 2021-04-09</a></span></li><li><a href="/manhwa/whats-wrong-with-secretary-kim"><strong>What's Wrong with Secretary Kim?</strong><span>Kim Myeongmi</span><span>Comedy, Romance, Drama</span></a><span class="seo-chapters"><a href="/read/whats-wrong-with-secretary-kim/chapter-98">Chapter 98 — 2021-03-31</a><a href="/read/whats-wrong-with-secretary-kim/chapter-97">Chapter 97 — 2021-03-31</a><a href="/read/whats-wrong-with-secretary-kim/chapter-96">Chapter 96 — 2021-03-31</a></span></li><li><a href="/manhwa/never-understand"><strong>Never Understand</strong><span>Bbong</span><span>Comedy, Drama, Romance</span></a><span class="seo-chapters"><a href="/read/never-understand/chapter-86">Chapter 86 — 2021-03-20</a><a href="/read/never-understand/chapter-85">Chapter 85 — 2018-02-25</a><a href="/read/never-understand/chapter-84">Chapter 84 — 2018-02-25</a></span></li><li><a href="/manhwa/the-problem-of-my-love-affair"><strong>The Problem of My Love Affair</strong><span>Heo Yun Hwa</span><span>Psychological, Romance, Comedy</span></a><span class="seo-chapters"><a href="/read/the-problem-of-my-love-affair/chapter-60">Chapter 60 — 2021-03-19</a><a href="/read/the-problem-of-my-love-affair/chapter-59">Chapter 59 — 2021-03-19</a><a href="/read/the-problem-of-my-love-affair/chapter-58">Chapter 58 — 2021-03-17</a></span></li><li><a href="/manhwa/the-emperors-partner"><strong>The Emperor's Partner</strong><span>Assam (아쌈)</span><span>Fantasy, Romance, Fantasy</span></a><span class="seo-chapters"><a href="/read/the-emperors-partner/chapter-91">Chapter 91 — 2021-03-19</a><a href="/read/the-emperors-partner/chapter-90">Chapter 90 — 2021-03-12</a><a href="/read/the-emperors-partner/chapter-89">Chapter 89 — 2021-03-11</a></span></li><li><a href="/manhwa/otome-equation"><strong>Otome Equation</strong><span>Sae-un</span><span>Comedy, Adventure, Adventure</span></a><span class="seo-chapters"><a href="/read/otome-equation/chapter-28">Chapter 28 — 2021-03-19</a><a href="/read/otome-equation/chapter-27">Chapter 27 — 2021-02-25</a><a href="/read/otome-equation/chapter-26">Chapter 26 — 2021-01-31</a></span></li><li><a href="/manhwa/a-villain-demands-to-be-loved"><strong>A Villain Demands to Be Loved</strong><span>오미자청</span><span>Historical, Romance, Comedy</span></a><span class="seo-chapters"><a href="/read/a-villain-demands-to-be-loved/chapter-14">Chapter 14 — 2021-03-18</a><a href="/read/a-villain-demands-to-be-loved/chapter-13">Chapter 13 — 2021-03-16</a><a href="/read/a-villain-demands-to-be-loved/chapter-12">Chapter 12 — 2021-03-16</a></span></li><li><a href="/manhwa/a-bitch-and-a-punk"><strong>A Bitch and a Punk</strong><span>Sangha</span><span>Drama, Romance, Slice of Life</span></a><span class="seo-chapters"><a href="/read/a-bitch-and-a-punk/chapter-18">Chapter 18 — 2021-03-16</a><a href="/read/a-bitch-and-a-punk/chapter-17">Chapter 17 — 2021-03-09</a><a href="/read/a-bitch-and-a-punk/chapter-16">Chapter 16 — 2021-03-04</a></span></li><li><a href="/manhwa/auto-hunting"><strong>Auto Hunting</strong><span>Black Seed Entertainment (블랙시드 엔터테인먼트)</span><span>Sci-Fi, Horror, Action</span></a><span class="seo-chapters"><a href="/read/auto-hunting/chapter-92">Chapter 92 — 2021-03-15</a><a href="/read/auto-hunting/chapter-91">Chapter 91 — 2021-03-12</a><a href="/read/auto-hunting/chapter-90">Chapter 90 — 2021-03-11</a></span></li><li><a href="/manhwa/when-winter-comes-to-the-way-station"><strong>When Winter Comes to the Way Station</strong><span>Kkul Odeng</span><span>Drama, Romance</span></a><span class="seo-chapters"><a href="/read/when-winter-comes-to-the-way-station/chapter-42">Chapter 42 — 2021-03-15</a><a href="/read/when-winter-comes-to-the-way-station/chapter-41">Chapter 41 — 2021-03-15</a><a href="/read/when-winter-comes-to-the-way-station/chapter-40">Chapter 40 — 2021-03-01</a></span></li><li><a href="/manhua/umbrella-girl-dreams"><strong>Umbrella Girl Dreams</strong><span>Zuo Xiaoling</span><span>Supernatural, Fantasy, Historical</span></a><span class="seo-chapters"><a href="/read/umbrella-girl-dreams/chapter-20">Chapter 20 — 2021-03-15</a><a href="/read/umbrella-girl-dreams/chapter-19">Chapter 19 — 2021-02-21</a><a href="/read/umbrella-girl-dreams/chapter-18">Chapter 18 — 2021-02-21</a></span></li><li><a href="/manhua/nightmare-world"><strong>Nightmare World</strong><span>Wu Man Tin</span><span>Action, Adventure, Mystery</span></a><span class="seo-chapters"><a href="/read/nightmare-world/chapter-75">Chapter 75 — 2021-03-14</a><a href="/read/nightmare-world/chapter-74">Chapter 74 — 2021-03-14</a><a href="/read/nightmare-world/chapter-73">Chapter 73 — 2021-03-14</a></span></li><li><a href="/manhwa/touch-touch-you"><strong>Touch Touch You</strong><span>손팡</span><span>Romance, Comedy, Slice of Life</span></a><span class="seo-chapters"><a href="/read/touch-touch-you/chapter-24">Chapter 24 — 2021-03-13</a><a href="/read/touch-touch-you/chapter-23">Chapter 23 — 2021-03-10</a><a href="/read/touch-touch-you/chapter-22">Chapter 22 — 2021-03-07</a></span></li><li><a href="/manhwa/seven-knights-alkaid"><strong>Seven Knights: Alkaid</strong><span>Ant Studio (앤트스튜디오)</span><span>Action, Comedy, Adventure</span></a><span class="seo-chapters"><a href="/read/seven-knights-alkaid/chapter-28">Chapter 28 — 2021-03-13</a><a href="/read/seven-knights-alkaid/chapter-27">Chapter 27 — 2021-03-13</a><a href="/read/seven-knights-alkaid/chapter-24">Chapter 24 — 2020-12-15</a></span></li><li><a href="/manhua/zero-point-idol"><strong>Zero Point Idol</strong><span>Sanjing Jun</span><span>Comedy, Romance, Drama</span></a><span class="seo-chapters"><a href="/read/zero-point-idol/chapter-130">Chapter 130 — 2021-03-13</a><a href="/read/zero-point-idol/chapter-129">Chapter 129 — 2021-03-11</a><a href="/read/zero-point-idol/chapter-128">Chapter 128 — 2021-02-26</a></span></li></ul></section>
+      <p><a href="/updates/page/21" rel="prev">← Page 21</a> · <a href="/updates/page/23" rel="next">Page 23 →</a></p>
+    <p style="margin:24px 0;text-align:center;font-size:13px"><a href="https://www.profitableratecpmnetwork.com/rwke4e7k?key=2b2a096dea78bd8cb7bdc2b9ee370110" target="_blank" rel="noopener nofollow sponsored">Sponsored</a></p></main></div></div>
+    <script src="https://pl31102148.profitableratecpmnetwork.com/a4/a1/fe/a4a1fe30d63892bdc56fb6286e4439c3.js"></script>
+  </body>
+</html>

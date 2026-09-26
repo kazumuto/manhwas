@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#141413" />
+    <meta name="google-adsense-account" content="ca-pub-9672720678512933" />
+    <link rel="icon" type="image/png" href="/logo1.png" />
+    <title>New Manhwa &amp; Manhua 2023 – Read Free Online | MANHWAS</title>
+    <link rel="canonical" href="https://manhwas.site/years/2023" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Cover CDN: every card/hero cover loads from here — preconnect removes
+         a full mobile TLS+DNS round-trip from the LCP image (the homepage
+         hero cover IS the LCP element; field data showed ~6s on mobile) -->
+    <link rel="preconnect" href="https://cdn.manhwas.site" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.manhwas.site">
+    <!-- Non-blocking font CSS: text paints in system-ui immediately and
+         swaps to Inter when loaded (the face uses font-display: swap).
+         The prerendered #seo-content block already uses system-ui, so the
+         crawler-visible content never waits on fonts. -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    </noscript>
+    <!-- critical pre-hydration styles: prevents white flash before React mounts -->
+    <style>
+      body { margin: 0; background: #141413; }
+      #seo-content {
+        padding: 24px;
+        color: #d8d5d1;
+        font-family: system-ui, sans-serif;
+        line-height: 1.5;
+        max-width: 1240px;
+        margin: 0 auto;
+        overflow-wrap: break-word;
+      }
+      #seo-content a { color: #e06a55; text-decoration: underline; }
+      #seo-content ul,
+      #seo-content nav { list-style: none; margin: 0; padding: 0; }
+      #seo-content h1 { font-size: 1.75rem; font-weight: 700; color: #f0efeb; margin: 0 0 8px; }
+      #seo-content h2 { font-size: 1.125rem; font-weight: 600; color: #f0efeb; margin: 24px 0 8px; }
+      #seo-content p { margin: 0 0 12px; color: #b3b1a8; }
+      #seo-content .seo-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 12px;
+      }
+    </style>
+    <!-- Popunder partner script. async: must NOT block HTML parsing —
+         a synchronous script here delays first paint AND React mount by the
+         ad network's full response time (worst case seconds on mobile),
+         which used to leave the whole page (hero + Trending + Updates) blank.
+         The script self-injects its anchors when it eventually runs, so the
+         popunder behavior is unchanged; only its start becomes non-blocking. -->
+    <script async src="https://pl31102147.profitableratecpmnetwork.com/c8/ce/72/c8ce72a5a8e626dad922ab986b7f329d.js"></script>
+    <!-- Ad frequency cap: ONE visual ad per page view. When the visitor closes
+         it, every further body-level fixed ad iframe is removed until the next
+         page view (SPA route change or refresh). Never touches anything inside
+         #root — the app itself renders no fixed iframes. -->
+    <script>
+      (function () {
+        try {
+          var state = { shown: false, suppressed: false };
+          function isAdIframe(el) {
+            if (!el || el.tagName !== 'IFRAME') return false;
+            if (el.closest && el.closest('#root')) return false;
+            try {
+              if (getComputedStyle(el).position !== 'fixed') return false;
+            } catch (e) {
+              return false;
+            }
+            return true;
+          }
+          function scan() {
+            var iframes = document.querySelectorAll('body iframe');
+            for (var i = 0; i < iframes.length; i++) {
+              var f = iframes[i];
+              if (!isAdIframe(f)) continue;
+              if (state.suppressed) {
+                f.remove();
+                continue;
+              }
+              if (!state.shown) {
+                state.shown = true;
+                // enforce "only one": drop any sibling ad layers present in
+                // the same batch so a single page view shows a single ad
+                for (var j = 0; j < iframes.length; j++) {
+                  if (j !== i && isAdIframe(iframes[j])) iframes[j].remove();
+                }
+                watchForClose(f);
+                break;
+              }
+            }
+            hideAdHoverUrls();
+            sweepOverlays();
+          }
+
+          // The popunder script injects an invisible full-page anchor, so
+          // the browser status bar shows its long tracking URL whenever the
+          // mouse is anywhere over a page. Neutralize the HOVER DISPLAY
+          // without touching ad behavior: the href is stripped (no status
+          // text) and restored on mousedown/touchstart, so the actual click
+          // still goes through the ad's own anchor with its original URL,
+          // target and listeners — revenue path unchanged. Internal links
+          // are never touched.
+          function hideAdHoverUrls() {
+            var anchors = document.getElementsByTagName('a');
+            for (var k = 0; k < anchors.length; k++) {
+              var a = anchors[k];
+              if (a.dataset.hoverLocked === '1') continue;
+              var href = a.getAttribute('href') || '';
+              if (href.length > 80 && a.hostname !== location.hostname) {
+                a.dataset.hoverLocked = '1';
+                a.dataset.keepHref = href;
+                var show = function () {
+                  if (this.dataset.keepHref) this.setAttribute('href', this.dataset.keepHref);
+                };
+                var hide = function () { this.removeAttribute('href'); };
+                a.addEventListener('mousedown', show);
+                a.addEventListener('touchstart', show, { passive: true });
+                a.addEventListener('focus', show);
+                a.addEventListener('mouseleave', hide);
+                a.addEventListener('blur', hide);
+                a.removeAttribute('href');
+              }
+            }
+          }
+          // "Have to press twice" fix: the popunder injects an invisible
+          // full-viewport anchor that keeps swallowing taps after its pop
+          // attempt (especially when the popup is blocked — nothing visible
+          // happens, so the page feels stuck). The FIRST interaction still
+          // goes through the ad's own anchor (revenue path unchanged); every
+          // later pointer event passes through to the real UI.
+          function defuseFullPageAnchor(a) {
+            if (a.dataset.overlayDefused === '1') return;
+            a.dataset.overlayDefused = '1';
+            var pass = function () {
+              setTimeout(function () { a.style.pointerEvents = 'none'; }, 0);
+            };
+            a.addEventListener('pointerdown', pass, { capture: true, passive: true });
+            a.addEventListener('click', pass, { capture: true });
+          }
+          function sweepOverlays() {
+            var links = document.getElementsByTagName('a');
+            var vw = window.innerWidth, vh = window.innerHeight;
+            for (var m = 0; m < links.length; m++) {
+              var a = links[m];
+              if (a.dataset.overlayDefused === '1') continue;
+              if (a.closest && a.closest('#root')) continue;
+              var href = a.getAttribute('href') || '';
+              if (href.length <= 80 && a.hostname === location.hostname) continue;
+              var r = a.getBoundingClientRect();
+              if (r.width * r.height < 0.8 * vw * vh) continue;
+              try {
+                var pos = getComputedStyle(a).position;
+                if (pos !== 'fixed' && pos !== 'absolute') continue;
+              } catch (e) { continue; }
+              defuseFullPageAnchor(a);
+            }
+          }
+          function watchForClose(el) {
+            var mo = new MutationObserver(function () {
+              if (!document.documentElement.contains(el)) {
+                mo.disconnect();
+                suppress();
+              }
+            });
+            mo.observe(document.documentElement, { childList: true, subtree: true });
+          }
+          function suppress() {
+            state.suppressed = true;
+            document.documentElement.setAttribute('data-adcap', '1');
+            scan();
+          }
+          // one ad per PAGE VIEW: navigating to another page re-arms the cap
+          function reset() {
+            state.suppressed = false;
+            state.shown = false;
+            document.documentElement.removeAttribute('data-adcap');
+          }
+          var push = history.pushState;
+          history.pushState = function () {
+            var r = push.apply(this, arguments);
+            reset();
+            return r;
+          };
+          window.addEventListener('popstate', reset);
+          // rAF-coalesced: a page mount triggers dozens of mutation batches,
+          // and scan() queries every body iframe each time — one scan per
+          // frame keeps the cap behavior while cutting SPA navigation cost
+          var scanQueued = false;
+          var queueScan = function () {
+            if (scanQueued) return;
+            scanQueued = true;
+            requestAnimationFrame(function () {
+              scanQueued = false;
+              scan();
+            });
+          };
+          new MutationObserver(queueScan).observe(document.documentElement, { childList: true, subtree: true });
+          document.addEventListener('DOMContentLoaded', scan);
+        } catch (e) {}
+      })();
+    </script>
+    <script type="module" crossorigin src="/assets/index-DryuG25J.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DABcpq0e.css">
+    <meta name="description" content="164 manhwa and manhua that started publishing in 2023 — read them free online, full chapter lists, on MANHWAS." />
+    <meta name="robots" content="index,follow" />
+    <meta property="og:title" content="New Manhwa &amp; Manhua 2023 – Read Free Online | MANHWAS" />
+    <meta property="og:description" content="164 manhwa and manhua that started publishing in 2023 — read them free online, full chapter lists, on MANHWAS." />
+    <meta property="og:url" content="https://manhwas.site/years/2023" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="MANHWAS" />
+    <script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://manhwas.site/"},{"@type":"ListItem","position":2,"name":"Directory","item":"https://manhwas.site/directory"},{"@type":"ListItem","position":3,"name":"2023","item":"https://manhwas.site/years/2023"}]}]</script>
+  </head>
+  <body class="antialiased selection:bg-[#D95743] selection:text-white">
+    <div id="root"><div id="seo-content"><main>
+          <nav aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/directory">Directory</a> › 2023</nav>
+          <h1>Manhwa &amp; Manhua from 2023</h1>
+          <p>164 series that started publishing in 2023.</p>
+          
+          <section><h2>2023 debuts</h2><ul class="seo-grid"><li><a href="/manhwa/revenge-of-the-sword-clans-hound"><strong>Revenge of the Sword Clan's Hound</strong><span>설아랑</span><span>Fantasy, Action, Psychological</span></a></li><li><a href="/manhwa/pick-me-up"><strong>Pick Me Up!</strong><span>Hermod (헤르모드)</span><span>Action, Adventure, Fantasy</span></a></li><li><a href="/manhwa/star-fostered-swordmaster"><strong>Star-Fostered Swordmaster</strong><span>Hong Dae Eui (홍대의)</span><span>Historical, Action, Drama</span></a></li><li><a href="/manhwa/academys-genius-swordmaster"><strong>Academy’s Genius Swordmaster</strong><span>Seok Wando</span><span>Action, Adventure, Drama</span></a></li><li><a href="/manhwa/the-max-level-players-100th-regression"><strong>The Max-Level Player’s 100th Regression</strong><span>킹소다 (King Soda)</span><span>Action, Adventure, Drama</span></a></li><li><a href="/manhwa/surviving-the-game-as-a-barbarian"><strong>Surviving the Game as a Barbarian</strong><span>Han Tae-Soo</span><span>Action, Adventure, Fantasy</span></a></li><li><a href="/manhwa/the-martial-god-who-regressed-back-to-level-2"><strong>The Martial God who Regressed Back to Level 2</strong><span>REDICE studio</span><span>Sci-Fi, Action, Fantasy</span></a></li><li><a href="/manhwa/the-knight-king-who-returned-with-a-god"><strong>The Knight King Who Returned With a God</strong><span>Salam Sallyeo (사람살려.)</span><span>Action, Drama, Fantasy</span></a></li><li><a href="/manhwa/boundless-necromancer"><strong>Boundless Necromancer</strong><span>Seonun</span><span>Action, Thriller, Adventure</span></a></li><li><a href="/manhwa/the-player-hides-his-past"><strong>The Player Hides His Past</strong><span>Gaechaban</span><span>Action, Comedy, Drama</span></a></li><li><a href="/manhwa/the-reincarnated-assassin-is-a-genius-swordsman"><strong>The Reincarnated Assassin is a Genius Swordsman</strong><span>Voke</span><span>Fantasy, Action, Adventure</span></a></li><li><a href="/manhwa/regressing-with-the-kings-power"><strong>Regressing With the King's Power</strong><span>Kim</span><span>Sci-Fi, Action, Drama</span></a></li><li><a href="/manhwa/chronicles-of-the-demon-faction"><strong>Chronicles of the Demon Faction</strong><span>Codezero</span><span>Fantasy, Action, Drama</span></a></li><li><a href="/manhwa/solo-farming-in-the-tower"><strong>Solo Farming in the Tower</strong><span>Lim Hyeong</span><span>Action, Adventure, Drama</span></a></li><li><a href="/manhwa/a-barbarian-was-admitted-to-the-academy"><strong>A Barbarian Was Admitted to the Academy</strong><span>just</span><span>Fantasy, Historical, Action</span></a></li><li><a href="/manhwa/killer-pietro"><strong>Killer Pietro</strong><span>Kim Jung-Hyun</span><span>Action, Drama</span></a></li><li><a href="/manhwa/the-priest-of-corruption"><strong>The Priest of Corruption</strong><span>YU (III)</span><span>Action, Adventure, Fantasy</span></a></li><li><a href="/manhwa/iljin-romance"><strong>Iljin Romance</strong><span>Yuhwa Yuhwa</span><span>Romance, Comedy</span></a></li><li><a href="/manhwa/i-used-to-be-a-boss"><strong>I Used to Be a Boss</strong><span>Lucks</span><span>Action, Fantasy, Drama</span></a></li><li><a href="/manhwa/marriage-of-convenience"><strong>Marriage of Convenience</strong><span>Ken+</span><span>Historical, Romance, Fantasy</span></a></li><li><a href="/manhwa/whats-wrong-with-being-the-villainess"><strong>What's Wrong with Being the Villainess?</strong><span>Manggokim (망고킴)</span><span>Fantasy, Romance, Comedy</span></a></li><li><a href="/manhwa/the-demon-prince-goes-to-the-academy"><strong>The Demon Prince goes to the Academy</strong><span>로노푸</span><span>Action, Comedy, Adventure</span></a></li><li><a href="/manhwa/the-constellations-are-my-disciples"><strong>The Constellations Are My Disciples</strong><span>Inus Studio</span><span>Action, Drama, Fantasy</span></a></li><li><a href="/manhwa/marry-my-husband"><strong>Marry My Husband</strong><span>Sung Sojak</span><span>Fantasy, Psychological, Romance</span></a></li><li><a href="/manhwa/the-dark-mages-return-to-enlistment"><strong>The Dark Mage's Return to Enlistment</strong><span>Golden Dove</span><span>Action, Drama, Fantasy</span></a></li><li><a href="/manhwa/high-school-boy"><strong>High School Boy</strong><span>Park Gee/Ji (박지)</span><span>Action</span></a></li><li><a href="/manhwa/daytime-star"><strong>Daytime Star</strong><span>Chae-Eun</span><span>Romance, Drama</span></a></li><li><a href="/manhwa/magic-academy-survival-guide"><strong>Magic Academy Survival Guide</strong><span>Writing Machine (글쓰는기계)</span><span>Adventure, Slice of Life, Fantasy</span></a></li><li><a href="/manhwa/the-dawn-to-come"><strong>The Dawn to Come</strong><span>Woo Jihye (우지혜)</span><span>Romance, Drama, Slice of Life</span></a></li><li><a href="/manhwa/absolute-necromancer"><strong>Absolute Necromancer</strong><span>Blue Jaeng-Yi</span><span>Fantasy, Action, Adventure</span></a></li><li><a href="/manhwa/sherbet-above-the-sea-of-fog"><strong>Sherbet Above the Sea of Fog</strong><span>BonesBloodFlesh (뼈피살)</span><span>Romance, Comedy, Fantasy</span></a></li><li><a href="/manhwa/the-invincible-man"><strong>The Invincible Man</strong><span>No Kyoungchan (노경찬)</span><span>Action, Psychological, Drama</span></a></li><li><a href="/manhwa/show-me-your-bust"><strong>Show Me Your Bust</strong><span>Team Gaji</span><span>Romance, Drama, Slice of Life</span></a></li><li><a href="/manhwa/my-reason-to-die"><strong>My Reason to Die</strong><span>Yuju</span><span>Psychological, Romance, Drama</span></a></li><li><a href="/manhwa/heavenly-grand-archives-young-master"><strong>Heavenly Grand Archive's Young Master</strong><span>Midnight Studio</span><span>Action, Adventure, Comedy</span></a></li><li><a href="/manhua/song-of-the-sky-walkers"><strong>Song of the Sky Walkers</strong><span>Xia Da (夏达)</span><span>Historical, Action, Adventure</span></a></li><li><a href="/manhua/disastrous-necromancer"><strong>Disastrous Necromancer</strong><span>黑鸟社</span><span>Action, Adventure, Slice of Life</span></a></li><li><a href="/manhwa/necromancer-academy-and-the-genius-summoner"><strong>Necromancer Academy and the Genius Summoner</strong><span>Azi</span><span>Action, Adventure, Comedy</span></a></li><li><a href="/manhwa/devil-returns-to-school-days"><strong>Devil Returns to School Days</strong><span>Team the JICK (팀 더 지크)</span><span>Fantasy, Sci-Fi, Action</span></a></li><li><a href="/manhwa/neolith-girl"><strong>Neolith Girl</strong><span>Jae Ah</span><span>Action, Adventure, Comedy</span></a></li><li><a href="/manhua/demonic-evolution"><strong>Demonic Evolution</strong><span>黑鸟社</span><span>Fantasy, Action, Adventure</span></a></li><li><a href="/manhwa/for-my-derelict-favorite"><strong>For My Derelict Favorite</strong><span>Kim Seon-Yu</span><span>Fantasy, Historical, Romance</span></a></li><li><a href="/manhwa/drug-eating-genius-mage"><strong>Drug-Eating Genius Mage</strong><span>Geul Geun Yook</span><span>Sci-Fi, Action, Adventure</span></a></li><li><a href="/manhwa/dokgo-rewind"><strong>Dokgo Rewind</strong><span>Min (민)</span><span>Action, Drama, Slice of Life</span></a></li><li><a href="/manhwa/level-up-with-skills"><strong>Level Up With Skills</strong><span>Paran Yeong (파란영)</span><span>Sci-Fi, Action, Thriller</span></a></li><li><a href="/manhwa/my-mom-entered-a-contract-marriage"><strong>My Mom Entered a Contract Marriage</strong><span>Siya</span><span>Romance, Drama, Sci-Fi</span></a></li><li><a href="/manhwa/ill-be-a-villain-in-this-life"><strong>I'll Be a Villain in This Life</strong><span>Glevillain</span><span>Sci-Fi, Action, Drama</span></a></li><li><a href="/manhwa/how-to-hide-the-emperors-child"><strong>How to Hide the Emperor's Child</strong><span>Lee Yeon-Sun (이연선)</span><span>Historical, Romance, Drama</span></a></li><li><a href="/manhwa/i-became-an-evolving-space-monster"><strong>I Became an Evolving Space Monster</strong><span>공포의거북이</span><span>Action, Adventure, Drama</span></a></li><li><a href="/manhwa/f-rank-fortune-hunter"><strong>F-Rank Fortune Hunter</strong><span>anamin</span><span>Sci-Fi, Horror, Action</span></a></li><li><a href="/manhwa/everyone-else-is-a-returnee"><strong>Everyone Else Is a Returnee</strong><span>Toy Car (토이카)</span><span>Action, Adventure, Comedy</span></a></li><li><a href="/manhwa/the-superheroes-of-class-f"><strong>The Superheroes of Class F</strong><span>Bbolong</span><span>Action, Comedy, Drama</span></a></li><li><a href="/manhwa/8mm"><strong>8mm</strong><span>You Na</span><span>Comedy, Drama, Romance</span></a></li><li><a href="/manhwa/im-being-raised-by-villains"><strong>I'm Being Raised by Villains</strong><span>Ja Eunhyang</span><span>Romance, Comedy, Drama</span></a></li><li><a href="/manhwa/han-daesung-back-from-hell"><strong>Han Daesung, Back From Hell</strong><span>Grujam (Lee Seo Kyung)</span><span>Action, Adventure, Drama</span></a></li><li><a href="/manhwa/steel-eating-player"><strong>Steel-Eating Player</strong><span>Jjj (지점장)</span><span>Fantasy, Action, Drama</span></a></li><li><a href="/manhwa/legend-of-the-holy-sword"><strong>Legend of the Holy Sword</strong><span>최다킬</span><span>Action, Comedy, Adventure</span></a></li><li><a href="/manhua/the-star"><strong>The Star</strong><span>Tutu</span><span>Historical, Action, Adventure</span></a></li><li><a href="/manhwa/i-found-a-husband-when-i-picked-up-the-male-lead"><strong>I Found a Husband When I Picked Up the Male Lead</strong><span>Malissi (마리씨)</span><span>Fantasy, Romance, Adventure</span></a></li><li><a href="/manhwa/i-became-the-despised-granddaughter-of-the-murim-family"><strong>I Became the Despised Granddaughter of the Murim Family</strong><span>Berry (열매)</span><span>Fantasy, Drama, Romance</span></a></li></ul></section>
+          <p><a href="/years/2024">2024</a> · <a href="/years/2022">2022</a> · <a href="/new-releases">New releases</a> · <a href="/directory">A–Z directory</a></p>
+        <p style="margin:24px 0;text-align:center;font-size:13px"><a href="https://www.profitableratecpmnetwork.com/rwke4e7k?key=2b2a096dea78bd8cb7bdc2b9ee370110" target="_blank" rel="noopener nofollow sponsored">Sponsored</a></p></main></div></div>
+    <script src="https://pl31102148.profitableratecpmnetwork.com/a4/a1/fe/a4a1fe30d63892bdc56fb6286e4439c3.js"></script>
+  </body>
+</html>

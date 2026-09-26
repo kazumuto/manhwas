@@ -1,0 +1,49 @@
+# MANHWAS
+
+> Read manhwa and manhua online free. 2,000+ series with daily chapter
+> updates, weekly rankings, a release calendar, and genre browsing.
+> No account needed to read.
+
+MANHWAS (https://manhwas.site) is a digital-comics discovery and reader
+platform for Korean manhwa and Chinese manhua. The catalogue refreshes
+every 2 hours from public sources; chapter pages carry full reader context
+(series, chapter number, related titles). Series pages include synopsis,
+author, status, genre, chapter count, and alt titles.
+
+## Core pages
+
+- [Home](https://manhwas.site/): featured and trending series, latest updates
+- [Catalog](https://manhwas.site/catalog): all series with filters
+- [Manhwa hub](https://manhwas.site/manhwa): Korean comics, browse by genre and status
+- [Manhua hub](https://manhwas.site/manhua): Chinese comics, browse by genre and status
+- [Latest updates](https://manhwas.site/updates): chapters released by day
+- [New releases](https://manhwas.site/new-releases): newest debuting series
+- [Rankings](https://manhwas.site/rankings): most-read series this week
+- [Calendar](https://manhwas.site/calendar): weekly release schedule
+- [Genres](https://manhwas.site/genres): genre directory (action, romance, fantasy, …)
+
+## Popular series
+
+- [Solo Leveling](https://manhwas.site/manhwa/solo-leveling)
+- [Lookism](https://manhwas.site/manhwa/lookism)
+- [Omniscient Reader's Viewpoint](https://manhwas.site/manhwa/omniscient-readers-viewpoint)
+- [Eleceed](https://manhwas.site/manhwa/eleceed)
+- [Tower of God](https://manhwas.site/manhwa/tower-of-god)
+
+## Series URL format
+
+- Series: https://manhwas.site/manhwa/{title-slug} (manhua: /manhua/{title-slug})
+- Chapter: https://manhwas.site/read/{title-slug}/chapter-{n}
+
+## Data
+
+- [Sitemap (series and hub pages)](https://manhwas.site/sitemap.xml)
+- [Sitemap (chapter pages)](https://manhwas.site/sitemap-chapters.xml)
+- [Machine-readable catalog](https://manhwas.site/catalog.json): full series index
+- Covers are served from https://cdn.manhwas.site/covers/
+
+## Policies
+
+- [About](https://manhwas.site/about)
+- [DMCA & copyright](https://manhwas.site/dmca): takedown contact and process
+- [Privacy](https://manhwas.site/privacy)

@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#141413" />
+    <meta name="google-adsense-account" content="ca-pub-9672720678512933" />
+    <link rel="icon" type="image/png" href="/logo1.png" />
+    <title>Manhwa Updates — Page 8 — Latest Chapters | MANHWAS</title>
+    <link rel="canonical" href="https://manhwas.site/updates/page/8" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Cover CDN: every card/hero cover loads from here — preconnect removes
+         a full mobile TLS+DNS round-trip from the LCP image (the homepage
+         hero cover IS the LCP element; field data showed ~6s on mobile) -->
+    <link rel="preconnect" href="https://cdn.manhwas.site" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.manhwas.site">
+    <!-- Non-blocking font CSS: text paints in system-ui immediately and
+         swaps to Inter when loaded (the face uses font-display: swap).
+         The prerendered #seo-content block already uses system-ui, so the
+         crawler-visible content never waits on fonts. -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    </noscript>
+    <!-- critical pre-hydration styles: prevents white flash before React mounts -->
+    <style>
+      body { margin: 0; background: #141413; }
+      #seo-content {
+        padding: 24px;
+        color: #d8d5d1;
+        font-family: system-ui, sans-serif;
+        line-height: 1.5;
+        max-width: 1240px;
+        margin: 0 auto;
+        overflow-wrap: break-word;
+      }
+      #seo-content a { color: #e06a55; text-decoration: underline; }
+      #seo-content ul,
+      #seo-content nav { list-style: none; margin: 0; padding: 0; }
+      #seo-content h1 { font-size: 1.75rem; font-weight: 700; color: #f0efeb; margin: 0 0 8px; }
+      #seo-content h2 { font-size: 1.125rem; font-weight: 600; color: #f0efeb; margin: 24px 0 8px; }
+      #seo-content p { margin: 0 0 12px; color: #b3b1a8; }
+      #seo-content .seo-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 12px;
+      }
+    </style>
+    <!-- Popunder partner script. async: must NOT block HTML parsing —
+         a synchronous script here delays first paint AND React mount by the
+         ad network's full response time (worst case seconds on mobile),
+         which used to leave the whole page (hero + Trending + Updates) blank.
+         The script self-injects its anchors when it eventually runs, so the
+         popunder behavior is unchanged; only its start becomes non-blocking. -->
+    <script async src="https://pl31102147.profitableratecpmnetwork.com/c8/ce/72/c8ce72a5a8e626dad922ab986b7f329d.js"></script>
+    <!-- Ad frequency cap: ONE visual ad per page view. When the visitor closes
+         it, every further body-level fixed ad iframe is removed until the next
+         page view (SPA route change or refresh). Never touches anything inside
+         #root — the app itself renders no fixed iframes. -->
+    <script>
+      (function () {
+        try {
+          var state = { shown: false, suppressed: false };
+          function isAdIframe(el) {
+            if (!el || el.tagName !== 'IFRAME') return false;
+            if (el.closest && el.closest('#root')) return false;
+            try {
+              if (getComputedStyle(el).position !== 'fixed') return false;
+            } catch (e) {
+              return false;
+            }
+            return true;
+          }
+          function scan() {
+            var iframes = document.querySelectorAll('body iframe');
+            for (var i = 0; i < iframes.length; i++) {
+              var f = iframes[i];
+              if (!isAdIframe(f)) continue;
+              if (state.suppressed) {
+                f.remove();
+                continue;
+              }
+              if (!state.shown) {
+                state.shown = true;
+                // enforce "only one": drop any sibling ad layers present in
+                // the same batch so a single page view shows a single ad
+                for (var j = 0; j < iframes.length; j++) {
+                  if (j !== i && isAdIframe(iframes[j])) iframes[j].remove();
+                }
+                watchForClose(f);
+                break;
+              }
+            }
+            hideAdHoverUrls();
+            sweepOverlays();
+          }
+
+          // The popunder script injects an invisible full-page anchor, so
+          // the browser status bar shows its long tracking URL whenever the
+          // mouse is anywhere over a page. Neutralize the HOVER DISPLAY
+          // without touching ad behavior: the href is stripped (no status
+          // text) and restored on mousedown/touchstart, so the actual click
+          // still goes through the ad's own anchor with its original URL,
+          // target and listeners — revenue path unchanged. Internal links
+          // are never touched.
+          function hideAdHoverUrls() {
+            var anchors = document.getElementsByTagName('a');
+            for (var k = 0; k < anchors.length; k++) {
+              var a = anchors[k];
+              if (a.dataset.hoverLocked === '1') continue;
+              var href = a.getAttribute('href') || '';
+              if (href.length > 80 && a.hostname !== location.hostname) {
+                a.dataset.hoverLocked = '1';
+                a.dataset.keepHref = href;
+                var show = function () {
+                  if (this.dataset.keepHref) this.setAttribute('href', this.dataset.keepHref);
+                };
+                var hide = function () { this.removeAttribute('href'); };
+                a.addEventListener('mousedown', show);
+                a.addEventListener('touchstart', show, { passive: true });
+                a.addEventListener('focus', show);
+                a.addEventListener('mouseleave', hide);
+                a.addEventListener('blur', hide);
+                a.removeAttribute('href');
+              }
+            }
+          }
+          // "Have to press twice" fix: the popunder injects an invisible
+          // full-viewport anchor that keeps swallowing taps after its pop
+          // attempt (especially when the popup is blocked — nothing visible
+          // happens, so the page feels stuck). The FIRST interaction still
+          // goes through the ad's own anchor (revenue path unchanged); every
+          // later pointer event passes through to the real UI.
+          function defuseFullPageAnchor(a) {
+            if (a.dataset.overlayDefused === '1') return;
+            a.dataset.overlayDefused = '1';
+            var pass = function () {
+              setTimeout(function () { a.style.pointerEvents = 'none'; }, 0);
+            };
+            a.addEventListener('pointerdown', pass, { capture: true, passive: true });
+            a.addEventListener('click', pass, { capture: true });
+          }
+          function sweepOverlays() {
+            var links = document.getElementsByTagName('a');
+            var vw = window.innerWidth, vh = window.innerHeight;
+            for (var m = 0; m < links.length; m++) {
+              var a = links[m];
+              if (a.dataset.overlayDefused === '1') continue;
+              if (a.closest && a.closest('#root')) continue;
+              var href = a.getAttribute('href') || '';
+              if (href.length <= 80 && a.hostname === location.hostname) continue;
+              var r = a.getBoundingClientRect();
+              if (r.width * r.height < 0.8 * vw * vh) continue;
+              try {
+                var pos = getComputedStyle(a).position;
+                if (pos !== 'fixed' && pos !== 'absolute') continue;
+              } catch (e) { continue; }
+              defuseFullPageAnchor(a);
+            }
+          }
+          function watchForClose(el) {
+            var mo = new MutationObserver(function () {
+              if (!document.documentElement.contains(el)) {
+                mo.disconnect();
+                suppress();
+              }
+            });
+            mo.observe(document.documentElement, { childList: true, subtree: true });
+          }
+          function suppress() {
+            state.suppressed = true;
+            document.documentElement.setAttribute('data-adcap', '1');
+            scan();
+          }
+          // one ad per PAGE VIEW: navigating to another page re-arms the cap
+          function reset() {
+            state.suppressed = false;
+            state.shown = false;
+            document.documentElement.removeAttribute('data-adcap');
+          }
+          var push = history.pushState;
+          history.pushState = function () {
+            var r = push.apply(this, arguments);
+            reset();
+            return r;
+          };
+          window.addEventListener('popstate', reset);
+          // rAF-coalesced: a page mount triggers dozens of mutation batches,
+          // and scan() queries every body iframe each time — one scan per
+          // frame keeps the cap behavior while cutting SPA navigation cost
+          var scanQueued = false;
+          var queueScan = function () {
+            if (scanQueued) return;
+            scanQueued = true;
+            requestAnimationFrame(function () {
+              scanQueued = false;
+              scan();
+            });
+          };
+          new MutationObserver(queueScan).observe(document.documentElement, { childList: true, subtree: true });
+          document.addEventListener('DOMContentLoaded', scan);
+        } catch (e) {}
+      })();
+    </script>
+    <script type="module" crossorigin src="/assets/index-DryuG25J.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DABcpq0e.css">
+    <meta name="description" content="See which manhwa and manhua updated recently — page 8 of 36, every new chapter as it drops, free to read." />
+    <meta name="robots" content="index,follow" />
+    <meta property="og:title" content="Manhwa Updates — Page 8 — Latest Chapters | MANHWAS" />
+    <meta property="og:description" content="See which manhwa and manhua updated recently — page 8 of 36, every new chapter as it drops, free to read." />
+    <meta property="og:url" content="https://manhwas.site/updates/page/8" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="MANHWAS" />
+    <script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://manhwas.site/"},{"@type":"ListItem","position":2,"name":"Latest Updates","item":"https://manhwas.site/updates"},{"@type":"ListItem","position":3,"name":"Page 8","item":"https://manhwas.site/updates/page/8"}]}]</script>
+  </head>
+  <body class="antialiased selection:bg-[#D95743] selection:text-white">
+    <div id="root"><div id="seo-content"><main>
+      <nav aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/updates">Latest Updates</a> › Page 8</nav>
+      <h1>Manhwa Updates — Page 8</h1>
+      <p>2126 updated series in total — page 8 of 36.</p>
+      <section><h2>Recently updated</h2><ul class="seo-grid"><li><a href="/manhwa/taming-master"><strong>Taming Master</strong><span>Park Taeseok</span><span>Action, Adventure, Fantasy</span></a><span class="seo-chapters"><a href="/read/taming-master/chapter-177">Chapter 177 — 2025-12-23</a><a href="/read/taming-master/chapter-176">Chapter 176 — 2025-12-23</a><a href="/read/taming-master/chapter-175">Chapter 175 — 2025-12-10</a></span></li><li><a href="/manhua/the-king-of-bugs"><strong>The King of Bugs</strong><span>Tony</span><span>Sci-Fi, Action, Adventure</span></a><span class="seo-chapters"><a href="/read/the-king-of-bugs/chapter-115">Chapter 115 — 2025-12-23</a><a href="/read/the-king-of-bugs/chapter-114">Chapter 114 — 2025-12-23</a><a href="/read/the-king-of-bugs/chapter-113">Chapter 113 — 2025-12-23</a></span></li><li><a href="/manhwa/cinderellas-pocket-sized-protector"><strong>Cinderella's Pocket-Sized Protector</strong><span>SKELL</span><span>Romance, Comedy, Fantasy</span></a><span class="seo-chapters"><a href="/read/cinderellas-pocket-sized-protector/chapter-30">Chapter 30 — 2025-12-22</a><a href="/read/cinderellas-pocket-sized-protector/chapter-29">Chapter 29 — 2025-12-22</a><a href="/read/cinderellas-pocket-sized-protector/chapter-28">Chapter 28 — 2025-12-19</a></span></li><li><a href="/manhwa/im-the-stepmother-but-my-daughter-is-too-cute"><strong>I’m the Stepmother, but my Daughter is too Cute</strong><span>IR</span><span>Comedy, Fantasy, Historical</span></a><span class="seo-chapters"><a href="/read/im-the-stepmother-but-my-daughter-is-too-cute/chapter-160">Chapter 160 — 2025-12-22</a><a href="/read/im-the-stepmother-but-my-daughter-is-too-cute/chapter-159">Chapter 159 — 2025-12-16</a><a href="/read/im-the-stepmother-but-my-daughter-is-too-cute/chapter-158">Chapter 158 — 2025-12-15</a></span></li><li><a href="/manhua/adventures-of-an-undead-who-became-paladin"><strong>Adventures of an Undead who became Paladin</strong><span>我是隐身的</span><span>Action, Comedy, Adventure</span></a><span class="seo-chapters"><a href="/read/adventures-of-an-undead-who-became-paladin/chapter-183">Chapter 183 — 2025-12-21</a><a href="/read/adventures-of-an-undead-who-became-paladin/chapter-182">Chapter 182 — 2025-12-21</a><a href="/read/adventures-of-an-undead-who-became-paladin/chapter-181">Chapter 181 — 2025-12-21</a></span></li><li><a href="/manhwa/bring-the-love"><strong>Bring the Love</strong><span>제스트쿄 (Zestkyō)</span><span>Historical, Romance, Comedy</span></a><span class="seo-chapters"><a href="/read/bring-the-love/chapter-155">Chapter 155 — 2025-12-20</a><a href="/read/bring-the-love/chapter-154">Chapter 154 — 2025-12-20</a><a href="/read/bring-the-love/chapter-153">Chapter 153 — 2025-12-20</a></span></li><li><a href="/manhwa/leveling-up-by-only-eating"><strong>Leveling Up, by Only Eating!</strong><span>Park Min Gyu</span><span>Fantasy, Drama, Slice of Life</span></a><span class="seo-chapters"><a href="/read/leveling-up-by-only-eating/chapter-208">Chapter 208 — 2025-12-20</a><a href="/read/leveling-up-by-only-eating/chapter-207">Chapter 207 — 2025-12-19</a><a href="/read/leveling-up-by-only-eating/chapter-206">Chapter 206 — 2025-12-18</a></span></li><li><a href="/manhwa/i-became-an-evolving-space-monster"><strong>I Became an Evolving Space Monster</strong><span>공포의거북이</span><span>Action, Adventure, Drama</span></a><span class="seo-chapters"><a href="/read/i-became-an-evolving-space-monster/chapter-50">Chapter 50 — 2025-12-16</a><a href="/read/i-became-an-evolving-space-monster/chapter-49">Chapter 49 — 2025-12-08</a><a href="/read/i-became-an-evolving-space-monster/chapter-48">Chapter 48 — 2025-12-01</a></span></li><li><a href="/manhwa/magic-academy-survival-guide"><strong>Magic Academy Survival Guide</strong><span>Writing Machine (글쓰는기계)</span><span>Adventure, Slice of Life, Fantasy</span></a><span class="seo-chapters"><a href="/read/magic-academy-survival-guide/chapter-133">Chapter 133 — 2025-12-14</a><a href="/read/magic-academy-survival-guide/chapter-132">Chapter 132 — 2025-12-07</a><a href="/read/magic-academy-survival-guide/chapter-131">Chapter 131 — 2025-11-30</a></span></li><li><a href="/manhwa/debut-or-die"><strong>Debut or Die</strong><span>Baek Deoksoo</span><span>Fantasy, Sci-Fi, Comedy</span></a><span class="seo-chapters"><a href="/read/debut-or-die/chapter-97">Chapter 97 — 2025-12-08</a><a href="/read/debut-or-die/chapter-96">Chapter 96 — 2025-11-24</a><a href="/read/debut-or-die/chapter-95">Chapter 95 — 2025-11-19</a></span></li><li><a href="/manhwa/baby-prisoner-of-the-winter-castle"><strong>Baby Prisoner of the Winter Castle</strong><span>RYU HEON</span><span>Romance, Fantasy, Fantasy</span></a><span class="seo-chapters"><a href="/read/baby-prisoner-of-the-winter-castle/chapter-84">Chapter 84 — 2025-12-06</a><a href="/read/baby-prisoner-of-the-winter-castle/chapter-83">Chapter 83 — 2025-12-06</a><a href="/read/baby-prisoner-of-the-winter-castle/chapter-82">Chapter 82 — 2025-12-06</a></span></li><li><a href="/manhwa/worthless-regression"><strong>Worthless Regression</strong><span>Puppy Master</span><span>Action, Adventure, Drama</span></a><span class="seo-chapters"><a href="/read/worthless-regression/chapter-106">Chapter 106 — 2025-12-06</a><a href="/read/worthless-regression/chapter-105">Chapter 105 — 2025-12-06</a><a href="/read/worthless-regression/chapter-104">Chapter 104 — 2025-11-11</a></span></li><li><a href="/manhwa/cooking-sorcerer"><strong>Cooking Sorcerer</strong><span>Ppili Ppala</span><span>Romance, Drama, Fantasy</span></a><span class="seo-chapters"><a href="/read/cooking-sorcerer/chapter-50">Chapter 50 — 2025-12-05</a><a href="/read/cooking-sorcerer/chapter-49">Chapter 49 — 2025-12-05</a><a href="/read/cooking-sorcerer/chapter-48">Chapter 48 — 2025-12-05</a></span></li><li><a href="/manhwa/ygret"><strong>Ygret</strong><span>Gongdeuntab</span><span>Action, Adventure, Fantasy</span></a><span class="seo-chapters"><a href="/read/ygret/chapter-144">Chapter 144 — 2025-12-05</a><a href="/read/ygret/chapter-143">Chapter 143 — 2024-09-03</a><a href="/read/ygret/chapter-142">Chapter 142 — 2024-08-27</a></span></li><li><a href="/manhwa/the-perfect-ending-for-the-villainess-of-a-fairy-tale"><strong>The Perfect Ending for the Villainess of a Fairy Tale</strong><span>Peachpie</span><span>Fantasy, Romance, Adventure</span></a><span class="seo-chapters"><a href="/read/the-perfect-ending-for-the-villainess-of-a-fairy-tale/chapter-118">Chapter 118 — 2025-12-05</a><a href="/read/the-perfect-ending-for-the-villainess-of-a-fairy-tale/chapter-117">Chapter 117 — 2025-12-04</a><a href="/read/the-perfect-ending-for-the-villainess-of-a-fairy-tale/chapter-116">Chapter 116 — 2025-12-02</a></span></li><li><a href="/manhwa/estio"><strong>Estio</strong><span>공든탑</span><span>Adventure, Drama, Fantasy</span></a><span class="seo-chapters"><a href="/read/estio/chapter-135">Chapter 135 — 2025-12-04</a><a href="/read/estio/chapter-134">Chapter 134 — 2025-12-03</a><a href="/read/estio/chapter-133">Chapter 133 — 2025-12-02</a></span></li><li><a href="/manhwa/the-invincible-man"><strong>The Invincible Man</strong><span>No Kyoungchan (노경찬)</span><span>Action, Psychological, Drama</span></a><span class="seo-chapters"><a href="/read/the-invincible-man/chapter-113">Chapter 113 — 2025-12-04</a><a href="/read/the-invincible-man/chapter-112">Chapter 112 — 2025-12-03</a><a href="/read/the-invincible-man/chapter-111">Chapter 111 — 2025-12-02</a></span></li><li><a href="/manhwa/surviving-as-an-illegitimate-princess"><strong>Surviving as an Illegitimate Princess</strong><span>Seo Gyeol</span><span>Romance, Adventure, Fantasy</span></a><span class="seo-chapters"><a href="/read/surviving-as-an-illegitimate-princess/chapter-120">Chapter 120 — 2025-12-03</a><a href="/read/surviving-as-an-illegitimate-princess/chapter-119">Chapter 119 — 2025-11-25</a><a href="/read/surviving-as-an-illegitimate-princess/chapter-118">Chapter 118 — 2025-11-16</a></span></li><li><a href="/manhwa/i-can-see-your-death"><strong>I Can See Your Death</strong><span>Dan Hae-Neul</span><span>Fantasy, Mystery, Romance</span></a><span class="seo-chapters"><a href="/read/i-can-see-your-death/chapter-81">Chapter 81 — 2025-12-02</a><a href="/read/i-can-see-your-death/chapter-80">Chapter 80 — 2025-12-02</a><a href="/read/i-can-see-your-death/chapter-79">Chapter 79 — 2025-12-02</a></span></li><li><a href="/manhwa/lucid-dream"><strong>Lucid Dream</strong><span>J.Sin (주신)</span><span>Horror, Action, Adventure</span></a><span class="seo-chapters"><a href="/read/lucid-dream/chapter-137">Chapter 137 — 2025-12-01</a><a href="/read/lucid-dream/chapter-136">Chapter 136 — 2025-11-30</a><a href="/read/lucid-dream/chapter-135">Chapter 135 — 2025-11-28</a></span></li><li><a href="/manhwa/the-real-daughter-is-back"><strong>The Real Daughter Is Back</strong><span>Rina</span><span>Romance, Fantasy, Drama</span></a><span class="seo-chapters"><a href="/read/the-real-daughter-is-back/chapter-162">Chapter 162 — 2025-11-28</a><a href="/read/the-real-daughter-is-back/chapter-161">Chapter 161 — 2025-11-21</a><a href="/read/the-real-daughter-is-back/chapter-160">Chapter 160 — 2025-11-16</a></span></li><li><a href="/manhwa/the-archvillains-dying-nanny"><strong>The Archvillain's Dying Nanny</strong><span>Chokam</span><span>Romance, Fantasy, Drama</span></a><span class="seo-chapters"><a href="/read/the-archvillains-dying-nanny/chapter-77">Chapter 77 — 2025-11-27</a><a href="/read/the-archvillains-dying-nanny/chapter-76">Chapter 76 — 2025-11-25</a><a href="/read/the-archvillains-dying-nanny/chapter-75">Chapter 75 — 2025-11-23</a></span></li><li><a href="/manhwa/make-it-real"><strong>Make It Real</strong><span>Thekkae (더깨)</span><span>Romance, Comedy</span></a><span class="seo-chapters"><a href="/read/make-it-real/chapter-22">Chapter 22 — 2025-11-26</a><a href="/read/make-it-real/chapter-21">Chapter 21 — 2025-11-26</a><a href="/read/make-it-real/chapter-20">Chapter 20 — 2025-10-14</a></span></li><li><a href="/manhwa/how-to-hide-the-emperors-child"><strong>How to Hide the Emperor's Child</strong><span>Lee Yeon-Sun (이연선)</span><span>Historical, Romance, Drama</span></a><span class="seo-chapters"><a href="/read/how-to-hide-the-emperors-child/chapter-129">Chapter 129 — 2025-11-26</a><a href="/read/how-to-hide-the-emperors-child/chapter-128">Chapter 128 — 2025-11-19</a><a href="/read/how-to-hide-the-emperors-child/chapter-127">Chapter 127 — 2025-11-11</a></span></li><li><a href="/manhua/star-martial-god-technique"><strong>Star Martial God Technique</strong><span>Mad Snail</span><span>Action, Adventure, Drama</span></a><span class="seo-chapters"><a href="/read/star-martial-god-technique/chapter-869">Chapter 869 — 2025-11-26</a><a href="/read/star-martial-god-technique/chapter-868">Chapter 868 — 2025-11-26</a><a href="/read/star-martial-god-technique/chapter-867">Chapter 867 — 2025-11-26</a></span></li><li><a href="/manhwa/surviving-as-a-maid"><strong>Surviving as a Maid</strong><span>희서</span><span>Drama, Fantasy, Historical</span></a><span class="seo-chapters"><a href="/read/surviving-as-a-maid/chapter-153">Chapter 153 — 2025-11-25</a><a href="/read/surviving-as-a-maid/chapter-152">Chapter 152 — 2025-11-23</a><a href="/read/surviving-as-a-maid/chapter-151">Chapter 151 — 2025-11-23</a></span></li><li><a href="/manhwa/my-girlfriend"><strong>My Girlfriend</strong><span>Park-Ssi (박씨)</span><span>Psychological, Drama, Horror</span></a><span class="seo-chapters"><a href="/read/my-girlfriend/chapter-47.5">Chapter 47.5 — 2025-11-24</a><a href="/read/my-girlfriend/chapter-47">Chapter 47 — 2025-11-23</a><a href="/read/my-girlfriend/chapter-46">Chapter 46 — 2025-11-23</a></span></li><li><a href="/manhwa/a-way-to-protect-the-lovable-you"><strong>A Way to Protect the Lovable You</strong><span>Han Yujeong</span><span>Drama, Fantasy, Romance</span></a><span class="seo-chapters"><a href="/read/a-way-to-protect-the-lovable-you/chapter-167">Chapter 167 — 2025-11-24</a><a href="/read/a-way-to-protect-the-lovable-you/chapter-166">Chapter 166 — 2025-11-17</a><a href="/read/a-way-to-protect-the-lovable-you/chapter-165">Chapter 165 — 2025-11-02</a></span></li><li><a href="/manhua/the-game-that-i-came-from"><strong>The Game That I Came From</strong><span>Mokf 黑鸟社</span><span>Action, Adventure, Fantasy</span></a><span class="seo-chapters"><a href="/read/the-game-that-i-came-from/chapter-359">Chapter 359 — 2025-11-23</a><a href="/read/the-game-that-i-came-from/chapter-358">Chapter 358 — 2025-11-23</a><a href="/read/the-game-that-i-came-from/chapter-357">Chapter 357 — 2025-11-23</a></span></li><li><a href="/manhwa/boxer-kali"><strong>Boxer Kali</strong><span>El Macho</span><span>Sci-Fi, Action, Sports</span></a><span class="seo-chapters"><a href="/read/boxer-kali/chapter-128">Chapter 128 — 2025-11-21</a><a href="/read/boxer-kali/chapter-127">Chapter 127 — 2025-11-21</a><a href="/read/boxer-kali/chapter-126">Chapter 126 — 2025-11-17</a></span></li><li><a href="/manhwa/trigger-bulman-issnyang"><strong>Trigger (Bulman-Issnyang)</strong><span>Bulman-issnyang</span><span>Action, Drama, Slice of Life</span></a><span class="seo-chapters"><a href="/read/trigger-bulman-issnyang/chapter-80">Chapter 80 — 2025-11-17</a><a href="/read/trigger-bulman-issnyang/chapter-79">Chapter 79 — 2025-11-17</a><a href="/read/trigger-bulman-issnyang/chapter-78">Chapter 78 — 2025-11-17</a></span></li><li><a href="/manhwa/who-made-me-a-princess"><strong>Who Made Me a Princess</strong><span>Spoon (스푼)</span><span>Fantasy, Romance, Comedy</span></a><span class="seo-chapters"><a href="/read/who-made-me-a-princess/chapter-131">Chapter 131 — 2025-11-14</a><a href="/read/who-made-me-a-princess/chapter-130">Chapter 130 — 2025-11-08</a><a href="/read/who-made-me-a-princess/chapter-129">Chapter 129 — 2025-10-31</a></span></li><li><a href="/manhwa/escort-warrior"><strong>Escort Warrior</strong><span>김인호</span><span>Historical, Action, Adventure</span></a><span class="seo-chapters"><a href="/read/escort-warrior/chapter-255">Chapter 255 — 2025-11-14</a><a href="/read/escort-warrior/chapter-254">Chapter 254 — 2025-11-14</a><a href="/read/escort-warrior/chapter-253">Chapter 253 — 2025-11-14</a></span></li><li><a href="/manhwa/archmage-transcending-through-regression"><strong>Archmage Transcending Through Regression</strong><span>Hanbit Nuri</span><span>Action, Drama, Fantasy</span></a><span class="seo-chapters"><a href="/read/archmage-transcending-through-regression/chapter-176">Chapter 176 — 2025-11-13</a><a href="/read/archmage-transcending-through-regression/chapter-175">Chapter 175 — 2025-11-06</a><a href="/read/archmage-transcending-through-regression/chapter-174">Chapter 174 — 2025-10-31</a></span></li><li><a href="/manhwa/my-husband-hates-me-but-he-lost-his-memories"><strong>My Husband Hates Me, But He Lost His Memories</strong><span>Karemandu</span><span>Romance, Drama, Psychological</span></a><span class="seo-chapters"><a href="/read/my-husband-hates-me-but-he-lost-his-memories/chapter-98">Chapter 98 — 2025-11-12</a><a href="/read/my-husband-hates-me-but-he-lost-his-memories/chapter-97">Chapter 97 — 2025-11-03</a><a href="/read/my-husband-hates-me-but-he-lost-his-memories/chapter-96">Chapter 96 — 2025-10-25</a></span></li><li><a href="/manhwa/wail-of-weakness"><strong>Wail of Weakness</strong><span>Jodeon</span><span>Action, Fantasy, Supernatural</span></a><span class="seo-chapters"><a href="/read/wail-of-weakness/chapter-83.5">Chapter 83.5 — 2025-11-12</a><a href="/read/wail-of-weakness/chapter-83">Chapter 83 — 2025-11-12</a><a href="/read/wail-of-weakness/chapter-82">Chapter 82 — 2025-11-12</a></span></li><li><a href="/manhwa/not-your-typical-reincarnation-story"><strong>Not Your Typical Reincarnation Story</strong><span>Doyosay</span><span>Mystery, Fantasy, Sci-Fi</span></a><span class="seo-chapters"><a href="/read/not-your-typical-reincarnation-story/chapter-116">Chapter 116 — 2025-11-12</a><a href="/read/not-your-typical-reincarnation-story/chapter-115">Chapter 115 — 2025-10-29</a><a href="/read/not-your-typical-reincarnation-story/chapter-114">Chapter 114 — 2025-10-22</a></span></li><li><a href="/manhwa/shes-my-type"><strong>She's My Type</strong><span>Roseong</span><span>Comedy, Drama, Romance</span></a><span class="seo-chapters"><a href="/read/shes-my-type/chapter-89">Chapter 89 — 2025-11-11</a><a href="/read/shes-my-type/chapter-88">Chapter 88 — 2025-11-06</a><a href="/read/shes-my-type/chapter-87">Chapter 87 — 2025-11-01</a></span></li><li><a href="/manhwa/max-level-returner"><strong>Max Level Returner</strong><span>허니</span><span>Action, Adventure, Fantasy</span></a><span class="seo-chapters"><a href="/read/max-level-returner/chapter-200">Chapter 200 — 2025-11-09</a><a href="/read/max-level-returner/chapter-199">Chapter 199 — 2025-11-09</a><a href="/read/max-level-returner/chapter-198">Chapter 198 — 2025-11-09</a></span></li><li><a href="/manhua/talent-copycat"><strong>Talent Copycat</strong><span>剑神无敌</span><span>Action, Fantasy, Supernatural</span></a><span class="seo-chapters"><a href="/read/talent-copycat/chapter-106">Chapter 106 — 2025-11-08</a><a href="/read/talent-copycat/chapter-105">Chapter 105 — 2025-10-02</a><a href="/read/talent-copycat/chapter-104">Chapter 104 — 2025-09-15</a></span></li><li><a href="/manhua/rules-for-peddling-in-another-world"><strong>Rules for Peddling in Another World</strong><span>Zero Creation Animation</span><span>Comedy, Adventure, Fantasy</span></a><span class="seo-chapters"><a href="/read/rules-for-peddling-in-another-world/chapter-102">Chapter 102 — 2025-11-08</a><a href="/read/rules-for-peddling-in-another-world/chapter-101">Chapter 101 — 2025-07-13</a><a href="/read/rules-for-peddling-in-another-world/chapter-100">Chapter 100 — 2025-01-29</a></span></li><li><a href="/manhwa/high-school-boy"><strong>High School Boy</strong><span>Park Gee/Ji (박지)</span><span>Action</span></a><span class="seo-chapters"><a href="/read/high-school-boy/chapter-82">Chapter 82 — 2025-11-06</a><a href="/read/high-school-boy/chapter-81">Chapter 81 — 2025-10-30</a><a href="/read/high-school-boy/chapter-80">Chapter 80 — 2025-10-16</a></span></li><li><a href="/manhwa/the-s-class-lady"><strong>The S-Class Lady</strong><span>Assam (아쌈)</span><span>Fantasy, Romance, Fantasy</span></a><span class="seo-chapters"><a href="/read/the-s-class-lady/chapter-80">Chapter 80 — 2025-11-05</a><a href="/read/the-s-class-lady/chapter-79">Chapter 79 — 2025-11-03</a><a href="/read/the-s-class-lady/chapter-78">Chapter 78 — 2025-11-01</a></span></li><li><a href="/manhwa/asura"><strong>Asura</strong><span>Ryu Ki-woon</span><span>Historical, Action, Adventure</span></a><span class="seo-chapters"><a href="/read/asura/chapter-58">Chapter 58 — 2025-11-02</a><a href="/read/asura/chapter-57">Chapter 57 — 2025-10-26</a><a href="/read/asura/chapter-56">Chapter 56 — 2025-10-19</a></span></li><li><a href="/manhwa/first-time-as-an-adored-youngest-child"><strong>First Time As An Adored Youngest Child</strong><span>Miraenavi (미래나비)</span><span>Fantasy, Romance, Comedy</span></a><span class="seo-chapters"><a href="/read/first-time-as-an-adored-youngest-child/chapter-75">Chapter 75 — 2025-11-01</a><a href="/read/first-time-as-an-adored-youngest-child/chapter-74">Chapter 74 — 2025-11-01</a><a href="/read/first-time-as-an-adored-youngest-child/chapter-73">Chapter 73 — 2025-10-21</a></span></li><li><a href="/manhwa/baby-squirrel-is-good-at-everything"><strong>Baby Squirrel Is Good at Everything</strong><span>Humpback Whale</span><span>Romance, Adventure, Drama</span></a><span class="seo-chapters"><a href="/read/baby-squirrel-is-good-at-everything/chapter-119">Chapter 119 — 2025-11-01</a><a href="/read/baby-squirrel-is-good-at-everything/chapter-118">Chapter 118 — 2025-11-01</a><a href="/read/baby-squirrel-is-good-at-everything/chapter-117">Chapter 117 — 2025-10-15</a></span></li><li><a href="/manhwa/seoul-station-druid"><strong>Seoul Station Druid</strong><span>Jin Seol U</span><span>Action, Fantasy, Sci-Fi</span></a><span class="seo-chapters"><a href="/read/seoul-station-druid/chapter-207">Chapter 207 — 2025-10-30</a><a href="/read/seoul-station-druid/chapter-206">Chapter 206 — 2025-10-23</a><a href="/read/seoul-station-druid/chapter-205">Chapter 205 — 2025-10-16</a></span></li><li><a href="/manhwa/the-tyrant-wants-to-live-a-virtuous-life"><strong>The Tyrant Wants to Live a Virtuous Life</strong><span>Ram Write</span><span>Romance, Drama, Fantasy</span></a><span class="seo-chapters"><a href="/read/the-tyrant-wants-to-live-a-virtuous-life/chapter-130">Chapter 130 — 2025-10-28</a><a href="/read/the-tyrant-wants-to-live-a-virtuous-life/chapter-129">Chapter 129 — 2025-10-28</a><a href="/read/the-tyrant-wants-to-live-a-virtuous-life/chapter-128">Chapter 128 — 2025-10-22</a></span></li><li><a href="/manhwa/the-gwichon-village-mystery"><strong>The Gwichon Village Mystery</strong><span>Hwang Yang (황양)</span><span>Action, Horror, Mystery</span></a><span class="seo-chapters"><a href="/read/the-gwichon-village-mystery/chapter-70">Chapter 70 — 2025-10-26</a><a href="/read/the-gwichon-village-mystery/chapter-69">Chapter 69 — 2025-10-19</a><a href="/read/the-gwichon-village-mystery/chapter-68">Chapter 68 — 2025-09-30</a></span></li><li><a href="/manhwa/worn-and-torn-newbie"><strong>Worn and Torn Newbie</strong><span>REDICE studio</span><span>Action, Adventure, Fantasy</span></a><span class="seo-chapters"><a href="/read/worn-and-torn-newbie/chapter-242">Chapter 242 — 2025-10-26</a><a href="/read/worn-and-torn-newbie/chapter-241">Chapter 241 — 2025-10-26</a><a href="/read/worn-and-torn-newbie/chapter-240">Chapter 240 — 2025-10-19</a></span></li><li><a href="/manhwa/into-the-light-once-again"><strong>Into the Light Once Again</strong><span>Tika Tika</span><span>Fantasy, Romance, Drama</span></a><span class="seo-chapters"><a href="/read/into-the-light-once-again/chapter-114">Chapter 114 — 2025-10-20</a><a href="/read/into-the-light-once-again/chapter-113">Chapter 113 — 2025-10-13</a><a href="/read/into-the-light-once-again/chapter-112">Chapter 112 — 2025-10-06</a></span></li><li><a href="/manhua/girls-frontline"><strong>Girls' Frontline</strong><span>MICA Team</span><span>Action, Sci-Fi</span></a><span class="seo-chapters"><a href="/read/girls-frontline/chapter-41">Chapter 41 — 2025-10-20</a><a href="/read/girls-frontline/chapter-40.1">Chapter 40.1 — 2025-01-16</a><a href="/read/girls-frontline/chapter-40">Chapter 40 — 2024-07-10</a></span></li><li><a href="/manhwa/the-genius-who-sees-through-the-world"><strong>The Genius Who Sees Through the World</strong><span>Jeong Yong</span><span>Psychological, Adventure, Drama</span></a><span class="seo-chapters"><a href="/read/the-genius-who-sees-through-the-world/chapter-40">Chapter 40 — 2025-10-19</a><a href="/read/the-genius-who-sees-through-the-world/chapter-39">Chapter 39 — 2025-10-10</a><a href="/read/the-genius-who-sees-through-the-world/chapter-38">Chapter 38 — 2025-09-25</a></span></li><li><a href="/manhwa/lady-beast"><strong>Lady Beast</strong><span>Yusu Hwan</span><span>Comedy, Romance, Fantasy</span></a><span class="seo-chapters"><a href="/read/lady-beast/chapter-145">Chapter 145 — 2025-10-15</a><a href="/read/lady-beast/chapter-144">Chapter 144 — 2025-10-01</a><a href="/read/lady-beast/chapter-143">Chapter 143 — 2025-10-01</a></span></li><li><a href="/manhwa/actually-i-was-the-real-one"><strong>Actually, I Was the Real One</strong><span>Sam Woel</span><span>Drama, Fantasy, Sci-Fi</span></a><span class="seo-chapters"><a href="/read/actually-i-was-the-real-one/chapter-152">Chapter 152 — 2025-10-14</a><a href="/read/actually-i-was-the-real-one/chapter-151">Chapter 151 — 2025-10-14</a><a href="/read/actually-i-was-the-real-one/chapter-150">Chapter 150 — 2025-05-24</a></span></li><li><a href="/manhwa/juvenile-detention-center"><strong>Juvenile Detention Center</strong><span>Cheongmin</span><span>Action, Adventure, Drama</span></a><span class="seo-chapters"><a href="/read/juvenile-detention-center/chapter-69">Chapter 69 — 2025-10-12</a><a href="/read/juvenile-detention-center/chapter-68">Chapter 68 — 2025-10-12</a><a href="/read/juvenile-detention-center/chapter-67">Chapter 67 — 2025-10-12</a></span></li><li><a href="/manhwa/match-made-in-heaven-by-chance"><strong>Match Made in Heaven by Chance</strong><span>Honey Skein</span><span>Romance, Comedy, Drama</span></a><span class="seo-chapters"><a href="/read/match-made-in-heaven-by-chance/chapter-132">Chapter 132 — 2025-10-11</a><a href="/read/match-made-in-heaven-by-chance/chapter-131">Chapter 131 — 2025-10-08</a><a href="/read/match-made-in-heaven-by-chance/chapter-130">Chapter 130 — 2025-10-03</a></span></li><li><a href="/manhwa/king-of-violence"><strong>King of Violence</strong><span>Lico</span><span>Action, Drama, Slice of Life</span></a><span class="seo-chapters"><a href="/read/king-of-violence/chapter-74">Chapter 74 — 2025-10-10</a><a href="/read/king-of-violence/chapter-73">Chapter 73 — 2025-10-09</a><a href="/read/king-of-violence/chapter-72">Chapter 72 — 2025-10-02</a></span></li><li><a href="/manhwa/imprisoned-with-the-horror-games-male-lead"><strong>Imprisoned with the Horror Game's Male Lead</strong><span>Flangby</span><span>Romance, Comedy, Adventure</span></a><span class="seo-chapters"><a href="/read/imprisoned-with-the-horror-games-male-lead/chapter-63">Chapter 63 — 2025-10-09</a><a href="/read/imprisoned-with-the-horror-games-male-lead/chapter-62">Chapter 62 — 2025-10-09</a><a href="/read/imprisoned-with-the-horror-games-male-lead/chapter-61">Chapter 61 — 2025-10-09</a></span></li><li><a href="/manhwa/jakdu-shamans-blade"><strong>JAKDU: Shaman's Blade</strong><span>232</span><span>Action, Fantasy</span></a><span class="seo-chapters"><a href="/read/jakdu-shamans-blade/chapter-65">Chapter 65 — 2025-10-07</a><a href="/read/jakdu-shamans-blade/chapter-64">Chapter 64 — 2025-10-07</a><a href="/read/jakdu-shamans-blade/chapter-63">Chapter 63 — 2025-10-07</a></span></li></ul></section>
+      <p><a href="/updates/page/7" rel="prev">← Page 7</a> · <a href="/updates/page/9" rel="next">Page 9 →</a></p>
+    <p style="margin:24px 0;text-align:center;font-size:13px"><a href="https://www.profitableratecpmnetwork.com/rwke4e7k?key=2b2a096dea78bd8cb7bdc2b9ee370110" target="_blank" rel="noopener nofollow sponsored">Sponsored</a></p></main></div></div>
+    <script src="https://pl31102148.profitableratecpmnetwork.com/a4/a1/fe/a4a1fe30d63892bdc56fb6286e4439c3.js"></script>
+  </body>
+</html>

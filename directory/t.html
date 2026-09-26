@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#141413" />
+    <meta name="google-adsense-account" content="ca-pub-9672720678512933" />
+    <link rel="icon" type="image/png" href="/logo1.png" />
+    <title>T Manhwa &amp; Manhua – A to Z Directory | MANHWAS</title>
+    <link rel="canonical" href="https://manhwas.site/directory/t" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Cover CDN: every card/hero cover loads from here — preconnect removes
+         a full mobile TLS+DNS round-trip from the LCP image (the homepage
+         hero cover IS the LCP element; field data showed ~6s on mobile) -->
+    <link rel="preconnect" href="https://cdn.manhwas.site" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.manhwas.site">
+    <!-- Non-blocking font CSS: text paints in system-ui immediately and
+         swaps to Inter when loaded (the face uses font-display: swap).
+         The prerendered #seo-content block already uses system-ui, so the
+         crawler-visible content never waits on fonts. -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    </noscript>
+    <!-- critical pre-hydration styles: prevents white flash before React mounts -->
+    <style>
+      body { margin: 0; background: #141413; }
+      #seo-content {
+        padding: 24px;
+        color: #d8d5d1;
+        font-family: system-ui, sans-serif;
+        line-height: 1.5;
+        max-width: 1240px;
+        margin: 0 auto;
+        overflow-wrap: break-word;
+      }
+      #seo-content a { color: #e06a55; text-decoration: underline; }
+      #seo-content ul,
+      #seo-content nav { list-style: none; margin: 0; padding: 0; }
+      #seo-content h1 { font-size: 1.75rem; font-weight: 700; color: #f0efeb; margin: 0 0 8px; }
+      #seo-content h2 { font-size: 1.125rem; font-weight: 600; color: #f0efeb; margin: 24px 0 8px; }
+      #seo-content p { margin: 0 0 12px; color: #b3b1a8; }
+      #seo-content .seo-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 12px;
+      }
+    </style>
+    <!-- Popunder partner script. async: must NOT block HTML parsing —
+         a synchronous script here delays first paint AND React mount by the
+         ad network's full response time (worst case seconds on mobile),
+         which used to leave the whole page (hero + Trending + Updates) blank.
+         The script self-injects its anchors when it eventually runs, so the
+         popunder behavior is unchanged; only its start becomes non-blocking. -->
+    <script async src="https://pl31102147.profitableratecpmnetwork.com/c8/ce/72/c8ce72a5a8e626dad922ab986b7f329d.js"></script>
+    <!-- Ad frequency cap: ONE visual ad per page view. When the visitor closes
+         it, every further body-level fixed ad iframe is removed until the next
+         page view (SPA route change or refresh). Never touches anything inside
+         #root — the app itself renders no fixed iframes. -->
+    <script>
+      (function () {
+        try {
+          var state = { shown: false, suppressed: false };
+          function isAdIframe(el) {
+            if (!el || el.tagName !== 'IFRAME') return false;
+            if (el.closest && el.closest('#root')) return false;
+            try {
+              if (getComputedStyle(el).position !== 'fixed') return false;
+            } catch (e) {
+              return false;
+            }
+            return true;
+          }
+          function scan() {
+            var iframes = document.querySelectorAll('body iframe');
+            for (var i = 0; i < iframes.length; i++) {
+              var f = iframes[i];
+              if (!isAdIframe(f)) continue;
+              if (state.suppressed) {
+                f.remove();
+                continue;
+              }
+              if (!state.shown) {
+                state.shown = true;
+                // enforce "only one": drop any sibling ad layers present in
+                // the same batch so a single page view shows a single ad
+                for (var j = 0; j < iframes.length; j++) {
+                  if (j !== i && isAdIframe(iframes[j])) iframes[j].remove();
+                }
+                watchForClose(f);
+                break;
+              }
+            }
+            hideAdHoverUrls();
+            sweepOverlays();
+          }
+
+          // The popunder script injects an invisible full-page anchor, so
+          // the browser status bar shows its long tracking URL whenever the
+          // mouse is anywhere over a page. Neutralize the HOVER DISPLAY
+          // without touching ad behavior: the href is stripped (no status
+          // text) and restored on mousedown/touchstart, so the actual click
+          // still goes through the ad's own anchor with its original URL,
+          // target and listeners — revenue path unchanged. Internal links
+          // are never touched.
+          function hideAdHoverUrls() {
+            var anchors = document.getElementsByTagName('a');
+            for (var k = 0; k < anchors.length; k++) {
+              var a = anchors[k];
+              if (a.dataset.hoverLocked === '1') continue;
+              var href = a.getAttribute('href') || '';
+              if (href.length > 80 && a.hostname !== location.hostname) {
+                a.dataset.hoverLocked = '1';
+                a.dataset.keepHref = href;
+                var show = function () {
+                  if (this.dataset.keepHref) this.setAttribute('href', this.dataset.keepHref);
+                };
+                var hide = function () { this.removeAttribute('href'); };
+                a.addEventListener('mousedown', show);
+                a.addEventListener('touchstart', show, { passive: true });
+                a.addEventListener('focus', show);
+                a.addEventListener('mouseleave', hide);
+                a.addEventListener('blur', hide);
+                a.removeAttribute('href');
+              }
+            }
+          }
+          // "Have to press twice" fix: the popunder injects an invisible
+          // full-viewport anchor that keeps swallowing taps after its pop
+          // attempt (especially when the popup is blocked — nothing visible
+          // happens, so the page feels stuck). The FIRST interaction still
+          // goes through the ad's own anchor (revenue path unchanged); every
+          // later pointer event passes through to the real UI.
+          function defuseFullPageAnchor(a) {
+            if (a.dataset.overlayDefused === '1') return;
+            a.dataset.overlayDefused = '1';
+            var pass = function () {
+              setTimeout(function () { a.style.pointerEvents = 'none'; }, 0);
+            };
+            a.addEventListener('pointerdown', pass, { capture: true, passive: true });
+            a.addEventListener('click', pass, { capture: true });
+          }
+          function sweepOverlays() {
+            var links = document.getElementsByTagName('a');
+            var vw = window.innerWidth, vh = window.innerHeight;
+            for (var m = 0; m < links.length; m++) {
+              var a = links[m];
+              if (a.dataset.overlayDefused === '1') continue;
+              if (a.closest && a.closest('#root')) continue;
+              var href = a.getAttribute('href') || '';
+              if (href.length <= 80 && a.hostname === location.hostname) continue;
+              var r = a.getBoundingClientRect();
+              if (r.width * r.height < 0.8 * vw * vh) continue;
+              try {
+                var pos = getComputedStyle(a).position;
+                if (pos !== 'fixed' && pos !== 'absolute') continue;
+              } catch (e) { continue; }
+              defuseFullPageAnchor(a);
+            }
+          }
+          function watchForClose(el) {
+            var mo = new MutationObserver(function () {
+              if (!document.documentElement.contains(el)) {
+                mo.disconnect();
+                suppress();
+              }
+            });
+            mo.observe(document.documentElement, { childList: true, subtree: true });
+          }
+          function suppress() {
+            state.suppressed = true;
+            document.documentElement.setAttribute('data-adcap', '1');
+            scan();
+          }
+          // one ad per PAGE VIEW: navigating to another page re-arms the cap
+          function reset() {
+            state.suppressed = false;
+            state.shown = false;
+            document.documentElement.removeAttribute('data-adcap');
+          }
+          var push = history.pushState;
+          history.pushState = function () {
+            var r = push.apply(this, arguments);
+            reset();
+            return r;
+          };
+          window.addEventListener('popstate', reset);
+          // rAF-coalesced: a page mount triggers dozens of mutation batches,
+          // and scan() queries every body iframe each time — one scan per
+          // frame keeps the cap behavior while cutting SPA navigation cost
+          var scanQueued = false;
+          var queueScan = function () {
+            if (scanQueued) return;
+            scanQueued = true;
+            requestAnimationFrame(function () {
+              scanQueued = false;
+              scan();
+            });
+          };
+          new MutationObserver(queueScan).observe(document.documentElement, { childList: true, subtree: true });
+          document.addEventListener('DOMContentLoaded', scan);
+        } catch (e) {}
+      })();
+    </script>
+    <script type="module" crossorigin src="/assets/index-DryuG25J.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DABcpq0e.css">
+    <meta name="description" content="Browse 422 manhwa and manhua starting with &quot;T&quot; on MANHWAS — free to read, sorted alphabetically, full chapter lists." />
+    <meta name="robots" content="index,follow" />
+    <meta property="og:title" content="T Manhwa &amp; Manhua – A to Z Directory | MANHWAS" />
+    <meta property="og:description" content="Browse 422 manhwa and manhua starting with &quot;T&quot; on MANHWAS — free to read, sorted alphabetically, full chapter lists." />
+    <meta property="og:url" content="https://manhwas.site/directory/t" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="MANHWAS" />
+    <script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://manhwas.site/"},{"@type":"ListItem","position":2,"name":"Directory","item":"https://manhwas.site/directory"},{"@type":"ListItem","position":3,"name":"T","item":"https://manhwas.site/directory/t"}]}]</script>
+  </head>
+  <body class="antialiased selection:bg-[#D95743] selection:text-white">
+    <div id="root"><div id="seo-content"><main>
+          <nav aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/directory">Directory</a> › T</nav>
+          <h1>Titles starting with T</h1>
+          <p>422 series, sorted alphabetically.</p>
+          
+          <section><h2>T titles</h2><ul class="seo-grid"><li><a href="/manhwa/tacit"><strong>Tacit</strong><span>Kim Dazzi</span><span>Action, Adventure, Drama</span></a></li><li><a href="/manhua/taizi"><strong>Taizi</strong><span>Feng Nong</span><span>Drama, Historical, Romance</span></a></li><li><a href="/manhwa/tal"><strong>TAL</strong><span>Kang Im</span><span>Action, Adventure, Comedy</span></a></li><li><a href="/manhwa/tale-of-a-scribe-who-retires-to-the-countryside"><strong>Tale of a Scribe Who Retires to the Countryside</strong><span>Barking Dog</span><span>Action, Adventure, Fantasy</span></a></li><li><a href="/manhwa/tale-of-felluah"><strong>Tale of Felluah</strong><span>Kim Yeon-Joo</span><span>Romance, Drama, Fantasy</span></a></li><li><a href="/manhua/tale-of-nezha"><strong>Tale of Nezha</strong><span>Mao Mao Jia</span><span>Action, Adventure, Drama</span></a></li><li><a href="/manhua/talent-copycat"><strong>Talent Copycat</strong><span>剑神无敌</span><span>Action, Fantasy, Supernatural</span></a></li><li><a href="/manhwa/talent-swallowing-magician"><strong>Talent-Swallowing Magician</strong><span>Bread squirrel (빵먹는다람쥐)</span><span>Action, Drama, Fantasy</span></a></li><li><a href="/manhua/talented-genius"><strong>Talented Genius</strong><span>Tu Shan Jun Studios</span><span>Action, Comedy, Adventure</span></a></li><li><a href="/manhua/tales-of-demons-and-gods"><strong>Tales of Demons and Gods</strong><span>Mad Snail</span><span>Action, Adventure, Comedy</span></a></li><li><a href="/manhwa/tales-of-the-unusual"><strong>Tales of the unusual</strong><span>Oh Seongdae</span><span>Horror, Mystery, Psychological</span></a></li><li><a href="/manhua/tall-girls-can-fall-in-love-too"><strong>Tall Girls Can Fall In Love Too</strong><span>Qing Ying</span><span>Drama, Romance</span></a></li><li><a href="/manhwa/talysia"><strong>Talysia</strong><span>Sjs0614</span><span>Drama, Action, Adventure</span></a></li><li><a href="/manhua/tamen-de-gushi"><strong>Tamen De Gushi</strong><span>Tan Jiu</span><span>Comedy, Romance, Slice of Life</span></a></li><li><a href="/manhwa/taming-a-defective-angel"><strong>Taming a Defective Angel</strong><span>Hwang Mi-ri</span><span>Fantasy, Romance, Slice of Life</span></a></li><li><a href="/manhwa/taming-a-munchkin"><strong>Taming a Munchkin</strong><span>Milcha (밀차)</span><span>Romance, Fantasy, Adventure</span></a></li><li><a href="/manhwa/taming-master"><strong>Taming Master</strong><span>Park Taeseok</span><span>Action, Adventure, Fantasy</span></a></li><li><a href="/manhua/tang-yin"><strong>Tang Yin</strong><span>Uncle Bear</span><span>Action, Comedy, Fantasy</span></a></li><li><a href="/manhua/tang-yin-zai-yi-jie"><strong>Tang Yin Zai Yi Jie</strong><span>Liudao</span><span>Action, Fantasy, Romance</span></a></li><li><a href="/manhua/teach-the-devil-husband"><strong>Teach the Devil Husband</strong><span>Dazui</span><span>Supernatural, Romance</span></a></li><li><a href="/manhwa/tears-on-a-withered-flower"><strong>Tears on a Withered Flower</strong><span>Gae (개)</span><span>Psychological, Romance, Slice of Life</span></a></li><li><a href="/manhua/ten-thousand-kinds-of-love"><strong>Ten Thousand Kinds of Love</strong><span>Yang Xiao Ru</span><span>Drama, Romance, Slice of Life</span></a></li><li><a href="/manhua/ten-thousand-paths-to-becoming-a-god"><strong>Ten Thousand Paths to Becoming a God</strong><span>Chudao Manhua</span><span>Action, Adventure, Fantasy</span></a></li><li><a href="/manhwa/ten-ways-to-get-dumped-by-a-tyrant"><strong>Ten Ways to Get Dumped by a Tyrant</strong><span>Danmyeong (단명)</span><span>Fantasy, Historical, Romance</span></a></li><li><a href="/manhwa/terminally-ill-genius-dark-knight"><strong>Terminally-Ill Genius Dark Knight</strong><span>Jung Seonyul (정선율)</span><span>Adventure, Drama, Romance</span></a></li><li><a href="/manhwa/terrarium-adventure"><strong>Terrarium Adventure</strong><span>Suha Suha (수하수하)</span><span>Action, Comedy, Adventure</span></a></li><li><a href="/manhwa/terror-man"><strong>Terror Man</strong><span>Han Dongwoo (한동우)</span><span>Action, Psychological, Drama</span></a></li><li><a href="/manhwa/terror-vs-revival"><strong>Terror vs Revival</strong><span>Go Jin-ho</span><span>Action, Fantasy, Drama</span></a></li><li><a href="/manhwa/teto-x-egen"><strong>Teto X Egen</strong><span>H2J</span><span>Romance, Slice of Life</span></a></li><li><a href="/manhwa/that-summer-kim-hyun"><strong>That Summer (KIM Hyun)</strong><span>Kim Hyun</span><span>Drama, Psychological, Romance</span></a></li><li><a href="/manhwa/the-31st-piece-overturns-the-board"><strong>The 31st Piece Overturns the Board</strong><span>Mojji Wang (왕모찌)</span><span>Action, Adventure, Drama</span></a></li><li><a href="/manhwa/the-academy-is-doomed"><strong>The Academy Is Doomed</strong><span>BIN</span><span>Comedy, Fantasy, Fantasy</span></a></li><li><a href="/manhwa/the-adventures-of-a-demon-kings-daughter"><strong>The Adventures of a Demon King's Daughter</strong><span>Yeowool (여울)</span><span>Fantasy, Adventure, Drama</span></a></li><li><a href="/manhwa/the-age-of-arrogance"><strong>The Age of Arrogance</strong><span>Team Komodo</span><span>Romance, Fantasy</span></a></li><li><a href="/manhwa/the-age-of-barbarous"><strong>The Age of Barbarous</strong><span>Shin Eui-cheol</span><span>Action, Drama, Slice of Life</span></a></li><li><a href="/manhwa/the-antagonists-pet"><strong>The Antagonist's Pet</strong><span>Servo</span><span>Drama, Adventure, Romance</span></a></li><li><a href="/manhwa/the-apocalypse-is-here"><strong>The Apocalypse is Here</strong><span>Jun SunWook</span><span>Action, Adventure, Drama</span></a></li><li><a href="/manhwa/the-archmages-daughter"><strong>The Archmage's Daughter</strong><span>Moon Seora</span><span>Adventure, Drama, Fantasy</span></a></li><li><a href="/manhwa/the-archmages-restaurant"><strong>The Archmage's Restaurant</strong><span>chassi</span><span>Fantasy, Action, Comedy</span></a></li><li><a href="/manhwa/the-archvillains-dying-nanny"><strong>The Archvillain's Dying Nanny</strong><span>Chokam</span><span>Romance, Fantasy, Drama</span></a></li><li><a href="/manhwa/the-aura-of-a-genius-actor"><strong>The Aura of a Genius Actor</strong><span>Geulsulsul</span><span>Sci-Fi, Drama, Fantasy</span></a></li><li><a href="/manhwa/the-baby-fairy-is-a-villain"><strong>The Baby Fairy Is a Villain</strong><span>Saha</span><span>Romance, Fantasy, Drama</span></a></li><li><a href="/manhwa/the-baby-isnt-yours"><strong>The Baby Isn’t Yours</strong><span>아롱드리 (Arongdri)</span><span>Historical, Psychological, Romance</span></a></li><li><a href="/manhwa/the-baby-saint-wants-to-destroy-the-world"><strong>The Baby Saint Wants to Destroy the World!</strong><span>Eun Lee-Hwa</span><span>Romance, Fantasy</span></a></li><li><a href="/manhwa/the-baker-on-the-first-floor"><strong>The Baker on the First Floor</strong><span>Gya Ga</span><span>Drama, Romance</span></a></li><li><a href="/manhwa/the-barefoot-nina"><strong>The Barefoot Nina</strong><span>Cheomji (첨지)</span><span>Romance</span></a></li><li><a href="/manhwa/the-bastard-of-swordborne"><strong>The Bastard of Swordborne</strong><span>Next Level Studio (넥스트레벨스튜디오) </span><span>Sci-Fi, Action, Adventure</span></a></li><li><a href="/manhwa/the-beast"><strong>The Beast</strong><span>Lee Seon Joo</span><span>Action, Drama</span></a></li><li><a href="/manhua/the-beast-husband"><strong>The Beast Husband</strong><span>Ying qianxian dongman</span><span>Comedy, Romance, Drama</span></a></li><li><a href="/manhua/the-beautiful-wife-of-the-whirlwind-marriage"><strong>The Beautiful Wife of the Whirlwind Marriage</strong><span>ZhaYaStudio</span><span>Comedy, Romance</span></a></li><li><a href="/manhwa/the-berserkers-second-playthrough"><strong>The Berserker's Second Playthrough</strong><span>Life Ruined</span><span>Action, Adventure, Drama</span></a></li><li><a href="/manhwa/the-best-smell"><strong>The Best Smell</strong><span>Lee Man-se (이만세)</span><span>Romance, Comedy, Supernatural</span></a></li><li><a href="/manhwa/the-black-haired-princess"><strong>The Black-Haired Princess</strong><span>Ellian Yang</span><span>Comedy, Fantasy, Romance</span></a></li><li><a href="/manhwa/the-blue-guardian-of-the-princess"><strong>The Blue Guardian of the Princess</strong><span>Heosua</span><span>Historical, Romance, Adventure</span></a></li><li><a href="/manhua/the-blurry-viewfinder"><strong>The Blurry Viewfinder</strong><span>Mn</span><span>Drama, Romance, Slice of Life</span></a></li><li><a href="/manhwa/the-book-eating-magician"><strong>The Book Eating Magician</strong><span>Mackenro</span><span>Action, Adventure, Fantasy</span></a></li><li><a href="/manhwa/the-book-of-lagier"><strong>The Book of Lagier</strong><span>Kim Joon-hyung</span><span>Fantasy, Action, Drama</span></a></li><li><a href="/manhwa/the-boxer"><strong>The Boxer</strong><span>Jihoon Jung (정지훈)</span><span>Action, Drama, Sports</span></a></li><li><a href="/manhwa/the-boy-and-the-sea"><strong>The Boy and the Sea</strong><span>Lee Hyunmin (이현민)</span><span>Romance, Drama, Slice of Life</span></a></li><li><a href="/manhua/the-boy-in-the-all-girls-school"><strong>The Boy in the All-Girls School</strong><span>Unknown</span><span>Comedy, Romance, Slice of Life</span></a></li><li><a href="/manhwa/the-boy-next-door-bae-cheol-wan"><strong>The Boy Next Door (Bae Cheol Wan)</strong><span>Bae Cheol Wan</span><span>Drama, Comedy, Slice of Life</span></a></li><li><a href="/manhwa/the-boy-of-death"><strong>The Boy of Death</strong><span>Ryu (류)</span><span>Action, Psychological, Fantasy</span></a></li><li><a href="/manhwa/the-breaker"><strong>The Breaker</strong><span>Jeon Geuk-jin</span><span>Action, Romance, Comedy</span></a></li><li><a href="/manhwa/the-breaker-eternal-force"><strong>The Breaker: Eternal Force</strong><span>Jeon Geuk-jin</span><span>Action, Slice of Life, Drama</span></a></li><li><a href="/manhwa/the-breaker-new-waves"><strong>The Breaker: New Waves</strong><span>Jeon Geuk-jin</span><span>Action, Comedy, Drama</span></a></li><li><a href="/manhua/the-brilliant-village-doctor"><strong>The Brilliant Village Doctor</strong><span>Aurora</span><span>Comedy, Romance, Drama</span></a></li><li><a href="/manhwa/the-broken-ring-this-marriage-will-fail-anyway"><strong>The Broken Ring: This Marriage Will Fail Anyway</strong><span>Chokam</span><span>Romance, Fantasy, Drama</span></a></li><li><a href="/manhwa/the-bully-in-charge"><strong>The Bully In-Charge</strong><span>Grimzo</span><span>Action, Drama, Slice of Life</span></a></li><li><a href="/manhwa/the-careful-empress"><strong>The Careful Empress</strong><span>Jajoo</span><span>Drama, Fantasy, Romance</span></a></li><li><a href="/manhua/the-cat-immortal"><strong>The Cat Immortal</strong><span>繁茂茂</span><span>Fantasy</span></a></li><li><a href="/manhwa/the-cellhouse-kingmakers-playbook"><strong>The Cellhouse Kingmaker's Playbook</strong><span>Moon Sihyun (문시현)</span><span>Fantasy, Romance, Comedy</span></a></li><li><a href="/manhwa/the-chaebeols-youngest-son"><strong>The Chaebeol's Youngest Son</strong><span>JP</span><span>Drama</span></a></li><li><a href="/manhwa/the-challenger"><strong>The Challenger</strong><span>Trytry (redice Studio)</span><span>Action, Adventure, Drama</span></a></li><li><a href="/manhwa/the-chart-of-priest"><strong>The Chart of Priest</strong><span>Gob</span><span>Comedy, Fantasy, Drama</span></a></li><li><a href="/manhwa/the-chef-hides-his-blessing"><strong>The Chef Hides His Blessing</strong><span>Kim Chon-Ji</span><span>Drama, Fantasy, Slice of Life</span></a></li><li><a href="/manhwa/the-chick-class-hunter-is-filial"><strong>The Chick-Class Hunter Is Filial!</strong><span>Milcha</span><span>Comedy, Drama, Fantasy</span></a></li><li><a href="/manhwa/the-civil-servant-of-the-sword-returns"><strong>The Civil Servant of the Sword Returns</strong><span>zary (자리)</span><span>Sci-Fi, Horror, Action</span></a></li><li><a href="/manhua/the-code-to-the-evolutionary-spiral"><strong>The Code to the Evolutionary Spiral</strong><span>Wang XiaoDong</span><span>Supernatural, Action, Adventure</span></a></li><li><a href="/manhwa/the-color-trilogy"><strong>The Color Trilogy</strong><span>Kim Dong Hwa</span><span>Drama, Historical, Romance</span></a></li><li><a href="/manhwa/the-concours"><strong>The Concours</strong><span>Jeong Seol Hwa</span><span>Drama, Psychological</span></a></li><li><a href="/manhwa/the-constellation-that-returned-from-hell"><strong>The Constellation That Returned From Hell</strong><span>Writing Machine (글쓰는기계)</span><span>Action, Adventure, Fantasy</span></a></li><li><a href="/manhwa/the-constellations-are-my-disciples"><strong>The Constellations Are My Disciples</strong><span>Inus Studio</span><span>Action, Drama, Fantasy</span></a></li><li><a href="/manhwa/the-counts-secret-maid"><strong>The Count's Secret Maid</strong><span>Baekjua (백주아)</span><span>Fantasy, Romance, Drama</span></a></li><li><a href="/manhwa/the-counts-youngest-son-is-a-gamer"><strong>The Count's Youngest Son Is a Gamer</strong><span>Konsonan</span><span>Fantasy, Adventure, Fantasy</span></a></li><li><a href="/manhwa/the-creator-is-on-hiatus"><strong>The Creator is on Hiatus</strong><span>canine</span><span>Action, Drama, Fantasy</span></a></li><li><a href="/manhwa/the-crown-prince-that-sells-medicine"><strong>The Crown Prince That Sells Medicine</strong><span>BK_Moon (문백경)</span><span>Fantasy, Action, Comedy</span></a></li><li><a href="/manhwa/the-cup-of-vengeance-is-in-your-hands"><strong>The Cup of Vengeance Is in Your Hands</strong><span>Tado</span><span>Romance, Drama, Fantasy</span></a></li><li><a href="/manhwa/the-dark-mages-return-to-enlistment"><strong>The Dark Mage's Return to Enlistment</strong><span>Golden Dove</span><span>Action, Drama, Fantasy</span></a></li><li><a href="/manhwa/the-dark-magician-transmigrates-after-66666-years"><strong>The Dark Magician Transmigrates After 66666 Years</strong><span>Hwabong</span><span>Adventure, Fantasy, Drama</span></a></li><li><a href="/manhwa/the-dawn-to-come"><strong>The Dawn to Come</strong><span>Woo Jihye (우지혜)</span><span>Romance, Drama, Slice of Life</span></a></li><li><a href="/manhua/the-defiant-subject"><strong>The Defiant Subject</strong><span>Mizi</span><span>Drama, Historical, Romance</span></a></li><li><a href="/manhua/the-demon-blades"><strong>The Demon Blades</strong><span>Cat Comics</span><span>Action, Adventure, Drama</span></a></li><li><a href="/manhua/the-demon-is-ready-for-dinner"><strong>The Demon is Ready for Dinner!</strong><span>Tuotuo</span><span>Action, Psychological, Comedy</span></a></li><li><a href="/manhwa/the-demon-king-overrun-by-heroes"><strong>The Demon King Overrun by Heroes</strong><span>Fine Particles</span><span>Action, Comedy, Fantasy</span></a></li><li><a href="/manhua/the-demon-king-who-lost-his-job"><strong>The Demon King Who Lost His Job</strong><span>Tang Li Shui</span><span>Action, Comedy, Fantasy</span></a></li><li><a href="/manhwa/the-demon-prince-goes-to-the-academy"><strong>The Demon Prince goes to the Academy</strong><span>로노푸</span><span>Action, Comedy, Adventure</span></a></li><li><a href="/manhwa/the-descendant-of-the-dynasty"><strong>The Descendant of the Dynasty</strong><span>Hwang Mi-ri</span><span>Action, Drama, Fantasy</span></a></li><li><a href="/manhwa/the-descending-moon-at-the-foot-of-the-mountain"><strong>The Descending Moon at the Foot of the Mountain</strong><span>Son Jang-won</span><span>Drama, Slice of Life, Supernatural</span></a></li><li><a href="/manhwa/the-descent-of-the-demonic-master"><strong>The Descent of the Demonic Master</strong><span>Wolbaek</span><span>Action, Adventure, Drama</span></a></li><li><a href="/manhwa/the-devil-king-is-bored"><strong>The Devil King Is Bored</strong><span>Kim Sang Min</span><span>Adventure, Comedy, Fantasy</span></a></li><li><a href="/manhwa/the-devils-boy"><strong>The Devil's Boy</strong><span>Kirin</span><span>Action, Slice of Life, Fantasy</span></a></li><li><a href="/manhua/the-devils-cure"><strong>The Devil's Cure</strong><span>Lin Lin</span><span>Comedy, Fantasy</span></a></li><li><a href="/manhua/the-diary-to-the-stage"><strong>The Diary to the Stage</strong><span>You Ling</span><span>Adventure</span></a></li><li><a href="/manhwa/the-dictator"><strong>The Dictator</strong><span>Rossi (KIM Shin-hyung)</span><span>Thriller, Romance, Drama</span></a></li><li><a href="/manhwa/the-divine-demons-grand-ascension"><strong>The Divine Demon's Grand Ascension</strong><span>Eun Geom</span><span>Action, Adventure, Fantasy</span></a></li><li><a href="/manhwa/the-doomed-houses-contract-daughter"><strong>The Doomed House's Contract Daughter</strong><span>Harasyo (하라쇼)</span><span>Sci-Fi, Romance, Fantasy</span></a></li><li><a href="/manhwa/the-dragon-master"><strong>The Dragon Master</strong><span>Taesun (태선)</span><span>Action, Adventure, Fantasy</span></a></li><li><a href="/manhua/the-dream-of-flight"><strong>The Dream of Flight</strong><span>Kuang Sheng</span><span>Action, Fantasy</span></a></li><li><a href="/manhwa/the-duchess-with-an-empty-soul"><strong>The Duchess With An Empty Soul</strong><span>Han Jin-Seo</span><span>Adventure, Drama, Fantasy</span></a></li><li><a href="/manhwa/the-duchess-50-tea-recipes"><strong>The Duchess' 50 Tea Recipes</strong><span>Lee Jiha</span><span>Drama, Adventure, Romance</span></a></li><li><a href="/manhua/the-duke-of-the-mount-deer"><strong>The Duke of the Mount Deer</strong><span>Jin Yong</span><span>Action, Comedy, Adventure</span></a></li><li><a href="/manhwa/the-dungeon-master"><strong>The Dungeon Master</strong><span>Jae-Hoo Park</span><span>Action, Adventure, Comedy</span></a></li><li><a href="/manhua/the-eighth-consciousness"><strong>The Eighth Consciousness</strong><span>Shou Si</span><span>Action, Drama, Mystery</span></a></li><li><a href="/manhwa/the-ember-knight"><strong>The Ember Knight</strong><span>Hwan Daeng</span><span>Action, Adventure, Fantasy</span></a></li><li><a href="/manhwa/the-emperors-partner"><strong>The Emperor's Partner</strong><span>Assam (아쌈)</span><span>Fantasy, Romance, Fantasy</span></a></li><li><a href="/manhwa/the-end-is-a-game-to-me"><strong>The End is a Game to Me</strong><span>Hoopa</span><span>Fantasy, Action, Thriller</span></a></li><li><a href="/manhwa/the-evil-ladys-hero"><strong>The Evil Lady's Hero</strong><span>Lee Haron</span><span>Adventure, Romance, Drama</span></a></li><li><a href="/manhua/the-evil-sorceress-plans-to-survive"><strong>The Evil Sorceress Plans to Survive!</strong><span>Yi Ge Da Cheng Zi</span><span>Fantasy, Historical, Adventure</span></a></li><li><a href="/manhwa/the-executioner"><strong>The Executioner</strong><span>Lee Je Hwan (이제환)</span><span>Drama, Action, Supernatural</span></a></li><li><a href="/manhwa/the-exiled-hero"><strong>The Exiled Hero</strong><span>Bluecliffe</span><span>Action, Adventure, Fantasy</span></a></li><li><a href="/manhua/the-exorcism-record"><strong>The Exorcism Record</strong><span>Dengang</span><span>Adventure, Historical, Horror</span></a></li><li><a href="/manhua/the-exploding-girl"><strong>The Exploding Girl</strong><span>Shi Tuzi</span><span>Action, Comedy, Adventure</span></a></li><li><a href="/manhwa/the-extras-academy-survival-guide"><strong>The Extra’s Academy Survival Guide</strong><span>Corita (코리타)</span><span>Fantasy, Action, Romance</span></a></li><li><a href="/manhwa/the-extras-touch"><strong>The Extra's Touch</strong><span>Kim Zia (김지아)</span><span>Fantasy, Romance, Adventure</span></a></li><li><a href="/manhwa/the-fake-lady-and-her-rabbit-duke"><strong>The Fake Lady and Her Rabbit Duke</strong><span>Han Seram</span><span>Historical, Romance, Fantasy</span></a></li><li><a href="/manhwa/the-fangs-that-pierce-the-heart"><strong>The Fangs That Pierce the Heart</strong><span>Youngonedot</span><span>Fantasy, Action, Psychological</span></a></li><li><a href="/manhua/the-fiary-captivity"><strong>The Fiary Captivity</strong><span>Unknown</span><span>Comedy, Drama, Mystery</span></a></li><li><a href="/manhua/the-fifth-encounter"><strong>The Fifth Encounter</strong><span>Dual82</span><span>Drama, Romance</span></a></li><li><a href="/manhua/the-first-ancestor-in-history"><strong>The First Ancestor in History</strong><span>August Eagle</span><span>Action, Adventure, Comedy</span></a></li><li><a href="/manhwa/the-first-hunter"><strong>The First Hunter</strong><span>D-Dart (디다트)</span><span>Action, Adventure, Fantasy</span></a></li><li><a href="/manhwa/the-flower-dances-and-the-wind-sings"><strong>The Flower Dances and the Wind Sings</strong><span>Lanella</span><span>Drama, Fantasy, Romance</span></a></li><li><a href="/manhwa/the-flower-that-was-bloomed-by-a-cloud"><strong>The Flower That Was Bloomed by a Cloud</strong><span>Bionhu</span><span>Drama, Historical, Psychological</span></a></li><li><a href="/manhwa/the-flower-that-wields-a-sword"><strong>The Flower That Wields a Sword</strong><span>Eunsoro</span><span>Sci-Fi, Historical, Romance</span></a></li><li><a href="/manhwa/the-fox-eyed-villain-of-the-demon-academy"><strong>The Fox-Eyed Villain of the Demon Academy</strong><span>Cheon Jin-Hee (천진희)</span><span>Fantasy, Action, Adventure</span></a></li><li><a href="/manhua/the-game-of-points"><strong>The Game of Points</strong><span>Shang Man</span><span>Adventure, Comedy, Mystery</span></a></li><li><a href="/manhua/the-game-that-i-came-from"><strong>The Game That I Came From</strong><span>Mokf 黑鸟社</span><span>Action, Adventure, Fantasy</span></a></li><li><a href="/manhwa/the-gamer"><strong>The Gamer</strong><span>Seong Sang Yeong</span><span>Action, Adventure, Comedy</span></a></li><li><a href="/manhwa/the-garden-of-plantus"><strong>The Garden of Plantus</strong><span>김현식 (Kim Hyeonsik)</span><span>Thriller, Psychological, Drama</span></a></li><li><a href="/manhwa/the-garden-of-red-flowers"><strong>The Garden of Red Flowers</strong><span>Mareu</span><span>Fantasy, Sci-Fi, Romance</span></a></li><li><a href="/manhwa/the-gardener-in-a-hunter-world"><strong>The Gardener in a Hunter World</strong><span>GITAE CHON (전기태)</span><span>Adventure, Fantasy</span></a></li><li><a href="/manhua/the-gateway-of-revolution"><strong>The Gateway of Revolution</strong><span>Zhi Bai</span><span>Action, Comedy, Adventure</span></a></li><li><a href="/manhwa/the-genius-assassin-who-takes-it-all"><strong>The Genius Assassin Who Takes It All</strong><span>Mozo</span><span>Fantasy, Action, Adventure</span></a></li><li><a href="/manhwa/the-genius-wants-to-be-ordinary"><strong>The Genius Wants to be Ordinary!</strong><span>Silk Shell (비단가리비)</span><span>Sci-Fi, Drama, Fantasy</span></a></li><li><a href="/manhwa/the-genius-who-sees-through-the-world"><strong>The Genius Who Sees Through the World</strong><span>Jeong Yong</span><span>Psychological, Adventure, Drama</span></a></li><li><a href="/manhwa/the-girl-next-door-sun"><strong>The Girl Next Door (Sun)</strong><span>Imstar</span><span>Drama, Romance</span></a></li><li><a href="/manhua/the-girl-with-horns"><strong>The Girl With Horns</strong><span>Dream.Demon</span><span>Action, Comedy, Slice of Life</span></a></li><li><a href="/manhua/the-glutton"><strong>The Glutton</strong><span>Dorlag Culture (多拉格文化)</span><span>Fantasy, Action, Adventure</span></a></li><li><a href="/manhwa/the-god-of-game-of-god"><strong>The God of &quot;Game of God&quot;</strong><span>Yoon Jae Ho</span><span>Mystery, Drama, Romance</span></a></li><li><a href="/manhwa/the-god-of-high-school"><strong>The God of High School</strong><span>Park Yong-je</span><span>Action, Adventure, Comedy</span></a></li><li><a href="/manhwa/the-god-of-pro-wrestling"><strong>The God of Pro Wrestling</strong><span>Coby</span><span>Action, Fantasy, Drama</span></a></li><li><a href="/manhua/the-god-of-the-land-and-grains-mountain-river-map"><strong>The God of the Land and Grain’s Mountain River Map</strong><span>Yue Cang</span><span>Action, Comedy, Adventure</span></a></li><li><a href="/manhwa/the-god-of-war"><strong>The God of War</strong><span>codezero</span><span>Fantasy, Sci-Fi, Action</span></a></li><li><a href="/manhwa/the-golden-haired-elementalist"><strong>The Golden Haired Elementalist</strong><span>글비&amp;도막</span><span>Fantasy, Adventure, Romance</span></a></li><li><a href="/manhua/the-golden-sparrow"><strong>The Golden Sparrow</strong><span>Yi Chun</span><span>Action, Historical, Mystery</span></a></li><li><a href="/manhua/the-grandmaster-of-demonic-cultivation"><strong>The Grandmaster of Demonic Cultivation</strong><span>Unknown</span><span>Action, Adventure, Comedy</span></a></li><li><a href="/manhwa/the-graymark"><strong>The Graymark</strong><span>Tae Hyeon Park (박태현)</span><span>Action, Adventure, Drama</span></a></li><li><a href="/manhwa/the-great-mage-returns-after-4000-years"><strong>The Great Mage Returns After 4000 Years</strong><span>Barnacle</span><span>Action, Adventure, Fantasy</span></a></li><li><a href="/manhwa/the-great-master-sunyoo"><strong>The Great Master Sunyoo</strong><span>No Kyoungchan (노경찬)</span><span>Historical, Action, Drama</span></a></li><li><a href="/manhua/the-great-ruler"><strong>The Great Ruler</strong><span>Tian Can Tu Dou</span><span>Action, Adventure, Drama</span></a></li><li><a href="/manhwa/the-greatest-estate-developer"><strong>The Greatest Estate Developer</strong><span>Lee Hyunmin (이현민)</span><span>Adventure, Comedy, Supernatural</span></a></li><li><a href="/manhwa/the-greatest-in-the-world"><strong>The Greatest in the World</strong><span>SOON Q (권순규)</span><span>Action, Comedy, Adventure</span></a></li><li><a href="/manhwa/the-guy-who-will-give-a-kiss-for-5000-won"><strong>The Guy Who Will Give a Kiss for 5000 won</strong><span>Hwang Mi-ri</span><span>Comedy, Drama, Romance</span></a></li><li><a href="/manhwa/the-gwichon-village-mystery"><strong>The Gwichon Village Mystery</strong><span>Hwang Yang (황양)</span><span>Action, Horror, Mystery</span></a></li><li><a href="/manhwa/the-healing-priest-of-the-sun"><strong>The Healing Priest of the Sun</strong><span>제리엠</span><span>Action, Adventure, Fantasy</span></a></li><li><a href="/manhwa/the-heart-pounding-operation"><strong>The Heart-Pounding Operation</strong><span>Choi Jun-Young</span><span>Romance, Comedy</span></a></li><li><a href="/manhua/the-heavens-list"><strong>The Heaven's List</strong><span>Tian Can Tu Dou</span><span>Action, Adventure, Comedy</span></a></li><li><a href="/manhwa/the-heavenly-demon-cant-live-a-normal-life"><strong>The Heavenly Demon Can't Live a Normal Life</strong><span>San Cheon</span><span>Action, Fantasy, Drama</span></a></li><li><a href="/manhwa/the-heavenly-demon-destroys-the-lich-kings-murim"><strong>The Heavenly Demon Destroys the Lich King's Murim</strong><span>붕뎅</span><span>Action, Adventure, Fantasy</span></a></li><li><a href="/manhwa/the-heavenly-demon-lord-who-doesnt-want-to-level-up"><strong>The Heavenly Demon Lord Who Doesn't Want to Level Up</strong><span>Inkhead (잉크헤드)</span><span>Action, Comedy, Fantasy</span></a></li><li><a href="/manhwa/the-heavenly-demon-wants-a-quiet-life"><strong>The Heavenly Demon Wants a Quiet Life</strong><span>Gijema</span><span>Action, Drama, Fantasy</span></a></li><li><a href="/manhwa/the-heavenly-demon-will-give-you-a-massage"><strong>The Heavenly Demon Will Give You a Massage</strong><span>Lee Seok-jun (이석준)</span><span>Historical, Comedy, Adventure</span></a></li><li><a href="/manhua/the-heavenly-prince"><strong>The Heavenly Prince</strong><span>ZhanKe Jie</span><span>Action, Supernatural, Drama</span></a></li><li><a href="/manhwa/the-heiresss-double-life"><strong>The Heiress's Double Life</strong><span>Ko Eun Chae (고은채)</span><span>Romance, Fantasy, Adventure</span></a></li><li><a href="/manhwa/the-hero-returns"><strong>The Hero Returns</strong><span>Ant Studio</span><span>Action, Adventure, Fantasy</span></a></li><li><a href="/manhwa/the-hero-the-demon-and-the-villain"><strong>The Hero, the Demon, and the Villain</strong><span>Mu Yeongja (무영자)</span><span>Action, Comedy, Adventure</span></a></li><li><a href="/manhwa/the-heros-savior"><strong>The Hero's Savior</strong><span>Dodam (도담)</span><span>Fantasy, Romance, Adventure</span></a></li><li><a href="/manhwa/the-holy-emperors-grandson-is-a-necromancer"><strong>The Holy Emperor's Grandson Is a Necromancer</strong><span>Shadow Man (그림자꾼)</span><span>Fantasy, Action, Adventure</span></a></li><li><a href="/manhwa/the-horizon"><strong>The Horizon</strong><span>Jeong Ji-Hoon</span><span>Drama, Psychological, Romance</span></a></li><li><a href="/manhwa/the-house-without-time"><strong>The House Without Time</strong><span>Hego</span><span>Action, Psychological, Comedy</span></a></li><li><a href="/manhua/the-hunter"><strong>The Hunter</strong><span>聂备 Nie Bei</span><span>Action, Romance, Adventure</span></a></li><li><a href="/manhua/the-hunter-g"><strong>The Hunter G</strong><span>You Yi Hu Yu</span><span>Action, Comedy, Fantasy</span></a></li><li><a href="/manhwa/the-hunters-gonna-lay-low"><strong>The Hunter's Gonna Lay Low</strong><span>Magma</span><span>Sci-Fi, Horror, Action</span></a></li><li><a href="/manhwa/the-incognito-princess"><strong>The Incognito Princess</strong><span>Yangnlam</span><span>Fantasy, Romance, Adventure</span></a></li><li><a href="/manhwa/the-indomitable-martial-king"><strong>The Indomitable Martial King</strong><span>Yang Kyung-il</span><span>Action, Adventure, Sci-Fi</span></a></li><li><a href="/manhwa/the-investor-who-sees-the-future"><strong>The Investor Who Sees The Future</strong><span>Lim Young-Yoon (임영윤)</span><span>Comedy, Drama, Supernatural</span></a></li><li><a href="/manhwa/the-invincible-man"><strong>The Invincible Man</strong><span>No Kyoungchan (노경찬)</span><span>Action, Psychological, Drama</span></a></li><li><a href="/manhua/the-journey-of-flower"><strong>The Journey of Flower</strong><span>Fresh</span><span>Drama, Historical, Romance</span></a></li><li><a href="/manhwa/the-justice-of-villainous-woman"><strong>The Justice of Villainous Woman</strong><span>Sola</span><span>Comedy, Drama, Fantasy</span></a></li><li><a href="/manhua/the-king-of-bugs"><strong>The King of Bugs</strong><span>Tony</span><span>Sci-Fi, Action, Adventure</span></a></li><li><a href="/manhua/the-kings-avatar"><strong>The King's Avatar</strong><span>Butterfly Blue</span><span>Action, Comedy, Fantasy</span></a></li><li><a href="/manhwa/the-knight-king-who-returned-with-a-god"><strong>The Knight King Who Returned With a God</strong><span>Salam Sallyeo (사람살려.)</span><span>Action, Drama, Fantasy</span></a></li><li><a href="/manhwa/the-lady-and-the-beast"><strong>The Lady and the Beast</strong><span>The Maginot LIne</span><span>Comedy, Fantasy, Historical</span></a></li><li><a href="/manhwa/the-lady-project"><strong>The Lady Project</strong><span>Hong</span><span>Romance, Comedy, Fantasy</span></a></li><li><a href="/manhwa/the-lady-wants-to-rest"><strong>The Lady Wants to Rest</strong><span>Yuin</span><span>Fantasy, Historical, Romance</span></a></li><li><a href="/manhwa/the-lady-with-a-mask"><strong>The Lady with a Mask</strong><span>MIN(민)</span><span>Romance, Comedy</span></a></li><li><a href="/manhwa/the-ladys-spaceship"><strong>The Lady's Spaceship</strong><span>Yungyung</span><span>Adventure, Fantasy, Romance</span></a></li><li><a href="/manhwa/the-language-of-god"><strong>The Language of God</strong><span>Rae Hyuk Jang</span><span>Comedy, Slice of Life, Supernatural</span></a></li><li><a href="/manhwa/the-last-golden-child"><strong>The Last Golden Child</strong><span>Alkkae</span><span>Action, Adventure, Fantasy</span></a></li><li><a href="/manhua/the-last-human"><strong>The Last Human</strong><span>Amazing Works</span><span>Action, Slice of Life, Horror</span></a></li><li><a href="/manhua/the-last-summoner"><strong>The Last Summoner</strong><span>Bo He Ying Xiang</span><span>Action, Adventure, Drama</span></a></li></ul></section>
+          <p>…and 222 more — <a href="/catalog">search the catalog</a>.</p>
+          <p><a href="/directory">Full A–Z directory</a> · <a href="/genres">Browse by genre</a></p>
+        <p style="margin:24px 0;text-align:center;font-size:13px"><a href="https://www.profitableratecpmnetwork.com/rwke4e7k?key=2b2a096dea78bd8cb7bdc2b9ee370110" target="_blank" rel="noopener nofollow sponsored">Sponsored</a></p></main></div></div>
+    <script src="https://pl31102148.profitableratecpmnetwork.com/a4/a1/fe/a4a1fe30d63892bdc56fb6286e4439c3.js"></script>
+  </body>
+</html>

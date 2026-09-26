@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#141413" />
+    <meta name="google-adsense-account" content="ca-pub-9672720678512933" />
+    <link rel="icon" type="image/png" href="/logo1.png" />
+    <title>I Become a Fool When It… Manhwa – Read Free Online | MANHWAS</title>
+    <link rel="canonical" href="https://manhwas.site/manhwa/i-become-a-fool-when-it-comes-to-my-daughter" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Cover CDN: every card/hero cover loads from here — preconnect removes
+         a full mobile TLS+DNS round-trip from the LCP image (the homepage
+         hero cover IS the LCP element; field data showed ~6s on mobile) -->
+    <link rel="preconnect" href="https://cdn.manhwas.site" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.manhwas.site">
+    <!-- Non-blocking font CSS: text paints in system-ui immediately and
+         swaps to Inter when loaded (the face uses font-display: swap).
+         The prerendered #seo-content block already uses system-ui, so the
+         crawler-visible content never waits on fonts. -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    </noscript>
+    <!-- critical pre-hydration styles: prevents white flash before React mounts -->
+    <style>
+      body { margin: 0; background: #141413; }
+      #seo-content {
+        padding: 24px;
+        color: #d8d5d1;
+        font-family: system-ui, sans-serif;
+        line-height: 1.5;
+        max-width: 1240px;
+        margin: 0 auto;
+        overflow-wrap: break-word;
+      }
+      #seo-content a { color: #e06a55; text-decoration: underline; }
+      #seo-content ul,
+      #seo-content nav { list-style: none; margin: 0; padding: 0; }
+      #seo-content h1 { font-size: 1.75rem; font-weight: 700; color: #f0efeb; margin: 0 0 8px; }
+      #seo-content h2 { font-size: 1.125rem; font-weight: 600; color: #f0efeb; margin: 24px 0 8px; }
+      #seo-content p { margin: 0 0 12px; color: #b3b1a8; }
+      #seo-content .seo-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 12px;
+      }
+    </style>
+    <!-- Popunder partner script. async: must NOT block HTML parsing —
+         a synchronous script here delays first paint AND React mount by the
+         ad network's full response time (worst case seconds on mobile),
+         which used to leave the whole page (hero + Trending + Updates) blank.
+         The script self-injects its anchors when it eventually runs, so the
+         popunder behavior is unchanged; only its start becomes non-blocking. -->
+    <script async src="https://pl31102147.profitableratecpmnetwork.com/c8/ce/72/c8ce72a5a8e626dad922ab986b7f329d.js"></script>
+    <!-- Ad frequency cap: ONE visual ad per page view. When the visitor closes
+         it, every further body-level fixed ad iframe is removed until the next
+         page view (SPA route change or refresh). Never touches anything inside
+         #root — the app itself renders no fixed iframes. -->
+    <script>
+      (function () {
+        try {
+          var state = { shown: false, suppressed: false };
+          function isAdIframe(el) {
+            if (!el || el.tagName !== 'IFRAME') return false;
+            if (el.closest && el.closest('#root')) return false;
+            try {
+              if (getComputedStyle(el).position !== 'fixed') return false;
+            } catch (e) {
+              return false;
+            }
+            return true;
+          }
+          function scan() {
+            var iframes = document.querySelectorAll('body iframe');
+            for (var i = 0; i < iframes.length; i++) {
+              var f = iframes[i];
+              if (!isAdIframe(f)) continue;
+              if (state.suppressed) {
+                f.remove();
+                continue;
+              }
+              if (!state.shown) {
+                state.shown = true;
+                // enforce "only one": drop any sibling ad layers present in
+                // the same batch so a single page view shows a single ad
+                for (var j = 0; j < iframes.length; j++) {
+                  if (j !== i && isAdIframe(iframes[j])) iframes[j].remove();
+                }
+                watchForClose(f);
+                break;
+              }
+            }
+            hideAdHoverUrls();
+            sweepOverlays();
+          }
+
+          // The popunder script injects an invisible full-page anchor, so
+          // the browser status bar shows its long tracking URL whenever the
+          // mouse is anywhere over a page. Neutralize the HOVER DISPLAY
+          // without touching ad behavior: the href is stripped (no status
+          // text) and restored on mousedown/touchstart, so the actual click
+          // still goes through the ad's own anchor with its original URL,
+          // target and listeners — revenue path unchanged. Internal links
+          // are never touched.
+          function hideAdHoverUrls() {
+            var anchors = document.getElementsByTagName('a');
+            for (var k = 0; k < anchors.length; k++) {
+              var a = anchors[k];
+              if (a.dataset.hoverLocked === '1') continue;
+              var href = a.getAttribute('href') || '';
+              if (href.length > 80 && a.hostname !== location.hostname) {
+                a.dataset.hoverLocked = '1';
+                a.dataset.keepHref = href;
+                var show = function () {
+                  if (this.dataset.keepHref) this.setAttribute('href', this.dataset.keepHref);
+                };
+                var hide = function () { this.removeAttribute('href'); };
+                a.addEventListener('mousedown', show);
+                a.addEventListener('touchstart', show, { passive: true });
+                a.addEventListener('focus', show);
+                a.addEventListener('mouseleave', hide);
+                a.addEventListener('blur', hide);
+                a.removeAttribute('href');
+              }
+            }
+          }
+          // "Have to press twice" fix: the popunder injects an invisible
+          // full-viewport anchor that keeps swallowing taps after its pop
+          // attempt (especially when the popup is blocked — nothing visible
+          // happens, so the page feels stuck). The FIRST interaction still
+          // goes through the ad's own anchor (revenue path unchanged); every
+          // later pointer event passes through to the real UI.
+          function defuseFullPageAnchor(a) {
+            if (a.dataset.overlayDefused === '1') return;
+            a.dataset.overlayDefused = '1';
+            var pass = function () {
+              setTimeout(function () { a.style.pointerEvents = 'none'; }, 0);
+            };
+            a.addEventListener('pointerdown', pass, { capture: true, passive: true });
+            a.addEventListener('click', pass, { capture: true });
+          }
+          function sweepOverlays() {
+            var links = document.getElementsByTagName('a');
+            var vw = window.innerWidth, vh = window.innerHeight;
+            for (var m = 0; m < links.length; m++) {
+              var a = links[m];
+              if (a.dataset.overlayDefused === '1') continue;
+              if (a.closest && a.closest('#root')) continue;
+              var href = a.getAttribute('href') || '';
+              if (href.length <= 80 && a.hostname === location.hostname) continue;
+              var r = a.getBoundingClientRect();
+              if (r.width * r.height < 0.8 * vw * vh) continue;
+              try {
+                var pos = getComputedStyle(a).position;
+                if (pos !== 'fixed' && pos !== 'absolute') continue;
+              } catch (e) { continue; }
+              defuseFullPageAnchor(a);
+            }
+          }
+          function watchForClose(el) {
+            var mo = new MutationObserver(function () {
+              if (!document.documentElement.contains(el)) {
+                mo.disconnect();
+                suppress();
+              }
+            });
+            mo.observe(document.documentElement, { childList: true, subtree: true });
+          }
+          function suppress() {
+            state.suppressed = true;
+            document.documentElement.setAttribute('data-adcap', '1');
+            scan();
+          }
+          // one ad per PAGE VIEW: navigating to another page re-arms the cap
+          function reset() {
+            state.suppressed = false;
+            state.shown = false;
+            document.documentElement.removeAttribute('data-adcap');
+          }
+          var push = history.pushState;
+          history.pushState = function () {
+            var r = push.apply(this, arguments);
+            reset();
+            return r;
+          };
+          window.addEventListener('popstate', reset);
+          // rAF-coalesced: a page mount triggers dozens of mutation batches,
+          // and scan() queries every body iframe each time — one scan per
+          // frame keeps the cap behavior while cutting SPA navigation cost
+          var scanQueued = false;
+          var queueScan = function () {
+            if (scanQueued) return;
+            scanQueued = true;
+            requestAnimationFrame(function () {
+              scanQueued = false;
+              scan();
+            });
+          };
+          new MutationObserver(queueScan).observe(document.documentElement, { childList: true, subtree: true });
+          document.addEventListener('DOMContentLoaded', scan);
+        } catch (e) {}
+      })();
+    </script>
+    <script type="module" crossorigin src="/assets/index-DryuG25J.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DABcpq0e.css">
+    <meta name="description" content="Read I Become a Fool When It Comes to My Daughter free online by Kiwoo — chapter 170 just dropped, 171 chapters and counting. 25 years old unemployed Lee…" />
+    <meta name="robots" content="index,follow" />
+    <meta property="og:title" content="I Become a Fool When It… Manhwa – Read Free Online | MANHWAS" />
+    <meta property="og:description" content="Read I Become a Fool When It Comes to My Daughter free online by Kiwoo — chapter 170 just dropped, 171 chapters and counting. 25 years old unemployed Lee…" />
+    <meta property="og:url" content="https://manhwas.site/manhwa/i-become-a-fool-when-it-comes-to-my-daughter" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="MANHWAS" />
+    <meta property="og:image" content="https://cdn.manhwas.site/covers/bcb237b5f6d55c542c8ac262715d6b3e.jpg" />
+    <script type="application/ld+json">[{"@context":"https://schema.org","@type":"Book","name":"I Become a Fool When It Comes to My Daughter","image":["https://cdn.manhwas.site/covers/bcb237b5f6d55c542c8ac262715d6b3e.jpg"],"alternateName":["I Became a Doting Father","I'm a Dotting Father"],"author":{"@type":"Person","name":"Kiwoo"},"genre":["Comedy","Drama","Slice of Life"],"inLanguage":"en","bookEdition":"Ongoing","abstract":"25 years old unemployed Lee Juwon. One day, he became a dad.","url":"https://manhwas.site/manhwa/i-become-a-fool-when-it-comes-to-my-daughter"},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://manhwas.site/"},{"@type":"ListItem","position":2,"name":"Catalog","item":"https://manhwas.site/catalog"},{"@type":"ListItem","position":3,"name":"I Become a Fool When It Comes to My Daughter","item":"https://manhwas.site/manhwa/i-become-a-fool-when-it-comes-to-my-daughter"}]}]</script>
+  </head>
+  <body class="antialiased selection:bg-[#D95743] selection:text-white">
+    <div id="root"><div id="seo-content"><main>
+    <nav aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/catalog">Catalog</a> › I Become a Fool When It Comes to My Daughter</nav>
+    <h1>I Become a Fool When It Comes to My Daughter</h1>
+    <p>25 years old unemployed Lee Juwon. One day, he became a dad.</p>
+    <p>Also known as: I Became a Doting Father · I'm a Dotting Father</p>
+    <p>I Become a Fool When It Comes to My Daughter is a ongoing manhwa by Kiwoo with 171 chapters on MANHWAS, spanning Comedy, Drama, Slice of Life. Start from chapter 1 or jump straight to the latest release — everything is free to read and the list updates as new chapters drop.</p>
+    <p>Author: <a href="/author/kiwoo">Kiwoo</a> (all series by this author) · Status: Ongoing · 171 chapters · Rated 3.6/5</p>
+    <p>Genres: <a href="/genres/comedy">Comedy</a>, <a href="/genres/drama">Drama</a>, <a href="/genres/slice-of-life">Slice of Life</a></p>
+    <p><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-170">Read the latest chapter (Ch. 170)</a></p>
+    <section><h2>Chapters</h2><ul><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-170">Chapter 170</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-169">Chapter 169</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-168">Chapter 168</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-167">Chapter 167</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-166">Chapter 166</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-165">Chapter 165</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-164">Chapter 164</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-163">Chapter 163</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-162">Chapter 162</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-161">Chapter 161</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-160">Chapter 160</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-159">Chapter 159</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-158">Chapter 158</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-157">Chapter 157</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-156">Chapter 156</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-155">Chapter 155</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-154">Chapter 154</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-153">Chapter 153</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-152">Chapter 152</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-151">Chapter 151</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-150">Chapter 150</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-149">Chapter 149</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-148">Chapter 148</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-147">Chapter 147</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-146">Chapter 146</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-145">Chapter 145</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-144">Chapter 144</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-143">Chapter 143</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-142">Chapter 142</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-141">Chapter 141</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-140">Chapter 140</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-139">Chapter 139</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-138">Chapter 138</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-137">Chapter 137</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-136">Chapter 136</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-135">Chapter 135</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-134">Chapter 134</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-133">Chapter 133</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-132">Chapter 132</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-131">Chapter 131</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-130">Chapter 130</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-129">Chapter 129</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-128">Chapter 128</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-127">Chapter 127</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-126">Chapter 126</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-125">Chapter 125</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-124">Chapter 124</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-123">Chapter 123</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-122">Chapter 122</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-121">Chapter 121</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-120">Chapter 120</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-119">Chapter 119</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-118">Chapter 118</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-117">Chapter 117</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-116">Chapter 116</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-115">Chapter 115</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-114">Chapter 114</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-113">Chapter 113</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-112">Chapter 112</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-111">Chapter 111</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-110">Chapter 110</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-109">Chapter 109</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-108">Chapter 108</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-107">Chapter 107</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-106">Chapter 106</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-105">Chapter 105</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-104">Chapter 104</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-103">Chapter 103</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-102">Chapter 102</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-101">Chapter 101</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-100.5">Chapter 100.5</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-100">Chapter 100</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-99">Chapter 99</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-98">Chapter 98</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-97">Chapter 97</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-96">Chapter 96</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-95">Chapter 95</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-94">Chapter 94</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-93">Chapter 93</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-92">Chapter 92</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-91">Chapter 91</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-90">Chapter 90</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-89">Chapter 89</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-88">Chapter 88</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-87">Chapter 87</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-86">Chapter 86</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-85">Chapter 85</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-84">Chapter 84</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-83">Chapter 83</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-82">Chapter 82</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-81">Chapter 81</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-80">Chapter 80</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-79">Chapter 79</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-78">Chapter 78</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-77">Chapter 77</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-76">Chapter 76</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-75">Chapter 75</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-74">Chapter 74</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-73">Chapter 73</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-72">Chapter 72</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-71">Chapter 71</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-70">Chapter 70</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-69">Chapter 69</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-68">Chapter 68</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-67">Chapter 67</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-66">Chapter 66</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-65">Chapter 65</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-64">Chapter 64</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-63">Chapter 63</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-62">Chapter 62</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-61">Chapter 61</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-60">Chapter 60</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-59">Chapter 59</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-58">Chapter 58</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-57">Chapter 57</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-56">Chapter 56</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-55">Chapter 55</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-54">Chapter 54</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-53">Chapter 53</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-52">Chapter 52</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-51">Chapter 51</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-50">Chapter 50</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-49">Chapter 49</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-48">Chapter 48</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-47">Chapter 47</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-46">Chapter 46</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-45">Chapter 45</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-44">Chapter 44</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-43">Chapter 43</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-42">Chapter 42</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-41">Chapter 41</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-40">Chapter 40</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-39">Chapter 39</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-38">Chapter 38</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-37">Chapter 37</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-36">Chapter 36</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-35">Chapter 35</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-34">Chapter 34</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-33">Chapter 33</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-32">Chapter 32</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-31">Chapter 31</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-30">Chapter 30</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-29">Chapter 29</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-28">Chapter 28</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-27">Chapter 27</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-26">Chapter 26</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-25">Chapter 25</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-24">Chapter 24</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-23">Chapter 23</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-22">Chapter 22</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-21">Chapter 21</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-20">Chapter 20</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-19">Chapter 19</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-18">Chapter 18</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-17">Chapter 17</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-16">Chapter 16</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-15">Chapter 15</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-14">Chapter 14</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-13">Chapter 13</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-12">Chapter 12</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-11">Chapter 11</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-10">Chapter 10</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-9">Chapter 9</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-8">Chapter 8</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-7">Chapter 7</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-6">Chapter 6</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-5">Chapter 5</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-4">Chapter 4</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-3">Chapter 3</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-2">Chapter 2</a></li><li><a href="/read/i-become-a-fool-when-it-comes-to-my-daughter/chapter-1">Chapter 1</a></li></ul></section>
+    <section><h2>Similar Series</h2><ul class="seo-grid"><li><a href="/manhwa/solo-leveling"><strong>Solo Leveling</strong><span>Chu-Gong</span><span>Action, Adventure, Fantasy</span></a></li><li><a href="/manhwa/omniscient-readers-viewpoint"><strong>Omniscient Reader's Viewpoint</strong><span>Sleepy-C (REDICE STUDIO)</span><span>Action, Adventure, Fantasy</span></a></li><li><a href="/manhwa/tower-of-god"><strong>Tower of God</strong><span>Siu</span><span>Action, Adventure, Comedy</span></a></li><li><a href="/manhwa/bastard-hwang-youngchan"><strong>Bastard (HWANG Youngchan)</strong><span>Kim Carnby</span><span>Drama, Horror, Mystery</span></a></li><li><a href="/manhwa/the-greatest-estate-developer"><strong>The Greatest Estate Developer</strong><span>Lee Hyunmin (이현민)</span><span>Adventure, Comedy, Supernatural</span></a></li><li><a href="/manhwa/sss-class-suicide-hunter"><strong>SSS-Class Suicide Hunter</strong><span>Shin Noah (신노아)</span><span>Action, Adventure, Comedy</span></a></li><li><a href="/manhwa/the-horizon"><strong>The Horizon</strong><span>Jeong Ji-Hoon</span><span>Drama, Psychological, Romance</span></a></li><li><a href="/manhwa/mercenary-enrollment"><strong>Mercenary Enrollment</strong><span>YC</span><span>Action, Adventure, Drama</span></a></li></ul></section>
+    <p><a href="/catalog">Browse more manhwa</a> · <a href="/updates">Latest updates</a></p>
+  <p style="margin:24px 0;text-align:center;font-size:13px"><a href="https://www.profitableratecpmnetwork.com/rwke4e7k?key=2b2a096dea78bd8cb7bdc2b9ee370110" target="_blank" rel="noopener nofollow sponsored">Sponsored</a></p></main></div></div>
+    <script src="https://pl31102148.profitableratecpmnetwork.com/a4/a1/fe/a4a1fe30d63892bdc56fb6286e4439c3.js"></script>
+  </body>
+</html>

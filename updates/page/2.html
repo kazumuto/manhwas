@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#141413" />
+    <meta name="google-adsense-account" content="ca-pub-9672720678512933" />
+    <link rel="icon" type="image/png" href="/logo1.png" />
+    <title>Manhwa Updates — Page 2 — Latest Chapters | MANHWAS</title>
+    <link rel="canonical" href="https://manhwas.site/updates/page/2" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Cover CDN: every card/hero cover loads from here — preconnect removes
+         a full mobile TLS+DNS round-trip from the LCP image (the homepage
+         hero cover IS the LCP element; field data showed ~6s on mobile) -->
+    <link rel="preconnect" href="https://cdn.manhwas.site" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.manhwas.site">
+    <!-- Non-blocking font CSS: text paints in system-ui immediately and
+         swaps to Inter when loaded (the face uses font-display: swap).
+         The prerendered #seo-content block already uses system-ui, so the
+         crawler-visible content never waits on fonts. -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    </noscript>
+    <!-- critical pre-hydration styles: prevents white flash before React mounts -->
+    <style>
+      body { margin: 0; background: #141413; }
+      #seo-content {
+        padding: 24px;
+        color: #d8d5d1;
+        font-family: system-ui, sans-serif;
+        line-height: 1.5;
+        max-width: 1240px;
+        margin: 0 auto;
+        overflow-wrap: break-word;
+      }
+      #seo-content a { color: #e06a55; text-decoration: underline; }
+      #seo-content ul,
+      #seo-content nav { list-style: none; margin: 0; padding: 0; }
+      #seo-content h1 { font-size: 1.75rem; font-weight: 700; color: #f0efeb; margin: 0 0 8px; }
+      #seo-content h2 { font-size: 1.125rem; font-weight: 600; color: #f0efeb; margin: 24px 0 8px; }
+      #seo-content p { margin: 0 0 12px; color: #b3b1a8; }
+      #seo-content .seo-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 12px;
+      }
+    </style>
+    <!-- Popunder partner script. async: must NOT block HTML parsing —
+         a synchronous script here delays first paint AND React mount by the
+         ad network's full response time (worst case seconds on mobile),
+         which used to leave the whole page (hero + Trending + Updates) blank.
+         The script self-injects its anchors when it eventually runs, so the
+         popunder behavior is unchanged; only its start becomes non-blocking. -->
+    <script async src="https://pl31102147.profitableratecpmnetwork.com/c8/ce/72/c8ce72a5a8e626dad922ab986b7f329d.js"></script>
+    <!-- Ad frequency cap: ONE visual ad per page view. When the visitor closes
+         it, every further body-level fixed ad iframe is removed until the next
+         page view (SPA route change or refresh). Never touches anything inside
+         #root — the app itself renders no fixed iframes. -->
+    <script>
+      (function () {
+        try {
+          var state = { shown: false, suppressed: false };
+          function isAdIframe(el) {
+            if (!el || el.tagName !== 'IFRAME') return false;
+            if (el.closest && el.closest('#root')) return false;
+            try {
+              if (getComputedStyle(el).position !== 'fixed') return false;
+            } catch (e) {
+              return false;
+            }
+            return true;
+          }
+          function scan() {
+            var iframes = document.querySelectorAll('body iframe');
+            for (var i = 0; i < iframes.length; i++) {
+              var f = iframes[i];
+              if (!isAdIframe(f)) continue;
+              if (state.suppressed) {
+                f.remove();
+                continue;
+              }
+              if (!state.shown) {
+                state.shown = true;
+                // enforce "only one": drop any sibling ad layers present in
+                // the same batch so a single page view shows a single ad
+                for (var j = 0; j < iframes.length; j++) {
+                  if (j !== i && isAdIframe(iframes[j])) iframes[j].remove();
+                }
+                watchForClose(f);
+                break;
+              }
+            }
+            hideAdHoverUrls();
+            sweepOverlays();
+          }
+
+          // The popunder script injects an invisible full-page anchor, so
+          // the browser status bar shows its long tracking URL whenever the
+          // mouse is anywhere over a page. Neutralize the HOVER DISPLAY
+          // without touching ad behavior: the href is stripped (no status
+          // text) and restored on mousedown/touchstart, so the actual click
+          // still goes through the ad's own anchor with its original URL,
+          // target and listeners — revenue path unchanged. Internal links
+          // are never touched.
+          function hideAdHoverUrls() {
+            var anchors = document.getElementsByTagName('a');
+            for (var k = 0; k < anchors.length; k++) {
+              var a = anchors[k];
+              if (a.dataset.hoverLocked === '1') continue;
+              var href = a.getAttribute('href') || '';
+              if (href.length > 80 && a.hostname !== location.hostname) {
+                a.dataset.hoverLocked = '1';
+                a.dataset.keepHref = href;
+                var show = function () {
+                  if (this.dataset.keepHref) this.setAttribute('href', this.dataset.keepHref);
+                };
+                var hide = function () { this.removeAttribute('href'); };
+                a.addEventListener('mousedown', show);
+                a.addEventListener('touchstart', show, { passive: true });
+                a.addEventListener('focus', show);
+                a.addEventListener('mouseleave', hide);
+                a.addEventListener('blur', hide);
+                a.removeAttribute('href');
+              }
+            }
+          }
+          // "Have to press twice" fix: the popunder injects an invisible
+          // full-viewport anchor that keeps swallowing taps after its pop
+          // attempt (especially when the popup is blocked — nothing visible
+          // happens, so the page feels stuck). The FIRST interaction still
+          // goes through the ad's own anchor (revenue path unchanged); every
+          // later pointer event passes through to the real UI.
+          function defuseFullPageAnchor(a) {
+            if (a.dataset.overlayDefused === '1') return;
+            a.dataset.overlayDefused = '1';
+            var pass = function () {
+              setTimeout(function () { a.style.pointerEvents = 'none'; }, 0);
+            };
+            a.addEventListener('pointerdown', pass, { capture: true, passive: true });
+            a.addEventListener('click', pass, { capture: true });
+          }
+          function sweepOverlays() {
+            var links = document.getElementsByTagName('a');
+            var vw = window.innerWidth, vh = window.innerHeight;
+            for (var m = 0; m < links.length; m++) {
+              var a = links[m];
+              if (a.dataset.overlayDefused === '1') continue;
+              if (a.closest && a.closest('#root')) continue;
+              var href = a.getAttribute('href') || '';
+              if (href.length <= 80 && a.hostname === location.hostname) continue;
+              var r = a.getBoundingClientRect();
+              if (r.width * r.height < 0.8 * vw * vh) continue;
+              try {
+                var pos = getComputedStyle(a).position;
+                if (pos !== 'fixed' && pos !== 'absolute') continue;
+              } catch (e) { continue; }
+              defuseFullPageAnchor(a);
+            }
+          }
+          function watchForClose(el) {
+            var mo = new MutationObserver(function () {
+              if (!document.documentElement.contains(el)) {
+                mo.disconnect();
+                suppress();
+              }
+            });
+            mo.observe(document.documentElement, { childList: true, subtree: true });
+          }
+          function suppress() {
+            state.suppressed = true;
+            document.documentElement.setAttribute('data-adcap', '1');
+            scan();
+          }
+          // one ad per PAGE VIEW: navigating to another page re-arms the cap
+          function reset() {
+            state.suppressed = false;
+            state.shown = false;
+            document.documentElement.removeAttribute('data-adcap');
+          }
+          var push = history.pushState;
+          history.pushState = function () {
+            var r = push.apply(this, arguments);
+            reset();
+            return r;
+          };
+          window.addEventListener('popstate', reset);
+          // rAF-coalesced: a page mount triggers dozens of mutation batches,
+          // and scan() queries every body iframe each time — one scan per
+          // frame keeps the cap behavior while cutting SPA navigation cost
+          var scanQueued = false;
+          var queueScan = function () {
+            if (scanQueued) return;
+            scanQueued = true;
+            requestAnimationFrame(function () {
+              scanQueued = false;
+              scan();
+            });
+          };
+          new MutationObserver(queueScan).observe(document.documentElement, { childList: true, subtree: true });
+          document.addEventListener('DOMContentLoaded', scan);
+        } catch (e) {}
+      })();
+    </script>
+    <script type="module" crossorigin src="/assets/index-DryuG25J.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DABcpq0e.css">
+    <meta name="description" content="See which manhwa and manhua updated recently — page 2 of 36, every new chapter as it drops, free to read." />
+    <meta name="robots" content="index,follow" />
+    <meta property="og:title" content="Manhwa Updates — Page 2 — Latest Chapters | MANHWAS" />
+    <meta property="og:description" content="See which manhwa and manhua updated recently — page 2 of 36, every new chapter as it drops, free to read." />
+    <meta property="og:url" content="https://manhwas.site/updates/page/2" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="MANHWAS" />
+    <script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://manhwas.site/"},{"@type":"ListItem","position":2,"name":"Latest Updates","item":"https://manhwas.site/updates"},{"@type":"ListItem","position":3,"name":"Page 2","item":"https://manhwas.site/updates/page/2"}]}]</script>
+  </head>
+  <body class="antialiased selection:bg-[#D95743] selection:text-white">
+    <div id="root"><div id="seo-content"><main>
+      <nav aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/updates">Latest Updates</a> › Page 2</nav>
+      <h1>Manhwa Updates — Page 2</h1>
+      <p>2126 updated series in total — page 2 of 36.</p>
+      <section><h2>Recently updated</h2><ul class="seo-grid"><li><a href="/manhwa/nano-machine"><strong>Nano Machine</strong><span>REDICE studio</span><span>Action, Adventure, Fantasy</span></a><span class="seo-chapters"><a href="/read/nano-machine/chapter-331">Chapter 331 — 2026-09-24</a><a href="/read/nano-machine/chapter-330">Chapter 330 — 2026-09-17</a><a href="/read/nano-machine/chapter-329">Chapter 329 — 2026-09-10</a></span></li><li><a href="/manhwa/archmage-curriculum"><strong>Archmage Curriculum</strong><span>Belly</span><span>Action, Fantasy, Horror</span></a><span class="seo-chapters"><a href="/read/archmage-curriculum/chapter-46">Chapter 46 — 2026-09-24</a><a href="/read/archmage-curriculum/chapter-45">Chapter 45 — 2026-09-17</a><a href="/read/archmage-curriculum/chapter-44">Chapter 44 — 2026-09-03</a></span></li><li><a href="/manhwa/pick-me-up"><strong>Pick Me Up!</strong><span>Hermod (헤르모드)</span><span>Action, Adventure, Fantasy</span></a><span class="seo-chapters"><a href="/read/pick-me-up/chapter-220">Chapter 220 — 2026-09-24</a><a href="/read/pick-me-up/chapter-219">Chapter 219 — 2026-09-17</a><a href="/read/pick-me-up/chapter-218">Chapter 218 — 2026-09-10</a></span></li><li><a href="/manhwa/the-lords-coins-arent-decreasing"><strong>The Lord's Coins Aren't Decreasing?!</strong><span>Hong Dae Eui</span><span>Action, Adventure, Fantasy</span></a><span class="seo-chapters"><a href="/read/the-lords-coins-arent-decreasing/chapter-220">Chapter 220 — 2026-09-24</a><a href="/read/the-lords-coins-arent-decreasing/chapter-219">Chapter 219 — 2026-09-10</a><a href="/read/the-lords-coins-arent-decreasing/chapter-218">Chapter 218 — 2026-09-04</a></span></li><li><a href="/manhwa/the-max-level-hero-has-returned"><strong>The Max Level Hero Has Returned!</strong><span>악마꼬리</span><span>Action, Adventure, Fantasy</span></a><span class="seo-chapters"><a href="/read/the-max-level-hero-has-returned/chapter-248">Chapter 248 — 2026-09-24</a><a href="/read/the-max-level-hero-has-returned/chapter-247">Chapter 247 — 2026-09-16</a><a href="/read/the-max-level-hero-has-returned/chapter-246">Chapter 246 — 2026-09-09</a></span></li><li><a href="/manhwa/the-chaebeols-youngest-son"><strong>The Chaebeol's Youngest Son</strong><span>JP</span><span>Drama</span></a><span class="seo-chapters"><a href="/read/the-chaebeols-youngest-son/chapter-226">Chapter 226 — 2026-09-24</a><a href="/read/the-chaebeols-youngest-son/chapter-225">Chapter 225 — 2026-09-17</a><a href="/read/the-chaebeols-youngest-son/chapter-224">Chapter 224 — 2026-09-11</a></span></li><li><a href="/manhwa/the-s-classes-that-i-raised"><strong>The S-Classes That I Raised</strong><span>근서</span><span>Sci-Fi, Action, Comedy</span></a><span class="seo-chapters"><a href="/read/the-s-classes-that-i-raised/chapter-183">Chapter 183 — 2026-09-24</a><a href="/read/the-s-classes-that-i-raised/chapter-182">Chapter 182 — 2026-09-16</a><a href="/read/the-s-classes-that-i-raised/chapter-181">Chapter 181 — 2026-09-09</a></span></li><li><a href="/manhua/tales-of-demons-and-gods"><strong>Tales of Demons and Gods</strong><span>Mad Snail</span><span>Action, Adventure, Comedy</span></a><span class="seo-chapters"><a href="/read/tales-of-demons-and-gods/chapter-531.5">Chapter 531.5 — 2026-09-24</a><a href="/read/tales-of-demons-and-gods/chapter-531.1">Chapter 531.1 — 2026-09-24</a><a href="/read/tales-of-demons-and-gods/chapter-530.5">Chapter 530.5 — 2026-09-24</a></span></li><li><a href="/manhwa/teto-x-egen"><strong>Teto X Egen</strong><span>H2J</span><span>Romance, Slice of Life</span></a><span class="seo-chapters"><a href="/read/teto-x-egen/chapter-23">Chapter 23 — 2026-09-23</a><a href="/read/teto-x-egen/chapter-22">Chapter 22 — 2026-09-15</a><a href="/read/teto-x-egen/chapter-21">Chapter 21 — 2026-09-08</a></span></li><li><a href="/manhwa/the-archmages-restaurant"><strong>The Archmage's Restaurant</strong><span>chassi</span><span>Fantasy, Action, Comedy</span></a><span class="seo-chapters"><a href="/read/the-archmages-restaurant/chapter-151">Chapter 151 — 2026-09-23</a><a href="/read/the-archmages-restaurant/chapter-150">Chapter 150 — 2026-09-17</a><a href="/read/the-archmages-restaurant/chapter-149">Chapter 149 — 2026-09-09</a></span></li><li><a href="/manhwa/eleceed"><strong>Eleceed</strong><span>Son Jae-ho</span><span>Action, Adventure, Comedy</span></a><span class="seo-chapters"><a href="/read/eleceed/chapter-419">Chapter 419 — 2026-09-23</a><a href="/read/eleceed/chapter-418">Chapter 418 — 2026-09-16</a><a href="/read/eleceed/chapter-417">Chapter 417 — 2026-09-09</a></span></li><li><a href="/manhwa/the-world-after-the-fall"><strong>The World After the Fall</strong><span>Sing N Song (싱숑)</span><span>Sci-Fi, Action, Adventure</span></a><span class="seo-chapters"><a href="/read/the-world-after-the-fall/chapter-253">Chapter 253 — 2026-09-23</a><a href="/read/the-world-after-the-fall/chapter-252">Chapter 252 — 2026-09-15</a><a href="/read/the-world-after-the-fall/chapter-251">Chapter 251 — 2026-09-08</a></span></li><li><a href="/manhwa/magical-realm-shopkeeper"><strong>Magical Realm Shopkeeper</strong><span>Seulpeunbang Ulbaem</span><span>Slice of Life, Comedy, Adventure</span></a><span class="seo-chapters"><a href="/read/magical-realm-shopkeeper/chapter-120">Chapter 120 — 2026-09-23</a><a href="/read/magical-realm-shopkeeper/chapter-119">Chapter 119 — 2026-09-10</a><a href="/read/magical-realm-shopkeeper/chapter-118">Chapter 118 — 2026-08-29</a></span></li><li><a href="/manhwa/get-schooled"><strong>Get Schooled</strong><span>Chae Yong Taek</span><span>Action, Drama, Slice of Life</span></a><span class="seo-chapters"><a href="/read/get-schooled/chapter-264">Chapter 264 — 2026-09-23</a><a href="/read/get-schooled/chapter-263">Chapter 263 — 2026-09-16</a><a href="/read/get-schooled/chapter-262">Chapter 262 — 2026-09-10</a></span></li><li><a href="/manhwa/surviving-the-apocalypse"><strong>Surviving the Apocalypse</strong><span>Song</span><span>Horror, Action, Drama</span></a><span class="seo-chapters"><a href="/read/surviving-the-apocalypse/chapter-109">Chapter 109 — 2026-09-23</a><a href="/read/surviving-the-apocalypse/chapter-108">Chapter 108 — 2026-09-23</a><a href="/read/surviving-the-apocalypse/chapter-107">Chapter 107 — 2026-09-21</a></span></li><li><a href="/manhwa/all-my-alter-egos-are-tycoons"><strong>All My Alter Egos Are Tycoons</strong><span>Lico</span><span>Action, Adventure, Drama</span></a><span class="seo-chapters"><a href="/read/all-my-alter-egos-are-tycoons/chapter-98">Chapter 98 — 2026-09-23</a><a href="/read/all-my-alter-egos-are-tycoons/chapter-97">Chapter 97 — 2026-09-17</a><a href="/read/all-my-alter-egos-are-tycoons/chapter-96">Chapter 96 — 2026-09-09</a></span></li><li><a href="/manhwa/a-rogue-guard-in-a-medieval-fantasy"><strong>A Rogue Guard in a Medieval Fantasy</strong><span>Teddy Bear</span><span>Action, Drama, Fantasy</span></a><span class="seo-chapters"><a href="/read/a-rogue-guard-in-a-medieval-fantasy/chapter-50">Chapter 50 — 2026-09-23</a><a href="/read/a-rogue-guard-in-a-medieval-fantasy/chapter-49">Chapter 49 — 2026-09-15</a><a href="/read/a-rogue-guard-in-a-medieval-fantasy/chapter-48">Chapter 48 — 2026-09-07</a></span></li><li><a href="/manhwa/villain-classroom"><strong>Villain Classroom</strong><span>Jooho</span><span>Psychological, Drama, Slice of Life</span></a><span class="seo-chapters"><a href="/read/villain-classroom/chapter-64">Chapter 64 — 2026-09-23</a><a href="/read/villain-classroom/chapter-63">Chapter 63 — 2026-09-11</a><a href="/read/villain-classroom/chapter-62">Chapter 62 — 2026-08-24</a></span></li><li><a href="/manhwa/the-genius-wants-to-be-ordinary"><strong>The Genius Wants to be Ordinary!</strong><span>Silk Shell (비단가리비)</span><span>Sci-Fi, Drama, Fantasy</span></a><span class="seo-chapters"><a href="/read/the-genius-wants-to-be-ordinary/chapter-74">Chapter 74 — 2026-09-23</a><a href="/read/the-genius-wants-to-be-ordinary/chapter-73">Chapter 73 — 2026-09-10</a><a href="/read/the-genius-wants-to-be-ordinary/chapter-72">Chapter 72 — 2026-09-04</a></span></li><li><a href="/manhwa/plagiarism-suspicion"><strong>Plagiarism Suspicion</strong><span>Hwang Youngchan</span><span>Drama, Horror</span></a><span class="seo-chapters"><a href="/read/plagiarism-suspicion/chapter-25">Chapter 25 — 2026-09-23</a><a href="/read/plagiarism-suspicion/chapter-24">Chapter 24 — 2026-09-17</a><a href="/read/plagiarism-suspicion/chapter-23">Chapter 23 — 2026-09-10</a></span></li><li><a href="/manhwa/shamoneyism"><strong>ShaMONEYism</strong><span>Narack (나락)</span><span>Action, Drama, Fantasy</span></a><span class="seo-chapters"><a href="/read/shamoneyism/chapter-52">Chapter 52 — 2026-09-23</a><a href="/read/shamoneyism/chapter-51">Chapter 51 — 2026-09-17</a><a href="/read/shamoneyism/chapter-50">Chapter 50 — 2026-09-10</a></span></li><li><a href="/manhwa/infinite-leveling-murim"><strong>Infinite Leveling: Murim</strong><span>Gonbung</span><span>Action, Adventure, Comedy</span></a><span class="seo-chapters"><a href="/read/infinite-leveling-murim/chapter-271">Chapter 271 — 2026-09-23</a><a href="/read/infinite-leveling-murim/chapter-270">Chapter 270 — 2026-09-17</a><a href="/read/infinite-leveling-murim/chapter-269">Chapter 269 — 2026-09-10</a></span></li><li><a href="/manhwa/ancient-animals"><strong>Ancient Animals</strong><span>Kojehyeong</span><span>Historical, Drama, Adventure</span></a><span class="seo-chapters"><a href="/read/ancient-animals/chapter-64">Chapter 64 — 2026-09-23</a><a href="/read/ancient-animals/chapter-63">Chapter 63 — 2026-09-17</a><a href="/read/ancient-animals/chapter-62">Chapter 62 — 2026-09-09</a></span></li><li><a href="/manhwa/hardcore-leveling-warrior"><strong>Hardcore Leveling Warrior</strong><span>Kim Se Hun</span><span>Drama, Action, Adventure</span></a><span class="seo-chapters"><a href="/read/hardcore-leveling-warrior/chapter-466">Chapter 466 — 2026-09-23</a><a href="/read/hardcore-leveling-warrior/chapter-465">Chapter 465 — 2026-09-17</a><a href="/read/hardcore-leveling-warrior/chapter-464">Chapter 464 — 2026-09-09</a></span></li><li><a href="/manhwa/worlds-strongest-troll"><strong>World's Strongest Troll</strong><span>Park Jong Suk</span><span>Action, Drama, Fantasy</span></a><span class="seo-chapters"><a href="/read/worlds-strongest-troll/chapter-190">Chapter 190 — 2026-09-23</a><a href="/read/worlds-strongest-troll/chapter-189">Chapter 189 — 2026-09-17</a><a href="/read/worlds-strongest-troll/chapter-188">Chapter 188 — 2026-09-09</a></span></li><li><a href="/manhwa/youngest-scion-of-the-mages"><strong>Youngest Scion of the Mages</strong><span>Bichyu</span><span>Action, Adventure, Fantasy</span></a><span class="seo-chapters"><a href="/read/youngest-scion-of-the-mages/chapter-136">Chapter 136 — 2026-09-23</a><a href="/read/youngest-scion-of-the-mages/chapter-135">Chapter 135 — 2026-09-16</a><a href="/read/youngest-scion-of-the-mages/chapter-134">Chapter 134 — 2026-09-09</a></span></li><li><a href="/manhwa/murim-psychopath"><strong>Murim Psychopath</strong><span>Gonbung</span><span>Action, Adventure, Fantasy</span></a><span class="seo-chapters"><a href="/read/murim-psychopath/chapter-44">Chapter 44 — 2026-09-23</a><a href="/read/murim-psychopath/chapter-43">Chapter 43 — 2026-09-16</a><a href="/read/murim-psychopath/chapter-42">Chapter 42 — 2026-09-09</a></span></li><li><a href="/manhwa/return-of-the-mount-hua-sect"><strong>Return of the Mount Hua Sect</strong><span>Biga (비가)</span><span>Action, Adventure, Fantasy</span></a><span class="seo-chapters"><a href="/read/return-of-the-mount-hua-sect/chapter-181">Chapter 181 — 2026-09-23</a><a href="/read/return-of-the-mount-hua-sect/chapter-180">Chapter 180 — 2026-09-16</a><a href="/read/return-of-the-mount-hua-sect/chapter-179">Chapter 179 — 2026-09-09</a></span></li><li><a href="/manhwa/star-fostered-swordmaster"><strong>Star-Fostered Swordmaster</strong><span>Hong Dae Eui (홍대의)</span><span>Historical, Action, Drama</span></a><span class="seo-chapters"><a href="/read/star-fostered-swordmaster/chapter-139">Chapter 139 — 2026-09-23</a><a href="/read/star-fostered-swordmaster/chapter-138">Chapter 138 — 2026-09-17</a><a href="/read/star-fostered-swordmaster/chapter-137">Chapter 137 — 2026-09-09</a></span></li><li><a href="/manhwa/infinite-mage"><strong>Infinite Mage</strong><span>REDICE studio</span><span>Action, Adventure, Fantasy</span></a><span class="seo-chapters"><a href="/read/infinite-mage/chapter-187">Chapter 187 — 2026-09-23</a><a href="/read/infinite-mage/chapter-186">Chapter 186 — 2026-09-16</a><a href="/read/infinite-mage/chapter-185">Chapter 185 — 2026-09-09</a></span></li><li><a href="/manhwa/the-investor-who-sees-the-future"><strong>The Investor Who Sees The Future</strong><span>Lim Young-Yoon (임영윤)</span><span>Comedy, Drama, Supernatural</span></a><span class="seo-chapters"><a href="/read/the-investor-who-sees-the-future/chapter-106">Chapter 106 — 2026-09-23</a><a href="/read/the-investor-who-sees-the-future/chapter-105">Chapter 105 — 2026-09-17</a><a href="/read/the-investor-who-sees-the-future/chapter-104">Chapter 104 — 2026-09-10</a></span></li><li><a href="/manhwa/i-became-the-first-prince-legend-of-swords-song"><strong>I Became the First Prince: Legend of Sword's Song</strong><span>Glumph</span><span>Fantasy, Action, Adventure</span></a><span class="seo-chapters"><a href="/read/i-became-the-first-prince-legend-of-swords-song/chapter-54">Chapter 54 — 2026-09-23</a><a href="/read/i-became-the-first-prince-legend-of-swords-song/chapter-53">Chapter 53 — 2026-09-16</a><a href="/read/i-became-the-first-prince-legend-of-swords-song/chapter-52">Chapter 52 — 2026-09-09</a></span></li><li><a href="/manhwa/vigilante-part-2"><strong>Vigilante Part 2</strong><span>Kim Gyu-Sam (김규삼)</span><span>Psychological, Action, Drama</span></a><span class="seo-chapters"><a href="/read/vigilante-part-2/chapter-108">Chapter 108 — 2026-09-23</a><a href="/read/vigilante-part-2/chapter-107">Chapter 107 — 2026-09-21</a><a href="/read/vigilante-part-2/chapter-106">Chapter 106 — 2026-09-19</a></span></li><li><a href="/manhwa/the-knight-king-who-returned-with-a-god"><strong>The Knight King Who Returned With a God</strong><span>Salam Sallyeo (사람살려.)</span><span>Action, Drama, Fantasy</span></a><span class="seo-chapters"><a href="/read/the-knight-king-who-returned-with-a-god/chapter-183">Chapter 183 — 2026-09-23</a><a href="/read/the-knight-king-who-returned-with-a-god/chapter-182">Chapter 182 — 2026-09-16</a><a href="/read/the-knight-king-who-returned-with-a-god/chapter-181">Chapter 181 — 2026-09-09</a></span></li><li><a href="/manhwa/i-reincarnated-as-a-legendary-surgeon"><strong>I Reincarnated as a Legendary Surgeon</strong><span>Dongshin Park</span><span>Sci-Fi, Historical, Action</span></a><span class="seo-chapters"><a href="/read/i-reincarnated-as-a-legendary-surgeon/chapter-218">Chapter 218 — 2026-09-23</a><a href="/read/i-reincarnated-as-a-legendary-surgeon/chapter-217">Chapter 217 — 2026-09-16</a><a href="/read/i-reincarnated-as-a-legendary-surgeon/chapter-216">Chapter 216 — 2026-09-10</a></span></li><li><a href="/manhwa/study-group"><strong>Study Group</strong><span>Hyungwuk Shin</span><span>Action, Comedy, Drama</span></a><span class="seo-chapters"><a href="/read/study-group/chapter-342">Chapter 342 — 2026-09-23</a><a href="/read/study-group/chapter-341">Chapter 341 — 2026-09-06</a><a href="/read/study-group/chapter-340">Chapter 340 — 2026-09-01</a></span></li><li><a href="/manhwa/restaurant-in-the-after-life"><strong>Restaurant in the After Life</strong><span>Assam 아쌈</span><span>Drama, Fantasy, Slice of Life</span></a><span class="seo-chapters"><a href="/read/restaurant-in-the-after-life/chapter-135">Chapter 135 — 2026-09-23</a><a href="/read/restaurant-in-the-after-life/chapter-134">Chapter 134 — 2026-09-12</a><a href="/read/restaurant-in-the-after-life/chapter-133">Chapter 133 — 2026-09-01</a></span></li><li><a href="/manhwa/i-became-a-married-man-in-another-world"><strong>I Became A Married Man in Another World</strong><span>베르헤라</span><span>Action, Romance, Adventure</span></a><span class="seo-chapters"><a href="/read/i-became-a-married-man-in-another-world/chapter-27">Chapter 27 — 2026-09-23</a><a href="/read/i-became-a-married-man-in-another-world/chapter-26">Chapter 26 — 2026-09-15</a><a href="/read/i-became-a-married-man-in-another-world/chapter-25">Chapter 25 — 2026-09-10</a></span></li><li><a href="/manhwa/regressing-as-the-reincarnated-bastard-of-the-sword-clan"><strong>Regressing As The Reincarnated Bastard Of The Sword Clan</strong><span>Bread squirrel (빵먹는다람쥐)</span><span>Drama, Fantasy, Sci-Fi</span></a><span class="seo-chapters"><a href="/read/regressing-as-the-reincarnated-bastard-of-the-sword-clan/chapter-113">Chapter 113 — 2026-09-23</a><a href="/read/regressing-as-the-reincarnated-bastard-of-the-sword-clan/chapter-112">Chapter 112 — 2026-09-16</a><a href="/read/regressing-as-the-reincarnated-bastard-of-the-sword-clan/chapter-111">Chapter 111 — 2026-09-09</a></span></li><li><a href="/manhwa/the-dark-magician-transmigrates-after-66666-years"><strong>The Dark Magician Transmigrates After 66666 Years</strong><span>Hwabong</span><span>Adventure, Fantasy, Drama</span></a><span class="seo-chapters"><a href="/read/the-dark-magician-transmigrates-after-66666-years/chapter-199">Chapter 199 — 2026-09-23</a><a href="/read/the-dark-magician-transmigrates-after-66666-years/chapter-198">Chapter 198 — 2026-09-23</a><a href="/read/the-dark-magician-transmigrates-after-66666-years/chapter-197">Chapter 197 — 2026-09-23</a></span></li><li><a href="/manhua/i-am-the-fated-villain"><strong>I Am the Fated Villain</strong><span>天命反派</span><span>Action, Drama, Fantasy</span></a><span class="seo-chapters"><a href="/read/i-am-the-fated-villain/chapter-359">Chapter 359 — 2026-09-23</a><a href="/read/i-am-the-fated-villain/chapter-358">Chapter 358 — 2026-09-22</a><a href="/read/i-am-the-fated-villain/chapter-357">Chapter 357 — 2026-09-16</a></span></li><li><a href="/manhwa/never-mind"><strong>Never Mind</strong><span>NETS</span><span>Fantasy</span></a><span class="seo-chapters"><a href="/read/never-mind/chapter-13">Chapter 13 — 2026-09-22</a><a href="/read/never-mind/chapter-12">Chapter 12 — 2026-09-22</a><a href="/read/never-mind/chapter-11">Chapter 11 — 2026-09-22</a></span></li><li><a href="/manhwa/to-be-you-even-just-for-a-day"><strong>To Be You, Even Just For a Day</strong><span>Sam</span><span>Drama, Fantasy, Romance</span></a><span class="seo-chapters"><a href="/read/to-be-you-even-just-for-a-day/chapter-262">Chapter 262 — 2026-09-22</a><a href="/read/to-be-you-even-just-for-a-day/chapter-261">Chapter 261 — 2026-09-16</a><a href="/read/to-be-you-even-just-for-a-day/chapter-260">Chapter 260 — 2026-09-08</a></span></li><li><a href="/manhwa/jungle-juice"><strong>Jungle Juice</strong><span>Hyeong Eun</span><span>Action, Fantasy, Horror</span></a><span class="seo-chapters"><a href="/read/jungle-juice/chapter-220">Chapter 220 — 2026-09-22</a><a href="/read/jungle-juice/chapter-219">Chapter 219 — 2026-09-20</a><a href="/read/jungle-juice/chapter-218">Chapter 218 — 2026-09-19</a></span></li><li><a href="/manhwa/the-indomitable-martial-king"><strong>The Indomitable Martial King</strong><span>Yang Kyung-il</span><span>Action, Adventure, Sci-Fi</span></a><span class="seo-chapters"><a href="/read/the-indomitable-martial-king/chapter-152">Chapter 152 — 2026-09-22</a><a href="/read/the-indomitable-martial-king/chapter-151">Chapter 151 — 2026-09-15</a><a href="/read/the-indomitable-martial-king/chapter-150">Chapter 150 — 2026-09-08</a></span></li><li><a href="/manhwa/myst-might-mayhem"><strong>Myst, Might, Mayhem</strong><span>Hanjung Wolya (한중월야)</span><span>Action, Fantasy, Drama</span></a><span class="seo-chapters"><a href="/read/myst-might-mayhem/chapter-117">Chapter 117 — 2026-09-22</a><a href="/read/myst-might-mayhem/chapter-116">Chapter 116 — 2026-09-22</a><a href="/read/myst-might-mayhem/chapter-115">Chapter 115 — 2026-09-15</a></span></li><li><a href="/manhwa/the-chick-class-hunter-is-filial"><strong>The Chick-Class Hunter Is Filial!</strong><span>Milcha</span><span>Comedy, Drama, Fantasy</span></a><span class="seo-chapters"><a href="/read/the-chick-class-hunter-is-filial/chapter-85">Chapter 85 — 2026-09-22</a><a href="/read/the-chick-class-hunter-is-filial/chapter-84">Chapter 84 — 2026-09-22</a><a href="/read/the-chick-class-hunter-is-filial/chapter-83">Chapter 83 — 2026-08-29</a></span></li><li><a href="/manhwa/the-great-mage-returns-after-4000-years"><strong>The Great Mage Returns After 4000 Years</strong><span>Barnacle</span><span>Action, Adventure, Fantasy</span></a><span class="seo-chapters"><a href="/read/the-great-mage-returns-after-4000-years/chapter-275">Chapter 275 — 2026-09-22</a><a href="/read/the-great-mage-returns-after-4000-years/chapter-274">Chapter 274 — 2026-09-15</a><a href="/read/the-great-mage-returns-after-4000-years/chapter-273">Chapter 273 — 2026-09-08</a></span></li><li><a href="/manhwa/childhood-friend-of-the-zenith"><strong>Childhood Friend of the Zenith</strong><span>Ubilam</span><span>Drama, Sci-Fi, Action</span></a><span class="seo-chapters"><a href="/read/childhood-friend-of-the-zenith/chapter-107">Chapter 107 — 2026-09-22</a><a href="/read/childhood-friend-of-the-zenith/chapter-106">Chapter 106 — 2026-09-22</a><a href="/read/childhood-friend-of-the-zenith/chapter-105">Chapter 105 — 2026-09-21</a></span></li><li><a href="/manhwa/the-player-that-cant-level-up"><strong>The Player That Can't Level Up</strong><span>앵무새</span><span>Action, Adventure, Fantasy</span></a><span class="seo-chapters"><a href="/read/the-player-that-cant-level-up/chapter-245">Chapter 245 — 2026-09-22</a><a href="/read/the-player-that-cant-level-up/chapter-244">Chapter 244 — 2026-09-15</a><a href="/read/the-player-that-cant-level-up/chapter-243">Chapter 243 — 2026-09-08</a></span></li><li><a href="/manhwa/absolute-regression"><strong>Absolute Regression</strong><span>Park Jin-hwan</span><span>Action, Adventure, Fantasy</span></a><span class="seo-chapters"><a href="/read/absolute-regression/chapter-120">Chapter 120 — 2026-09-22</a><a href="/read/absolute-regression/chapter-119">Chapter 119 — 2026-09-15</a><a href="/read/absolute-regression/chapter-118">Chapter 118 — 2026-09-08</a></span></li><li><a href="/manhwa/the-tutorial-is-too-hard"><strong>The Tutorial is Too Hard</strong><span>Gandara</span><span>Action, Adventure, Fantasy</span></a><span class="seo-chapters"><a href="/read/the-tutorial-is-too-hard/chapter-289">Chapter 289 — 2026-09-22</a><a href="/read/the-tutorial-is-too-hard/chapter-288">Chapter 288 — 2026-09-15</a><a href="/read/the-tutorial-is-too-hard/chapter-287">Chapter 287 — 2026-09-08</a></span></li><li><a href="/manhwa/the-wandering-knights-survival-manual"><strong>The Wandering Knight's Survival Manual</strong><span>Writing Machine (글쓰는기계)</span><span>Action, Adventure, Drama</span></a><span class="seo-chapters"><a href="/read/the-wandering-knights-survival-manual/chapter-60">Chapter 60 — 2026-09-22</a><a href="/read/the-wandering-knights-survival-manual/chapter-59">Chapter 59 — 2026-09-15</a><a href="/read/the-wandering-knights-survival-manual/chapter-58">Chapter 58 — 2026-09-08</a></span></li><li><a href="/manhwa/the-regressed-mercenarys-machinations"><strong>The Regressed Mercenary's Machinations</strong><span>Park Jin-Seok (박진석)</span><span>Drama, Sci-Fi, Action</span></a><span class="seo-chapters"><a href="/read/the-regressed-mercenarys-machinations/chapter-107">Chapter 107 — 2026-09-22</a><a href="/read/the-regressed-mercenarys-machinations/chapter-106">Chapter 106 — 2026-09-15</a><a href="/read/the-regressed-mercenarys-machinations/chapter-105">Chapter 105 — 2026-09-08</a></span></li><li><a href="/manhwa/a-strange-but-effective-villainess-life"><strong>A Strange but Effective Villainess Life</strong><span>Eddie</span><span>Romance, Drama, Fantasy</span></a><span class="seo-chapters"><a href="/read/a-strange-but-effective-villainess-life/chapter-62">Chapter 62 — 2026-09-22</a><a href="/read/a-strange-but-effective-villainess-life/chapter-61">Chapter 61 — 2026-09-22</a><a href="/read/a-strange-but-effective-villainess-life/chapter-60">Chapter 60 — 2026-09-22</a></span></li><li><a href="/manhwa/the-shepherd-wizard"><strong>The Shepherd Wizard</strong><span>JeTae Yoo (유제태)</span><span>Action, Thriller, Adventure</span></a><span class="seo-chapters"><a href="/read/the-shepherd-wizard/chapter-37">Chapter 37 — 2026-09-22</a><a href="/read/the-shepherd-wizard/chapter-36">Chapter 36 — 2026-09-15</a><a href="/read/the-shepherd-wizard/chapter-35">Chapter 35 — 2026-09-09</a></span></li><li><a href="/manhwa/fog-land"><strong>Fog Land</strong><span>Pogo</span><span>Action, Thriller, Adventure</span></a><span class="seo-chapters"><a href="/read/fog-land/chapter-55">Chapter 55 — 2026-09-22</a><a href="/read/fog-land/chapter-54">Chapter 54 — 2026-09-14</a><a href="/read/fog-land/chapter-53">Chapter 53 — 2026-09-12</a></span></li><li><a href="/manhwa/whats-wrong-with-being-the-villainess"><strong>What's Wrong with Being the Villainess?</strong><span>Manggokim (망고킴)</span><span>Fantasy, Romance, Comedy</span></a><span class="seo-chapters"><a href="/read/whats-wrong-with-being-the-villainess/chapter-106">Chapter 106 — 2026-09-22</a><a href="/read/whats-wrong-with-being-the-villainess/chapter-105">Chapter 105 — 2026-09-14</a><a href="/read/whats-wrong-with-being-the-villainess/chapter-104">Chapter 104 — 2026-09-14</a></span></li><li><a href="/manhwa/under-the-oak-tree"><strong>Under the Oak Tree</strong><span>P</span><span>Drama, Fantasy, Romance</span></a><span class="seo-chapters"><a href="/read/under-the-oak-tree/chapter-167">Chapter 167 — 2026-09-22</a><a href="/read/under-the-oak-tree/chapter-166">Chapter 166 — 2026-09-22</a><a href="/read/under-the-oak-tree/chapter-165">Chapter 165 — 2026-09-22</a></span></li><li><a href="/manhwa/the-novels-extra"><strong>The Novel’s Extra</strong><span>Jee Gab Song (지갑송)</span><span>Action, Adventure, Romance</span></a><span class="seo-chapters"><a href="/read/the-novels-extra/chapter-173">Chapter 173 — 2026-09-22</a><a href="/read/the-novels-extra/chapter-172">Chapter 172 — 2026-09-15</a><a href="/read/the-novels-extra/chapter-171">Chapter 171 — 2026-09-08</a></span></li></ul></section>
+      <p><a href="/updates" rel="prev">← Latest updates</a> · <a href="/updates/page/3" rel="next">Page 3 →</a></p>
+    <p style="margin:24px 0;text-align:center;font-size:13px"><a href="https://www.profitableratecpmnetwork.com/rwke4e7k?key=2b2a096dea78bd8cb7bdc2b9ee370110" target="_blank" rel="noopener nofollow sponsored">Sponsored</a></p></main></div></div>
+    <script src="https://pl31102148.profitableratecpmnetwork.com/a4/a1/fe/a4a1fe30d63892bdc56fb6286e4439c3.js"></script>
+  </body>
+</html>

@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#141413" />
+    <meta name="google-adsense-account" content="ca-pub-9672720678512933" />
+    <link rel="icon" type="image/png" href="/logo1.png" />
+    <title>Prince, Don’t Do This! Manhua – Read Free Online | MANHWAS</title>
+    <link rel="canonical" href="https://manhwas.site/manhua/prince-dont-do-this" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Cover CDN: every card/hero cover loads from here — preconnect removes
+         a full mobile TLS+DNS round-trip from the LCP image (the homepage
+         hero cover IS the LCP element; field data showed ~6s on mobile) -->
+    <link rel="preconnect" href="https://cdn.manhwas.site" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.manhwas.site">
+    <!-- Non-blocking font CSS: text paints in system-ui immediately and
+         swaps to Inter when loaded (the face uses font-display: swap).
+         The prerendered #seo-content block already uses system-ui, so the
+         crawler-visible content never waits on fonts. -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    </noscript>
+    <!-- critical pre-hydration styles: prevents white flash before React mounts -->
+    <style>
+      body { margin: 0; background: #141413; }
+      #seo-content {
+        padding: 24px;
+        color: #d8d5d1;
+        font-family: system-ui, sans-serif;
+        line-height: 1.5;
+        max-width: 1240px;
+        margin: 0 auto;
+        overflow-wrap: break-word;
+      }
+      #seo-content a { color: #e06a55; text-decoration: underline; }
+      #seo-content ul,
+      #seo-content nav { list-style: none; margin: 0; padding: 0; }
+      #seo-content h1 { font-size: 1.75rem; font-weight: 700; color: #f0efeb; margin: 0 0 8px; }
+      #seo-content h2 { font-size: 1.125rem; font-weight: 600; color: #f0efeb; margin: 24px 0 8px; }
+      #seo-content p { margin: 0 0 12px; color: #b3b1a8; }
+      #seo-content .seo-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 12px;
+      }
+    </style>
+    <!-- Popunder partner script. async: must NOT block HTML parsing —
+         a synchronous script here delays first paint AND React mount by the
+         ad network's full response time (worst case seconds on mobile),
+         which used to leave the whole page (hero + Trending + Updates) blank.
+         The script self-injects its anchors when it eventually runs, so the
+         popunder behavior is unchanged; only its start becomes non-blocking. -->
+    <script async src="https://pl31102147.profitableratecpmnetwork.com/c8/ce/72/c8ce72a5a8e626dad922ab986b7f329d.js"></script>
+    <!-- Ad frequency cap: ONE visual ad per page view. When the visitor closes
+         it, every further body-level fixed ad iframe is removed until the next
+         page view (SPA route change or refresh). Never touches anything inside
+         #root — the app itself renders no fixed iframes. -->
+    <script>
+      (function () {
+        try {
+          var state = { shown: false, suppressed: false };
+          function isAdIframe(el) {
+            if (!el || el.tagName !== 'IFRAME') return false;
+            if (el.closest && el.closest('#root')) return false;
+            try {
+              if (getComputedStyle(el).position !== 'fixed') return false;
+            } catch (e) {
+              return false;
+            }
+            return true;
+          }
+          function scan() {
+            var iframes = document.querySelectorAll('body iframe');
+            for (var i = 0; i < iframes.length; i++) {
+              var f = iframes[i];
+              if (!isAdIframe(f)) continue;
+              if (state.suppressed) {
+                f.remove();
+                continue;
+              }
+              if (!state.shown) {
+                state.shown = true;
+                // enforce "only one": drop any sibling ad layers present in
+                // the same batch so a single page view shows a single ad
+                for (var j = 0; j < iframes.length; j++) {
+                  if (j !== i && isAdIframe(iframes[j])) iframes[j].remove();
+                }
+                watchForClose(f);
+                break;
+              }
+            }
+            hideAdHoverUrls();
+            sweepOverlays();
+          }
+
+          // The popunder script injects an invisible full-page anchor, so
+          // the browser status bar shows its long tracking URL whenever the
+          // mouse is anywhere over a page. Neutralize the HOVER DISPLAY
+          // without touching ad behavior: the href is stripped (no status
+          // text) and restored on mousedown/touchstart, so the actual click
+          // still goes through the ad's own anchor with its original URL,
+          // target and listeners — revenue path unchanged. Internal links
+          // are never touched.
+          function hideAdHoverUrls() {
+            var anchors = document.getElementsByTagName('a');
+            for (var k = 0; k < anchors.length; k++) {
+              var a = anchors[k];
+              if (a.dataset.hoverLocked === '1') continue;
+              var href = a.getAttribute('href') || '';
+              if (href.length > 80 && a.hostname !== location.hostname) {
+                a.dataset.hoverLocked = '1';
+                a.dataset.keepHref = href;
+                var show = function () {
+                  if (this.dataset.keepHref) this.setAttribute('href', this.dataset.keepHref);
+                };
+                var hide = function () { this.removeAttribute('href'); };
+                a.addEventListener('mousedown', show);
+                a.addEventListener('touchstart', show, { passive: true });
+                a.addEventListener('focus', show);
+                a.addEventListener('mouseleave', hide);
+                a.addEventListener('blur', hide);
+                a.removeAttribute('href');
+              }
+            }
+          }
+          // "Have to press twice" fix: the popunder injects an invisible
+          // full-viewport anchor that keeps swallowing taps after its pop
+          // attempt (especially when the popup is blocked — nothing visible
+          // happens, so the page feels stuck). The FIRST interaction still
+          // goes through the ad's own anchor (revenue path unchanged); every
+          // later pointer event passes through to the real UI.
+          function defuseFullPageAnchor(a) {
+            if (a.dataset.overlayDefused === '1') return;
+            a.dataset.overlayDefused = '1';
+            var pass = function () {
+              setTimeout(function () { a.style.pointerEvents = 'none'; }, 0);
+            };
+            a.addEventListener('pointerdown', pass, { capture: true, passive: true });
+            a.addEventListener('click', pass, { capture: true });
+          }
+          function sweepOverlays() {
+            var links = document.getElementsByTagName('a');
+            var vw = window.innerWidth, vh = window.innerHeight;
+            for (var m = 0; m < links.length; m++) {
+              var a = links[m];
+              if (a.dataset.overlayDefused === '1') continue;
+              if (a.closest && a.closest('#root')) continue;
+              var href = a.getAttribute('href') || '';
+              if (href.length <= 80 && a.hostname === location.hostname) continue;
+              var r = a.getBoundingClientRect();
+              if (r.width * r.height < 0.8 * vw * vh) continue;
+              try {
+                var pos = getComputedStyle(a).position;
+                if (pos !== 'fixed' && pos !== 'absolute') continue;
+              } catch (e) { continue; }
+              defuseFullPageAnchor(a);
+            }
+          }
+          function watchForClose(el) {
+            var mo = new MutationObserver(function () {
+              if (!document.documentElement.contains(el)) {
+                mo.disconnect();
+                suppress();
+              }
+            });
+            mo.observe(document.documentElement, { childList: true, subtree: true });
+          }
+          function suppress() {
+            state.suppressed = true;
+            document.documentElement.setAttribute('data-adcap', '1');
+            scan();
+          }
+          // one ad per PAGE VIEW: navigating to another page re-arms the cap
+          function reset() {
+            state.suppressed = false;
+            state.shown = false;
+            document.documentElement.removeAttribute('data-adcap');
+          }
+          var push = history.pushState;
+          history.pushState = function () {
+            var r = push.apply(this, arguments);
+            reset();
+            return r;
+          };
+          window.addEventListener('popstate', reset);
+          // rAF-coalesced: a page mount triggers dozens of mutation batches,
+          // and scan() queries every body iframe each time — one scan per
+          // frame keeps the cap behavior while cutting SPA navigation cost
+          var scanQueued = false;
+          var queueScan = function () {
+            if (scanQueued) return;
+            scanQueued = true;
+            requestAnimationFrame(function () {
+              scanQueued = false;
+              scan();
+            });
+          };
+          new MutationObserver(queueScan).observe(document.documentElement, { childList: true, subtree: true });
+          document.addEventListener('DOMContentLoaded', scan);
+        } catch (e) {}
+      })();
+    </script>
+    <script type="module" crossorigin src="/assets/index-DryuG25J.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DABcpq0e.css">
+    <meta name="description" content="Read Prince, Don’t Do This! free online by Dong Man Tang — chapter 355.2 just dropped, 374 chapters and counting. In order to fulfil her mission of bringing…" />
+    <meta name="robots" content="index,follow" />
+    <meta property="og:title" content="Prince, Don’t Do This! Manhua – Read Free Online | MANHWAS" />
+    <meta property="og:description" content="Read Prince, Don’t Do This! free online by Dong Man Tang — chapter 355.2 just dropped, 374 chapters and counting. In order to fulfil her mission of bringing…" />
+    <meta property="og:url" content="https://manhwas.site/manhua/prince-dont-do-this" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="MANHWAS" />
+    <meta property="og:image" content="https://cdn.manhwas.site/covers/f3f927128870d63c0c2c8e8e273c5d51.jpg" />
+    <script type="application/ld+json">[{"@context":"https://schema.org","@type":"Book","name":"Prince, Don’t Do This!","image":["https://cdn.manhwas.site/covers/f3f927128870d63c0c2c8e8e273c5d51.jpg"],"alternateName":["Vương Gia! Đừng Làm Vậy","Vương Gia! Đừng Làm Bậy","Cửu Gia Đừng Làm Vậy","Cửu Lộ Phi Hương"],"author":{"@type":"Person","name":"Dong Man Tang"},"genre":["Romance"],"inLanguage":"en","bookEdition":"Completed","abstract":"In order to fulfil her mission of bringing peace to the land, the Princess of Uighur is going to travel to Changan and marry a prince. Her task is extremely difficult!","url":"https://manhwas.site/manhua/prince-dont-do-this"},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://manhwas.site/"},{"@type":"ListItem","position":2,"name":"Catalog","item":"https://manhwas.site/catalog"},{"@type":"ListItem","position":3,"name":"Prince, Don’t Do This!","item":"https://manhwas.site/manhua/prince-dont-do-this"}]}]</script>
+  </head>
+  <body class="antialiased selection:bg-[#D95743] selection:text-white">
+    <div id="root"><div id="seo-content"><main>
+    <nav aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/catalog">Catalog</a> › Prince, Don’t Do This!</nav>
+    <h1>Prince, Don’t Do This!</h1>
+    <p>In order to fulfil her mission of bringing peace to the land, the Princess of Uighur is going to travel to Changan and marry a prince. Her task is extremely difficult!</p>
+    <p>Also known as: Vương Gia! Đừng Làm Vậy · Vương Gia! Đừng Làm Bậy · Cửu Gia Đừng Làm Vậy · Cửu Lộ Phi Hương</p>
+    <p>Prince, Don’t Do This! is a completed manhua by Dong Man Tang with 374 chapters on MANHWAS, spanning Romance. Start from chapter 1 or jump straight to the latest release — everything is free to read and the list updates as new chapters drop.</p>
+    <p>Author: <a href="/author/dong-man-tang">Dong Man Tang</a> (all series by this author) · Status: Completed · 374 chapters · Rated 4/5</p>
+    <p>Genres: <a href="/genres/romance">Romance</a></p>
+    <p><a href="/read/prince-dont-do-this/chapter-355.2">Read the latest chapter (Ch. 355.2)</a></p>
+    <section><h2>Chapters</h2><ul><li><a href="/read/prince-dont-do-this/chapter-355.2">Chapter 355.2</a></li><li><a href="/read/prince-dont-do-this/chapter-355.1">Chapter 355.1</a></li><li><a href="/read/prince-dont-do-this/chapter-355">Chapter 355</a></li><li><a href="/read/prince-dont-do-this/chapter-354">Chapter 354</a></li><li><a href="/read/prince-dont-do-this/chapter-353">Chapter 353</a></li><li><a href="/read/prince-dont-do-this/chapter-352">Chapter 352</a></li><li><a href="/read/prince-dont-do-this/chapter-351">Chapter 351</a></li><li><a href="/read/prince-dont-do-this/chapter-350">Chapter 350</a></li><li><a href="/read/prince-dont-do-this/chapter-349">Chapter 349</a></li><li><a href="/read/prince-dont-do-this/chapter-348">Chapter 348</a></li><li><a href="/read/prince-dont-do-this/chapter-347">Chapter 347</a></li><li><a href="/read/prince-dont-do-this/chapter-346">Chapter 346</a></li><li><a href="/read/prince-dont-do-this/chapter-345">Chapter 345</a></li><li><a href="/read/prince-dont-do-this/chapter-344">Chapter 344</a></li><li><a href="/read/prince-dont-do-this/chapter-343">Chapter 343</a></li><li><a href="/read/prince-dont-do-this/chapter-342">Chapter 342</a></li><li><a href="/read/prince-dont-do-this/chapter-341">Chapter 341</a></li><li><a href="/read/prince-dont-do-this/chapter-339">Chapter 339</a></li><li><a href="/read/prince-dont-do-this/chapter-338">Chapter 338</a></li><li><a href="/read/prince-dont-do-this/chapter-337">Chapter 337</a></li><li><a href="/read/prince-dont-do-this/chapter-336">Chapter 336</a></li><li><a href="/read/prince-dont-do-this/chapter-335">Chapter 335</a></li><li><a href="/read/prince-dont-do-this/chapter-334">Chapter 334</a></li><li><a href="/read/prince-dont-do-this/chapter-333">Chapter 333</a></li><li><a href="/read/prince-dont-do-this/chapter-332">Chapter 332</a></li><li><a href="/read/prince-dont-do-this/chapter-331">Chapter 331</a></li><li><a href="/read/prince-dont-do-this/chapter-330">Chapter 330</a></li><li><a href="/read/prince-dont-do-this/chapter-329">Chapter 329</a></li><li><a href="/read/prince-dont-do-this/chapter-328">Chapter 328</a></li><li><a href="/read/prince-dont-do-this/chapter-327">Chapter 327</a></li><li><a href="/read/prince-dont-do-this/chapter-326">Chapter 326</a></li><li><a href="/read/prince-dont-do-this/chapter-325">Chapter 325</a></li><li><a href="/read/prince-dont-do-this/chapter-324">Chapter 324</a></li><li><a href="/read/prince-dont-do-this/chapter-323">Chapter 323</a></li><li><a href="/read/prince-dont-do-this/chapter-322">Chapter 322</a></li><li><a href="/read/prince-dont-do-this/chapter-321">Chapter 321</a></li><li><a href="/read/prince-dont-do-this/chapter-320">Chapter 320</a></li><li><a href="/read/prince-dont-do-this/chapter-319">Chapter 319</a></li><li><a href="/read/prince-dont-do-this/chapter-318">Chapter 318</a></li><li><a href="/read/prince-dont-do-this/chapter-317">Chapter 317</a></li><li><a href="/read/prince-dont-do-this/chapter-316">Chapter 316</a></li><li><a href="/read/prince-dont-do-this/chapter-315">Chapter 315</a></li><li><a href="/read/prince-dont-do-this/chapter-314.9">Chapter 314.9</a></li><li><a href="/read/prince-dont-do-this/chapter-314.8">Chapter 314.8</a></li><li><a href="/read/prince-dont-do-this/chapter-314.7">Chapter 314.7</a></li><li><a href="/read/prince-dont-do-this/chapter-314.6">Chapter 314.6</a></li><li><a href="/read/prince-dont-do-this/chapter-314.5">Chapter 314.5</a></li><li><a href="/read/prince-dont-do-this/chapter-314.4">Chapter 314.4</a></li><li><a href="/read/prince-dont-do-this/chapter-314.3">Chapter 314.3</a></li><li><a href="/read/prince-dont-do-this/chapter-314.2">Chapter 314.2</a></li><li><a href="/read/prince-dont-do-this/chapter-314.1">Chapter 314.1</a></li><li><a href="/read/prince-dont-do-this/chapter-314">Chapter 314</a></li><li><a href="/read/prince-dont-do-this/chapter-313.9">Chapter 313.9</a></li><li><a href="/read/prince-dont-do-this/chapter-313.8">Chapter 313.8</a></li><li><a href="/read/prince-dont-do-this/chapter-313.7">Chapter 313.7</a></li><li><a href="/read/prince-dont-do-this/chapter-313.6">Chapter 313.6</a></li><li><a href="/read/prince-dont-do-this/chapter-313.5">Chapter 313.5</a></li><li><a href="/read/prince-dont-do-this/chapter-313.4">Chapter 313.4</a></li><li><a href="/read/prince-dont-do-this/chapter-313.3">Chapter 313.3</a></li><li><a href="/read/prince-dont-do-this/chapter-313.2">Chapter 313.2</a></li><li><a href="/read/prince-dont-do-this/chapter-313.1">Chapter 313.1</a></li><li><a href="/read/prince-dont-do-this/chapter-313">Chapter 313</a></li><li><a href="/read/prince-dont-do-this/chapter-312">Chapter 312</a></li><li><a href="/read/prince-dont-do-this/chapter-311">Chapter 311</a></li><li><a href="/read/prince-dont-do-this/chapter-310">Chapter 310</a></li><li><a href="/read/prince-dont-do-this/chapter-309">Chapter 309</a></li><li><a href="/read/prince-dont-do-this/chapter-308">Chapter 308</a></li><li><a href="/read/prince-dont-do-this/chapter-307">Chapter 307</a></li><li><a href="/read/prince-dont-do-this/chapter-306">Chapter 306</a></li><li><a href="/read/prince-dont-do-this/chapter-305">Chapter 305</a></li><li><a href="/read/prince-dont-do-this/chapter-304">Chapter 304</a></li><li><a href="/read/prince-dont-do-this/chapter-303">Chapter 303</a></li><li><a href="/read/prince-dont-do-this/chapter-302">Chapter 302</a></li><li><a href="/read/prince-dont-do-this/chapter-301">Chapter 301</a></li><li><a href="/read/prince-dont-do-this/chapter-300">Chapter 300</a></li><li><a href="/read/prince-dont-do-this/chapter-299">Chapter 299</a></li><li><a href="/read/prince-dont-do-this/chapter-298">Chapter 298</a></li><li><a href="/read/prince-dont-do-this/chapter-297">Chapter 297</a></li><li><a href="/read/prince-dont-do-this/chapter-296">Chapter 296</a></li><li><a href="/read/prince-dont-do-this/chapter-295">Chapter 295</a></li><li><a href="/read/prince-dont-do-this/chapter-294">Chapter 294</a></li><li><a href="/read/prince-dont-do-this/chapter-293">Chapter 293</a></li><li><a href="/read/prince-dont-do-this/chapter-292">Chapter 292</a></li><li><a href="/read/prince-dont-do-this/chapter-291">Chapter 291</a></li><li><a href="/read/prince-dont-do-this/chapter-290">Chapter 290</a></li><li><a href="/read/prince-dont-do-this/chapter-289">Chapter 289</a></li><li><a href="/read/prince-dont-do-this/chapter-288">Chapter 288</a></li><li><a href="/read/prince-dont-do-this/chapter-287">Chapter 287</a></li><li><a href="/read/prince-dont-do-this/chapter-286">Chapter 286</a></li><li><a href="/read/prince-dont-do-this/chapter-285">Chapter 285</a></li><li><a href="/read/prince-dont-do-this/chapter-284">Chapter 284</a></li><li><a href="/read/prince-dont-do-this/chapter-283">Chapter 283</a></li><li><a href="/read/prince-dont-do-this/chapter-282">Chapter 282</a></li><li><a href="/read/prince-dont-do-this/chapter-281">Chapter 281</a></li><li><a href="/read/prince-dont-do-this/chapter-280">Chapter 280</a></li><li><a href="/read/prince-dont-do-this/chapter-279">Chapter 279</a></li><li><a href="/read/prince-dont-do-this/chapter-278">Chapter 278</a></li><li><a href="/read/prince-dont-do-this/chapter-277">Chapter 277</a></li><li><a href="/read/prince-dont-do-this/chapter-276">Chapter 276</a></li><li><a href="/read/prince-dont-do-this/chapter-275">Chapter 275</a></li><li><a href="/read/prince-dont-do-this/chapter-274">Chapter 274</a></li><li><a href="/read/prince-dont-do-this/chapter-273">Chapter 273</a></li><li><a href="/read/prince-dont-do-this/chapter-272">Chapter 272</a></li><li><a href="/read/prince-dont-do-this/chapter-271">Chapter 271</a></li><li><a href="/read/prince-dont-do-this/chapter-270">Chapter 270</a></li><li><a href="/read/prince-dont-do-this/chapter-269">Chapter 269</a></li><li><a href="/read/prince-dont-do-this/chapter-268">Chapter 268</a></li><li><a href="/read/prince-dont-do-this/chapter-267">Chapter 267</a></li><li><a href="/read/prince-dont-do-this/chapter-266">Chapter 266</a></li><li><a href="/read/prince-dont-do-this/chapter-265">Chapter 265</a></li><li><a href="/read/prince-dont-do-this/chapter-264">Chapter 264</a></li><li><a href="/read/prince-dont-do-this/chapter-263">Chapter 263</a></li><li><a href="/read/prince-dont-do-this/chapter-262">Chapter 262</a></li><li><a href="/read/prince-dont-do-this/chapter-261">Chapter 261</a></li><li><a href="/read/prince-dont-do-this/chapter-260">Chapter 260</a></li><li><a href="/read/prince-dont-do-this/chapter-259">Chapter 259</a></li><li><a href="/read/prince-dont-do-this/chapter-258">Chapter 258</a></li><li><a href="/read/prince-dont-do-this/chapter-257">Chapter 257</a></li><li><a href="/read/prince-dont-do-this/chapter-256">Chapter 256</a></li><li><a href="/read/prince-dont-do-this/chapter-255">Chapter 255</a></li><li><a href="/read/prince-dont-do-this/chapter-254">Chapter 254</a></li><li><a href="/read/prince-dont-do-this/chapter-253">Chapter 253</a></li><li><a href="/read/prince-dont-do-this/chapter-252">Chapter 252</a></li><li><a href="/read/prince-dont-do-this/chapter-251">Chapter 251</a></li><li><a href="/read/prince-dont-do-this/chapter-250">Chapter 250</a></li><li><a href="/read/prince-dont-do-this/chapter-249">Chapter 249</a></li><li><a href="/read/prince-dont-do-this/chapter-248">Chapter 248</a></li><li><a href="/read/prince-dont-do-this/chapter-247">Chapter 247</a></li><li><a href="/read/prince-dont-do-this/chapter-246">Chapter 246</a></li><li><a href="/read/prince-dont-do-this/chapter-245">Chapter 245</a></li><li><a href="/read/prince-dont-do-this/chapter-244">Chapter 244</a></li><li><a href="/read/prince-dont-do-this/chapter-243">Chapter 243</a></li><li><a href="/read/prince-dont-do-this/chapter-242">Chapter 242</a></li><li><a href="/read/prince-dont-do-this/chapter-241">Chapter 241</a></li><li><a href="/read/prince-dont-do-this/chapter-240">Chapter 240</a></li><li><a href="/read/prince-dont-do-this/chapter-239">Chapter 239</a></li><li><a href="/read/prince-dont-do-this/chapter-238">Chapter 238</a></li><li><a href="/read/prince-dont-do-this/chapter-237">Chapter 237</a></li><li><a href="/read/prince-dont-do-this/chapter-236">Chapter 236</a></li><li><a href="/read/prince-dont-do-this/chapter-235">Chapter 235</a></li><li><a href="/read/prince-dont-do-this/chapter-234">Chapter 234</a></li><li><a href="/read/prince-dont-do-this/chapter-233">Chapter 233</a></li><li><a href="/read/prince-dont-do-this/chapter-232">Chapter 232</a></li><li><a href="/read/prince-dont-do-this/chapter-231">Chapter 231</a></li><li><a href="/read/prince-dont-do-this/chapter-230">Chapter 230</a></li><li><a href="/read/prince-dont-do-this/chapter-229">Chapter 229</a></li><li><a href="/read/prince-dont-do-this/chapter-228">Chapter 228</a></li><li><a href="/read/prince-dont-do-this/chapter-227">Chapter 227</a></li><li><a href="/read/prince-dont-do-this/chapter-226">Chapter 226</a></li><li><a href="/read/prince-dont-do-this/chapter-225">Chapter 225</a></li><li><a href="/read/prince-dont-do-this/chapter-224">Chapter 224</a></li><li><a href="/read/prince-dont-do-this/chapter-223">Chapter 223</a></li><li><a href="/read/prince-dont-do-this/chapter-222">Chapter 222</a></li><li><a href="/read/prince-dont-do-this/chapter-221">Chapter 221</a></li><li><a href="/read/prince-dont-do-this/chapter-220">Chapter 220</a></li><li><a href="/read/prince-dont-do-this/chapter-219">Chapter 219</a></li><li><a href="/read/prince-dont-do-this/chapter-218">Chapter 218</a></li><li><a href="/read/prince-dont-do-this/chapter-217">Chapter 217</a></li><li><a href="/read/prince-dont-do-this/chapter-216">Chapter 216</a></li><li><a href="/read/prince-dont-do-this/chapter-215">Chapter 215</a></li><li><a href="/read/prince-dont-do-this/chapter-214">Chapter 214</a></li><li><a href="/read/prince-dont-do-this/chapter-213">Chapter 213</a></li><li><a href="/read/prince-dont-do-this/chapter-212">Chapter 212</a></li><li><a href="/read/prince-dont-do-this/chapter-211">Chapter 211</a></li><li><a href="/read/prince-dont-do-this/chapter-210">Chapter 210</a></li><li><a href="/read/prince-dont-do-this/chapter-209">Chapter 209</a></li><li><a href="/read/prince-dont-do-this/chapter-208">Chapter 208</a></li><li><a href="/read/prince-dont-do-this/chapter-207">Chapter 207</a></li><li><a href="/read/prince-dont-do-this/chapter-206">Chapter 206</a></li><li><a href="/read/prince-dont-do-this/chapter-205">Chapter 205</a></li><li><a href="/read/prince-dont-do-this/chapter-204">Chapter 204</a></li><li><a href="/read/prince-dont-do-this/chapter-203">Chapter 203</a></li><li><a href="/read/prince-dont-do-this/chapter-202">Chapter 202</a></li><li><a href="/read/prince-dont-do-this/chapter-201">Chapter 201</a></li><li><a href="/read/prince-dont-do-this/chapter-200">Chapter 200</a></li><li><a href="/read/prince-dont-do-this/chapter-199">Chapter 199</a></li><li><a href="/read/prince-dont-do-this/chapter-198">Chapter 198</a></li><li><a href="/read/prince-dont-do-this/chapter-197">Chapter 197</a></li><li><a href="/read/prince-dont-do-this/chapter-196">Chapter 196</a></li><li><a href="/read/prince-dont-do-this/chapter-195">Chapter 195</a></li><li><a href="/read/prince-dont-do-this/chapter-194">Chapter 194</a></li><li><a href="/read/prince-dont-do-this/chapter-193">Chapter 193</a></li><li><a href="/read/prince-dont-do-this/chapter-192">Chapter 192</a></li><li><a href="/read/prince-dont-do-this/chapter-191">Chapter 191</a></li><li><a href="/read/prince-dont-do-this/chapter-190">Chapter 190</a></li><li><a href="/read/prince-dont-do-this/chapter-189">Chapter 189</a></li><li><a href="/read/prince-dont-do-this/chapter-188">Chapter 188</a></li><li><a href="/read/prince-dont-do-this/chapter-187">Chapter 187</a></li><li><a href="/read/prince-dont-do-this/chapter-186">Chapter 186</a></li><li><a href="/read/prince-dont-do-this/chapter-185">Chapter 185</a></li><li><a href="/read/prince-dont-do-this/chapter-184">Chapter 184</a></li><li><a href="/read/prince-dont-do-this/chapter-183">Chapter 183</a></li><li><a href="/read/prince-dont-do-this/chapter-182">Chapter 182</a></li><li><a href="/read/prince-dont-do-this/chapter-181">Chapter 181</a></li><li><a href="/read/prince-dont-do-this/chapter-180">Chapter 180</a></li><li><a href="/read/prince-dont-do-this/chapter-179">Chapter 179</a></li><li><a href="/read/prince-dont-do-this/chapter-178">Chapter 178</a></li><li><a href="/read/prince-dont-do-this/chapter-177">Chapter 177</a></li><li><a href="/read/prince-dont-do-this/chapter-176">Chapter 176</a></li><li><a href="/read/prince-dont-do-this/chapter-175">Chapter 175</a></li><li><a href="/read/prince-dont-do-this/chapter-174">Chapter 174</a></li><li><a href="/read/prince-dont-do-this/chapter-173">Chapter 173</a></li><li><a href="/read/prince-dont-do-this/chapter-172">Chapter 172</a></li><li><a href="/read/prince-dont-do-this/chapter-171">Chapter 171</a></li><li><a href="/read/prince-dont-do-this/chapter-170">Chapter 170</a></li><li><a href="/read/prince-dont-do-this/chapter-169">Chapter 169</a></li><li><a href="/read/prince-dont-do-this/chapter-168">Chapter 168</a></li><li><a href="/read/prince-dont-do-this/chapter-167">Chapter 167</a></li><li><a href="/read/prince-dont-do-this/chapter-166">Chapter 166</a></li><li><a href="/read/prince-dont-do-this/chapter-165">Chapter 165</a></li><li><a href="/read/prince-dont-do-this/chapter-164">Chapter 164</a></li><li><a href="/read/prince-dont-do-this/chapter-163">Chapter 163</a></li><li><a href="/read/prince-dont-do-this/chapter-162">Chapter 162</a></li><li><a href="/read/prince-dont-do-this/chapter-161">Chapter 161</a></li><li><a href="/read/prince-dont-do-this/chapter-160">Chapter 160</a></li><li><a href="/read/prince-dont-do-this/chapter-159">Chapter 159</a></li><li><a href="/read/prince-dont-do-this/chapter-158">Chapter 158</a></li><li><a href="/read/prince-dont-do-this/chapter-157">Chapter 157</a></li><li><a href="/read/prince-dont-do-this/chapter-156">Chapter 156</a></li><li><a href="/read/prince-dont-do-this/chapter-155">Chapter 155</a></li><li><a href="/read/prince-dont-do-this/chapter-154">Chapter 154</a></li><li><a href="/read/prince-dont-do-this/chapter-153">Chapter 153</a></li><li><a href="/read/prince-dont-do-this/chapter-152">Chapter 152</a></li><li><a href="/read/prince-dont-do-this/chapter-151">Chapter 151</a></li><li><a href="/read/prince-dont-do-this/chapter-150">Chapter 150</a></li><li><a href="/read/prince-dont-do-this/chapter-149">Chapter 149</a></li><li><a href="/read/prince-dont-do-this/chapter-148">Chapter 148</a></li><li><a href="/read/prince-dont-do-this/chapter-147">Chapter 147</a></li><li><a href="/read/prince-dont-do-this/chapter-146">Chapter 146</a></li><li><a href="/read/prince-dont-do-this/chapter-145">Chapter 145</a></li><li><a href="/read/prince-dont-do-this/chapter-144">Chapter 144</a></li><li><a href="/read/prince-dont-do-this/chapter-143">Chapter 143</a></li><li><a href="/read/prince-dont-do-this/chapter-142">Chapter 142</a></li><li><a href="/read/prince-dont-do-this/chapter-141">Chapter 141</a></li><li><a href="/read/prince-dont-do-this/chapter-140">Chapter 140</a></li><li><a href="/read/prince-dont-do-this/chapter-139">Chapter 139</a></li><li><a href="/read/prince-dont-do-this/chapter-138">Chapter 138</a></li><li><a href="/read/prince-dont-do-this/chapter-137">Chapter 137</a></li><li><a href="/read/prince-dont-do-this/chapter-136">Chapter 136</a></li><li><a href="/read/prince-dont-do-this/chapter-135">Chapter 135</a></li><li><a href="/read/prince-dont-do-this/chapter-134">Chapter 134</a></li><li><a href="/read/prince-dont-do-this/chapter-133">Chapter 133</a></li><li><a href="/read/prince-dont-do-this/chapter-132">Chapter 132</a></li><li><a href="/read/prince-dont-do-this/chapter-131">Chapter 131</a></li><li><a href="/read/prince-dont-do-this/chapter-130">Chapter 130</a></li><li><a href="/read/prince-dont-do-this/chapter-129">Chapter 129</a></li><li><a href="/read/prince-dont-do-this/chapter-128">Chapter 128</a></li><li><a href="/read/prince-dont-do-this/chapter-127">Chapter 127</a></li><li><a href="/read/prince-dont-do-this/chapter-126">Chapter 126</a></li><li><a href="/read/prince-dont-do-this/chapter-125">Chapter 125</a></li><li><a href="/read/prince-dont-do-this/chapter-124">Chapter 124</a></li><li><a href="/read/prince-dont-do-this/chapter-123">Chapter 123</a></li><li><a href="/read/prince-dont-do-this/chapter-122">Chapter 122</a></li><li><a href="/read/prince-dont-do-this/chapter-121">Chapter 121</a></li><li><a href="/read/prince-dont-do-this/chapter-120">Chapter 120</a></li><li><a href="/read/prince-dont-do-this/chapter-119">Chapter 119</a></li><li><a href="/read/prince-dont-do-this/chapter-118">Chapter 118</a></li><li><a href="/read/prince-dont-do-this/chapter-117">Chapter 117</a></li><li><a href="/read/prince-dont-do-this/chapter-116">Chapter 116</a></li><li><a href="/read/prince-dont-do-this/chapter-115">Chapter 115</a></li><li><a href="/read/prince-dont-do-this/chapter-114">Chapter 114</a></li><li><a href="/read/prince-dont-do-this/chapter-113">Chapter 113</a></li><li><a href="/read/prince-dont-do-this/chapter-112">Chapter 112</a></li><li><a href="/read/prince-dont-do-this/chapter-111">Chapter 111</a></li><li><a href="/read/prince-dont-do-this/chapter-110">Chapter 110</a></li><li><a href="/read/prince-dont-do-this/chapter-109">Chapter 109</a></li><li><a href="/read/prince-dont-do-this/chapter-108">Chapter 108</a></li><li><a href="/read/prince-dont-do-this/chapter-107">Chapter 107</a></li><li><a href="/read/prince-dont-do-this/chapter-106">Chapter 106</a></li><li><a href="/read/prince-dont-do-this/chapter-105">Chapter 105</a></li><li><a href="/read/prince-dont-do-this/chapter-104">Chapter 104</a></li><li><a href="/read/prince-dont-do-this/chapter-103">Chapter 103</a></li><li><a href="/read/prince-dont-do-this/chapter-102">Chapter 102</a></li><li><a href="/read/prince-dont-do-this/chapter-101">Chapter 101</a></li><li><a href="/read/prince-dont-do-this/chapter-100">Chapter 100</a></li><li><a href="/read/prince-dont-do-this/chapter-99">Chapter 99</a></li><li><a href="/read/prince-dont-do-this/chapter-98">Chapter 98</a></li><li><a href="/read/prince-dont-do-this/chapter-97">Chapter 97</a></li><li><a href="/read/prince-dont-do-this/chapter-96">Chapter 96</a></li><li><a href="/read/prince-dont-do-this/chapter-95">Chapter 95</a></li><li><a href="/read/prince-dont-do-this/chapter-94">Chapter 94</a></li><li><a href="/read/prince-dont-do-this/chapter-93">Chapter 93</a></li><li><a href="/read/prince-dont-do-this/chapter-92">Chapter 92</a></li><li><a href="/read/prince-dont-do-this/chapter-91">Chapter 91</a></li><li><a href="/read/prince-dont-do-this/chapter-90">Chapter 90</a></li><li><a href="/read/prince-dont-do-this/chapter-89">Chapter 89</a></li><li><a href="/read/prince-dont-do-this/chapter-88">Chapter 88</a></li><li><a href="/read/prince-dont-do-this/chapter-87">Chapter 87</a></li><li><a href="/read/prince-dont-do-this/chapter-86">Chapter 86</a></li><li><a href="/read/prince-dont-do-this/chapter-85">Chapter 85</a></li><li><a href="/read/prince-dont-do-this/chapter-84">Chapter 84</a></li><li><a href="/read/prince-dont-do-this/chapter-83">Chapter 83</a></li><li><a href="/read/prince-dont-do-this/chapter-82">Chapter 82</a></li><li><a href="/read/prince-dont-do-this/chapter-81">Chapter 81</a></li><li><a href="/read/prince-dont-do-this/chapter-80">Chapter 80</a></li><li><a href="/read/prince-dont-do-this/chapter-79">Chapter 79</a></li><li><a href="/read/prince-dont-do-this/chapter-78">Chapter 78</a></li><li><a href="/read/prince-dont-do-this/chapter-77">Chapter 77</a></li><li><a href="/read/prince-dont-do-this/chapter-76">Chapter 76</a></li><li><a href="/read/prince-dont-do-this/chapter-75">Chapter 75</a></li><li><a href="/read/prince-dont-do-this/chapter-74">Chapter 74</a></li><li><a href="/read/prince-dont-do-this/chapter-73">Chapter 73</a></li><li><a href="/read/prince-dont-do-this/chapter-72">Chapter 72</a></li><li><a href="/read/prince-dont-do-this/chapter-71">Chapter 71</a></li><li><a href="/read/prince-dont-do-this/chapter-70">Chapter 70</a></li><li><a href="/read/prince-dont-do-this/chapter-69">Chapter 69</a></li><li><a href="/read/prince-dont-do-this/chapter-68">Chapter 68</a></li><li><a href="/read/prince-dont-do-this/chapter-67">Chapter 67</a></li><li><a href="/read/prince-dont-do-this/chapter-66">Chapter 66</a></li><li><a href="/read/prince-dont-do-this/chapter-65">Chapter 65</a></li><li><a href="/read/prince-dont-do-this/chapter-64">Chapter 64</a></li><li><a href="/read/prince-dont-do-this/chapter-63">Chapter 63</a></li><li><a href="/read/prince-dont-do-this/chapter-62">Chapter 62</a></li><li><a href="/read/prince-dont-do-this/chapter-61">Chapter 61</a></li><li><a href="/read/prince-dont-do-this/chapter-60">Chapter 60</a></li><li><a href="/read/prince-dont-do-this/chapter-59">Chapter 59</a></li><li><a href="/read/prince-dont-do-this/chapter-58">Chapter 58</a></li><li><a href="/read/prince-dont-do-this/chapter-57">Chapter 57</a></li><li><a href="/read/prince-dont-do-this/chapter-56">Chapter 56</a></li><li><a href="/read/prince-dont-do-this/chapter-55">Chapter 55</a></li><li><a href="/read/prince-dont-do-this/chapter-54">Chapter 54</a></li><li><a href="/read/prince-dont-do-this/chapter-53">Chapter 53</a></li><li><a href="/read/prince-dont-do-this/chapter-52">Chapter 52</a></li><li><a href="/read/prince-dont-do-this/chapter-51">Chapter 51</a></li><li><a href="/read/prince-dont-do-this/chapter-50">Chapter 50</a></li><li><a href="/read/prince-dont-do-this/chapter-49">Chapter 49</a></li><li><a href="/read/prince-dont-do-this/chapter-48">Chapter 48</a></li><li><a href="/read/prince-dont-do-this/chapter-47">Chapter 47</a></li><li><a href="/read/prince-dont-do-this/chapter-46">Chapter 46</a></li><li><a href="/read/prince-dont-do-this/chapter-45.4">Chapter 45.4</a></li><li><a href="/read/prince-dont-do-this/chapter-45.3">Chapter 45.3</a></li><li><a href="/read/prince-dont-do-this/chapter-45.2">Chapter 45.2</a></li><li><a href="/read/prince-dont-do-this/chapter-45.1">Chapter 45.1</a></li><li><a href="/read/prince-dont-do-this/chapter-45">Chapter 45</a></li><li><a href="/read/prince-dont-do-this/chapter-44.9">Chapter 44.9</a></li><li><a href="/read/prince-dont-do-this/chapter-44.8">Chapter 44.8</a></li><li><a href="/read/prince-dont-do-this/chapter-44.7">Chapter 44.7</a></li><li><a href="/read/prince-dont-do-this/chapter-44.6">Chapter 44.6</a></li><li><a href="/read/prince-dont-do-this/chapter-44.5">Chapter 44.5</a></li><li><a href="/read/prince-dont-do-this/chapter-44.4">Chapter 44.4</a></li><li><a href="/read/prince-dont-do-this/chapter-44.3">Chapter 44.3</a></li><li><a href="/read/prince-dont-do-this/chapter-44.2">Chapter 44.2</a></li><li><a href="/read/prince-dont-do-this/chapter-44.1">Chapter 44.1</a></li><li><a href="/read/prince-dont-do-this/chapter-44">Chapter 44</a></li><li><a href="/read/prince-dont-do-this/chapter-43.9">Chapter 43.9</a></li><li><a href="/read/prince-dont-do-this/chapter-43.8">Chapter 43.8</a></li><li><a href="/read/prince-dont-do-this/chapter-43.7">Chapter 43.7</a></li><li><a href="/read/prince-dont-do-this/chapter-43.6">Chapter 43.6</a></li><li><a href="/read/prince-dont-do-this/chapter-43.5">Chapter 43.5</a></li><li><a href="/read/prince-dont-do-this/chapter-43.4">Chapter 43.4</a></li><li><a href="/read/prince-dont-do-this/chapter-43.3">Chapter 43.3</a></li><li><a href="/read/prince-dont-do-this/chapter-43.2">Chapter 43.2</a></li><li><a href="/read/prince-dont-do-this/chapter-43.1">Chapter 43.1</a></li><li><a href="/read/prince-dont-do-this/chapter-43">Chapter 43</a></li><li><a href="/read/prince-dont-do-this/chapter-42.9">Chapter 42.9</a></li><li><a href="/read/prince-dont-do-this/chapter-42.8">Chapter 42.8</a></li><li><a href="/read/prince-dont-do-this/chapter-42.7">Chapter 42.7</a></li><li><a href="/read/prince-dont-do-this/chapter-42.6">Chapter 42.6</a></li><li><a href="/read/prince-dont-do-this/chapter-42.5">Chapter 42.5</a></li><li><a href="/read/prince-dont-do-this/chapter-42.4">Chapter 42.4</a></li><li><a href="/read/prince-dont-do-this/chapter-42.3">Chapter 42.3</a></li><li><a href="/read/prince-dont-do-this/chapter-42.2">Chapter 42.2</a></li><li><a href="/read/prince-dont-do-this/chapter-42.1">Chapter 42.1</a></li><li><a href="/read/prince-dont-do-this/chapter-42">Chapter 42</a></li><li><a href="/read/prince-dont-do-this/chapter-41.9">Chapter 41.9</a></li><li><a href="/read/prince-dont-do-this/chapter-41.8">Chapter 41.8</a></li><li><a href="/read/prince-dont-do-this/chapter-41.7">Chapter 41.7</a></li><li><a href="/read/prince-dont-do-this/chapter-41.6">Chapter 41.6</a></li><li><a href="/read/prince-dont-do-this/chapter-41.5">Chapter 41.5</a></li><li><a href="/read/prince-dont-do-this/chapter-41.4">Chapter 41.4</a></li><li><a href="/read/prince-dont-do-this/chapter-41.3">Chapter 41.3</a></li><li><a href="/read/prince-dont-do-this/chapter-41.2">Chapter 41.2</a></li><li><a href="/read/prince-dont-do-this/chapter-41.1">Chapter 41.1</a></li><li><a href="/read/prince-dont-do-this/chapter-41">Chapter 41</a></li></ul></section>
+    <section><h2>Similar Series</h2><ul class="seo-grid"><li><a href="/manhwa/the-horizon"><strong>The Horizon</strong><span>Jeong Ji-Hoon</span><span>Drama, Psychological, Romance</span></a></li><li><a href="/manhwa/a-returners-magic-should-be-special"><strong>A Returner's Magic Should Be Special</strong><span>Wookjakga (욱작가)</span><span>Supernatural, Action, Comedy</span></a></li><li><a href="/manhwa/death-is-the-only-ending-for-the-villainess"><strong>Death Is The Only Ending For The Villainess</strong><span>Gwon Gyeoeul</span><span>Fantasy, Adventure, Romance</span></a></li><li><a href="/manhwa/who-made-me-a-princess"><strong>Who Made Me a Princess</strong><span>Spoon (스푼)</span><span>Fantasy, Romance, Comedy</span></a></li><li><a href="/manhwa/the-breaker"><strong>The Breaker</strong><span>Jeon Geuk-jin</span><span>Action, Romance, Comedy</span></a></li><li><a href="/manhwa/damn-reincarnation"><strong>Damn Reincarnation</strong><span>Park Jeong yeol (박정열)</span><span>Fantasy, Action, Adventure</span></a></li><li><a href="/manhwa/the-extras-academy-survival-guide"><strong>The Extra’s Academy Survival Guide</strong><span>Corita (코리타)</span><span>Fantasy, Action, Romance</span></a></li><li><a href="/manhwa/the-novels-extra"><strong>The Novel’s Extra</strong><span>Jee Gab Song (지갑송)</span><span>Action, Adventure, Romance</span></a></li></ul></section>
+    <p><a href="/catalog">Browse more manhwa</a> · <a href="/updates">Latest updates</a></p>
+  <p style="margin:24px 0;text-align:center;font-size:13px"><a href="https://www.profitableratecpmnetwork.com/rwke4e7k?key=2b2a096dea78bd8cb7bdc2b9ee370110" target="_blank" rel="noopener nofollow sponsored">Sponsored</a></p></main></div></div>
+    <script src="https://pl31102148.profitableratecpmnetwork.com/a4/a1/fe/a4a1fe30d63892bdc56fb6286e4439c3.js"></script>
+  </body>
+</html>

@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#141413" />
+    <meta name="google-adsense-account" content="ca-pub-9672720678512933" />
+    <link rel="icon" type="image/png" href="/logo1.png" />
+    <title>The Scholar Warrior Manhwa – Read Free Online (72 Ch) | MANHWAS</title>
+    <link rel="canonical" href="https://manhwas.site/manhwa/the-scholar-warrior" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Cover CDN: every card/hero cover loads from here — preconnect removes
+         a full mobile TLS+DNS round-trip from the LCP image (the homepage
+         hero cover IS the LCP element; field data showed ~6s on mobile) -->
+    <link rel="preconnect" href="https://cdn.manhwas.site" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.manhwas.site">
+    <!-- Non-blocking font CSS: text paints in system-ui immediately and
+         swaps to Inter when loaded (the face uses font-display: swap).
+         The prerendered #seo-content block already uses system-ui, so the
+         crawler-visible content never waits on fonts. -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    </noscript>
+    <!-- critical pre-hydration styles: prevents white flash before React mounts -->
+    <style>
+      body { margin: 0; background: #141413; }
+      #seo-content {
+        padding: 24px;
+        color: #d8d5d1;
+        font-family: system-ui, sans-serif;
+        line-height: 1.5;
+        max-width: 1240px;
+        margin: 0 auto;
+        overflow-wrap: break-word;
+      }
+      #seo-content a { color: #e06a55; text-decoration: underline; }
+      #seo-content ul,
+      #seo-content nav { list-style: none; margin: 0; padding: 0; }
+      #seo-content h1 { font-size: 1.75rem; font-weight: 700; color: #f0efeb; margin: 0 0 8px; }
+      #seo-content h2 { font-size: 1.125rem; font-weight: 600; color: #f0efeb; margin: 24px 0 8px; }
+      #seo-content p { margin: 0 0 12px; color: #b3b1a8; }
+      #seo-content .seo-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 12px;
+      }
+    </style>
+    <!-- Popunder partner script. async: must NOT block HTML parsing —
+         a synchronous script here delays first paint AND React mount by the
+         ad network's full response time (worst case seconds on mobile),
+         which used to leave the whole page (hero + Trending + Updates) blank.
+         The script self-injects its anchors when it eventually runs, so the
+         popunder behavior is unchanged; only its start becomes non-blocking. -->
+    <script async src="https://pl31102147.profitableratecpmnetwork.com/c8/ce/72/c8ce72a5a8e626dad922ab986b7f329d.js"></script>
+    <!-- Ad frequency cap: ONE visual ad per page view. When the visitor closes
+         it, every further body-level fixed ad iframe is removed until the next
+         page view (SPA route change or refresh). Never touches anything inside
+         #root — the app itself renders no fixed iframes. -->
+    <script>
+      (function () {
+        try {
+          var state = { shown: false, suppressed: false };
+          function isAdIframe(el) {
+            if (!el || el.tagName !== 'IFRAME') return false;
+            if (el.closest && el.closest('#root')) return false;
+            try {
+              if (getComputedStyle(el).position !== 'fixed') return false;
+            } catch (e) {
+              return false;
+            }
+            return true;
+          }
+          function scan() {
+            var iframes = document.querySelectorAll('body iframe');
+            for (var i = 0; i < iframes.length; i++) {
+              var f = iframes[i];
+              if (!isAdIframe(f)) continue;
+              if (state.suppressed) {
+                f.remove();
+                continue;
+              }
+              if (!state.shown) {
+                state.shown = true;
+                // enforce "only one": drop any sibling ad layers present in
+                // the same batch so a single page view shows a single ad
+                for (var j = 0; j < iframes.length; j++) {
+                  if (j !== i && isAdIframe(iframes[j])) iframes[j].remove();
+                }
+                watchForClose(f);
+                break;
+              }
+            }
+            hideAdHoverUrls();
+            sweepOverlays();
+          }
+
+          // The popunder script injects an invisible full-page anchor, so
+          // the browser status bar shows its long tracking URL whenever the
+          // mouse is anywhere over a page. Neutralize the HOVER DISPLAY
+          // without touching ad behavior: the href is stripped (no status
+          // text) and restored on mousedown/touchstart, so the actual click
+          // still goes through the ad's own anchor with its original URL,
+          // target and listeners — revenue path unchanged. Internal links
+          // are never touched.
+          function hideAdHoverUrls() {
+            var anchors = document.getElementsByTagName('a');
+            for (var k = 0; k < anchors.length; k++) {
+              var a = anchors[k];
+              if (a.dataset.hoverLocked === '1') continue;
+              var href = a.getAttribute('href') || '';
+              if (href.length > 80 && a.hostname !== location.hostname) {
+                a.dataset.hoverLocked = '1';
+                a.dataset.keepHref = href;
+                var show = function () {
+                  if (this.dataset.keepHref) this.setAttribute('href', this.dataset.keepHref);
+                };
+                var hide = function () { this.removeAttribute('href'); };
+                a.addEventListener('mousedown', show);
+                a.addEventListener('touchstart', show, { passive: true });
+                a.addEventListener('focus', show);
+                a.addEventListener('mouseleave', hide);
+                a.addEventListener('blur', hide);
+                a.removeAttribute('href');
+              }
+            }
+          }
+          // "Have to press twice" fix: the popunder injects an invisible
+          // full-viewport anchor that keeps swallowing taps after its pop
+          // attempt (especially when the popup is blocked — nothing visible
+          // happens, so the page feels stuck). The FIRST interaction still
+          // goes through the ad's own anchor (revenue path unchanged); every
+          // later pointer event passes through to the real UI.
+          function defuseFullPageAnchor(a) {
+            if (a.dataset.overlayDefused === '1') return;
+            a.dataset.overlayDefused = '1';
+            var pass = function () {
+              setTimeout(function () { a.style.pointerEvents = 'none'; }, 0);
+            };
+            a.addEventListener('pointerdown', pass, { capture: true, passive: true });
+            a.addEventListener('click', pass, { capture: true });
+          }
+          function sweepOverlays() {
+            var links = document.getElementsByTagName('a');
+            var vw = window.innerWidth, vh = window.innerHeight;
+            for (var m = 0; m < links.length; m++) {
+              var a = links[m];
+              if (a.dataset.overlayDefused === '1') continue;
+              if (a.closest && a.closest('#root')) continue;
+              var href = a.getAttribute('href') || '';
+              if (href.length <= 80 && a.hostname === location.hostname) continue;
+              var r = a.getBoundingClientRect();
+              if (r.width * r.height < 0.8 * vw * vh) continue;
+              try {
+                var pos = getComputedStyle(a).position;
+                if (pos !== 'fixed' && pos !== 'absolute') continue;
+              } catch (e) { continue; }
+              defuseFullPageAnchor(a);
+            }
+          }
+          function watchForClose(el) {
+            var mo = new MutationObserver(function () {
+              if (!document.documentElement.contains(el)) {
+                mo.disconnect();
+                suppress();
+              }
+            });
+            mo.observe(document.documentElement, { childList: true, subtree: true });
+          }
+          function suppress() {
+            state.suppressed = true;
+            document.documentElement.setAttribute('data-adcap', '1');
+            scan();
+          }
+          // one ad per PAGE VIEW: navigating to another page re-arms the cap
+          function reset() {
+            state.suppressed = false;
+            state.shown = false;
+            document.documentElement.removeAttribute('data-adcap');
+          }
+          var push = history.pushState;
+          history.pushState = function () {
+            var r = push.apply(this, arguments);
+            reset();
+            return r;
+          };
+          window.addEventListener('popstate', reset);
+          // rAF-coalesced: a page mount triggers dozens of mutation batches,
+          // and scan() queries every body iframe each time — one scan per
+          // frame keeps the cap behavior while cutting SPA navigation cost
+          var scanQueued = false;
+          var queueScan = function () {
+            if (scanQueued) return;
+            scanQueued = true;
+            requestAnimationFrame(function () {
+              scanQueued = false;
+              scan();
+            });
+          };
+          new MutationObserver(queueScan).observe(document.documentElement, { childList: true, subtree: true });
+          document.addEventListener('DOMContentLoaded', scan);
+        } catch (e) {}
+      })();
+    </script>
+    <script type="module" crossorigin src="/assets/index-DryuG25J.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DABcpq0e.css">
+    <meta name="description" content="Read The Scholar Warrior free online by Team Mugeug — chapter 72 just dropped, 72 chapters and counting. Cheon Muji-chee, the only son of the Hebei thousand…" />
+    <meta name="robots" content="index,follow" />
+    <meta property="og:title" content="The Scholar Warrior Manhwa – Read Free Online (72 Ch) | MANHWAS" />
+    <meta property="og:description" content="Read The Scholar Warrior free online by Team Mugeug — chapter 72 just dropped, 72 chapters and counting. Cheon Muji-chee, the only son of the Hebei thousand…" />
+    <meta property="og:url" content="https://manhwas.site/manhwa/the-scholar-warrior" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="MANHWAS" />
+    <meta property="og:image" content="https://cdn.manhwas.site/covers/5bd785942bb51b7e54a3cc5b17c5d6c1.jpg" />
+    <script type="application/ld+json">[{"@context":"https://schema.org","@type":"Book","name":"The Scholar Warrior","image":["https://cdn.manhwas.site/covers/5bd785942bb51b7e54a3cc5b17c5d6c1.jpg"],"alternateName":["Hoành Tảo Cửu Châu"],"author":{"@type":"Person","name":"Team Mugeug"},"genre":["Action","Adventure","Drama","Fantasy"],"inLanguage":"en","bookEdition":"Ongoing","abstract":"Cheon Muji-chee, the only son of the Hebei thousand swords family and the grandson of King Kwon. Cheon Seong, the lazy young master of the heavenly swordsman.","url":"https://manhwas.site/manhwa/the-scholar-warrior"},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://manhwas.site/"},{"@type":"ListItem","position":2,"name":"Catalog","item":"https://manhwas.site/catalog"},{"@type":"ListItem","position":3,"name":"The Scholar Warrior","item":"https://manhwas.site/manhwa/the-scholar-warrior"}]}]</script>
+  </head>
+  <body class="antialiased selection:bg-[#D95743] selection:text-white">
+    <div id="root"><div id="seo-content"><main>
+    <nav aria-label="Breadcrumb"><a href="/">Home</a> › <a href="/catalog">Catalog</a> › The Scholar Warrior</nav>
+    <h1>The Scholar Warrior</h1>
+    <p>Cheon Muji-chee, the only son of the Hebei thousand swords family and the grandson of King Kwon. Cheon Seong, the lazy young master of the heavenly swordsman.</p>
+    <p>Also known as: Hoành Tảo Cửu Châu</p>
+    <p>The Scholar Warrior is a ongoing manhwa by Team Mugeug with 72 chapters on MANHWAS, spanning Action, Adventure, Drama. Start from chapter 1 or jump straight to the latest release — everything is free to read and the list updates as new chapters drop.</p>
+    <p>Author: <a href="/author/team-mugeug">Team Mugeug</a> (all series by this author) · Artist: Wol-in · Status: Ongoing · 72 chapters · Rated 4/5</p>
+    <p>Genres: <a href="/genres/action">Action</a>, <a href="/genres/adventure">Adventure</a>, <a href="/genres/drama">Drama</a>, <a href="/genres/fantasy">Fantasy</a></p>
+    <p><a href="/read/the-scholar-warrior/chapter-72">Read the latest chapter (Ch. 72)</a></p>
+    <section><h2>Chapters</h2><ul><li><a href="/read/the-scholar-warrior/chapter-72">Chapter 72</a></li><li><a href="/read/the-scholar-warrior/chapter-71">Chapter 71</a></li><li><a href="/read/the-scholar-warrior/chapter-70">Chapter 70</a></li><li><a href="/read/the-scholar-warrior/chapter-69">Chapter 69</a></li><li><a href="/read/the-scholar-warrior/chapter-68">Chapter 68</a></li><li><a href="/read/the-scholar-warrior/chapter-67">Chapter 67</a></li><li><a href="/read/the-scholar-warrior/chapter-66">Chapter 66</a></li><li><a href="/read/the-scholar-warrior/chapter-65">Chapter 65</a></li><li><a href="/read/the-scholar-warrior/chapter-64">Chapter 64</a></li><li><a href="/read/the-scholar-warrior/chapter-63">Chapter 63</a></li><li><a href="/read/the-scholar-warrior/chapter-62">Chapter 62</a></li><li><a href="/read/the-scholar-warrior/chapter-61">Chapter 61</a></li><li><a href="/read/the-scholar-warrior/chapter-60">Chapter 60</a></li><li><a href="/read/the-scholar-warrior/chapter-59">Chapter 59</a></li><li><a href="/read/the-scholar-warrior/chapter-58">Chapter 58</a></li><li><a href="/read/the-scholar-warrior/chapter-57">Chapter 57</a></li><li><a href="/read/the-scholar-warrior/chapter-56">Chapter 56</a></li><li><a href="/read/the-scholar-warrior/chapter-55">Chapter 55</a></li><li><a href="/read/the-scholar-warrior/chapter-54">Chapter 54</a></li><li><a href="/read/the-scholar-warrior/chapter-53">Chapter 53</a></li><li><a href="/read/the-scholar-warrior/chapter-52">Chapter 52</a></li><li><a href="/read/the-scholar-warrior/chapter-51">Chapter 51</a></li><li><a href="/read/the-scholar-warrior/chapter-50">Chapter 50</a></li><li><a href="/read/the-scholar-warrior/chapter-49">Chapter 49</a></li><li><a href="/read/the-scholar-warrior/chapter-48">Chapter 48</a></li><li><a href="/read/the-scholar-warrior/chapter-47">Chapter 47</a></li><li><a href="/read/the-scholar-warrior/chapter-46">Chapter 46</a></li><li><a href="/read/the-scholar-warrior/chapter-45">Chapter 45</a></li><li><a href="/read/the-scholar-warrior/chapter-44">Chapter 44</a></li><li><a href="/read/the-scholar-warrior/chapter-43">Chapter 43</a></li><li><a href="/read/the-scholar-warrior/chapter-42">Chapter 42</a></li><li><a href="/read/the-scholar-warrior/chapter-41">Chapter 41</a></li><li><a href="/read/the-scholar-warrior/chapter-40">Chapter 40</a></li><li><a href="/read/the-scholar-warrior/chapter-39">Chapter 39</a></li><li><a href="/read/the-scholar-warrior/chapter-38">Chapter 38</a></li><li><a href="/read/the-scholar-warrior/chapter-37">Chapter 37</a></li><li><a href="/read/the-scholar-warrior/chapter-36">Chapter 36</a></li><li><a href="/read/the-scholar-warrior/chapter-35">Chapter 35</a></li><li><a href="/read/the-scholar-warrior/chapter-34">Chapter 34</a></li><li><a href="/read/the-scholar-warrior/chapter-33">Chapter 33</a></li><li><a href="/read/the-scholar-warrior/chapter-32">Chapter 32</a></li><li><a href="/read/the-scholar-warrior/chapter-31">Chapter 31</a></li><li><a href="/read/the-scholar-warrior/chapter-30">Chapter 30</a></li><li><a href="/read/the-scholar-warrior/chapter-29">Chapter 29</a></li><li><a href="/read/the-scholar-warrior/chapter-28">Chapter 28</a></li><li><a href="/read/the-scholar-warrior/chapter-27">Chapter 27</a></li><li><a href="/read/the-scholar-warrior/chapter-26">Chapter 26</a></li><li><a href="/read/the-scholar-warrior/chapter-25">Chapter 25</a></li><li><a href="/read/the-scholar-warrior/chapter-24">Chapter 24</a></li><li><a href="/read/the-scholar-warrior/chapter-23">Chapter 23</a></li><li><a href="/read/the-scholar-warrior/chapter-22">Chapter 22</a></li><li><a href="/read/the-scholar-warrior/chapter-21">Chapter 21</a></li><li><a href="/read/the-scholar-warrior/chapter-20">Chapter 20</a></li><li><a href="/read/the-scholar-warrior/chapter-19">Chapter 19</a></li><li><a href="/read/the-scholar-warrior/chapter-18">Chapter 18</a></li><li><a href="/read/the-scholar-warrior/chapter-17">Chapter 17</a></li><li><a href="/read/the-scholar-warrior/chapter-16">Chapter 16</a></li><li><a href="/read/the-scholar-warrior/chapter-15">Chapter 15</a></li><li><a href="/read/the-scholar-warrior/chapter-14">Chapter 14</a></li><li><a href="/read/the-scholar-warrior/chapter-13">Chapter 13</a></li><li><a href="/read/the-scholar-warrior/chapter-12">Chapter 12</a></li><li><a href="/read/the-scholar-warrior/chapter-11">Chapter 11</a></li><li><a href="/read/the-scholar-warrior/chapter-10">Chapter 10</a></li><li><a href="/read/the-scholar-warrior/chapter-9">Chapter 9</a></li><li><a href="/read/the-scholar-warrior/chapter-8">Chapter 8</a></li><li><a href="/read/the-scholar-warrior/chapter-7">Chapter 7</a></li><li><a href="/read/the-scholar-warrior/chapter-6">Chapter 6</a></li><li><a href="/read/the-scholar-warrior/chapter-5">Chapter 5</a></li><li><a href="/read/the-scholar-warrior/chapter-4">Chapter 4</a></li><li><a href="/read/the-scholar-warrior/chapter-3">Chapter 3</a></li><li><a href="/read/the-scholar-warrior/chapter-2">Chapter 2</a></li><li><a href="/read/the-scholar-warrior/chapter-1">Chapter 1</a></li></ul></section>
+    <section><h2>Similar Series</h2><ul class="seo-grid"><li><a href="/manhwa/solo-leveling"><strong>Solo Leveling</strong><span>Chu-Gong</span><span>Action, Adventure, Fantasy</span></a></li><li><a href="/manhwa/omniscient-readers-viewpoint"><strong>Omniscient Reader's Viewpoint</strong><span>Sleepy-C (REDICE STUDIO)</span><span>Action, Adventure, Fantasy</span></a></li><li><a href="/manhwa/tower-of-god"><strong>Tower of God</strong><span>Siu</span><span>Action, Adventure, Comedy</span></a></li><li><a href="/manhwa/bastard-hwang-youngchan"><strong>Bastard (HWANG Youngchan)</strong><span>Kim Carnby</span><span>Drama, Horror, Mystery</span></a></li><li><a href="/manhwa/the-greatest-estate-developer"><strong>The Greatest Estate Developer</strong><span>Lee Hyunmin (이현민)</span><span>Adventure, Comedy, Supernatural</span></a></li><li><a href="/manhwa/sss-class-suicide-hunter"><strong>SSS-Class Suicide Hunter</strong><span>Shin Noah (신노아)</span><span>Action, Adventure, Comedy</span></a></li><li><a href="/manhwa/the-horizon"><strong>The Horizon</strong><span>Jeong Ji-Hoon</span><span>Drama, Psychological, Romance</span></a></li><li><a href="/manhwa/mercenary-enrollment"><strong>Mercenary Enrollment</strong><span>YC</span><span>Action, Adventure, Drama</span></a></li></ul></section>
+    <p><a href="/catalog">Browse more manhwa</a> · <a href="/updates">Latest updates</a></p>
+  <p style="margin:24px 0;text-align:center;font-size:13px"><a href="https://www.profitableratecpmnetwork.com/rwke4e7k?key=2b2a096dea78bd8cb7bdc2b9ee370110" target="_blank" rel="noopener nofollow sponsored">Sponsored</a></p></main></div></div>
+    <script src="https://pl31102148.profitableratecpmnetwork.com/a4/a1/fe/a4a1fe30d63892bdc56fb6286e4439c3.js"></script>
+  </body>
+</html>

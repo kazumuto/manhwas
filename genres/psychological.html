@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#141413" />
+    <meta name="google-adsense-account" content="ca-pub-9672720678512933" />
+    <link rel="icon" type="image/png" href="/logo1.png" />
+    <title>Best Psychological Manhwa — Read Free Online | MANHWAS</title>
+    <link rel="canonical" href="https://manhwas.site/genres/psychological" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Cover CDN: every card/hero cover loads from here — preconnect removes
+         a full mobile TLS+DNS round-trip from the LCP image (the homepage
+         hero cover IS the LCP element; field data showed ~6s on mobile) -->
+    <link rel="preconnect" href="https://cdn.manhwas.site" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.manhwas.site">
+    <!-- Non-blocking font CSS: text paints in system-ui immediately and
+         swaps to Inter when loaded (the face uses font-display: swap).
+         The prerendered #seo-content block already uses system-ui, so the
+         crawler-visible content never waits on fonts. -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    </noscript>
+    <!-- critical pre-hydration styles: prevents white flash before React mounts -->
+    <style>
+      body { margin: 0; background: #141413; }
+      #seo-content {
+        padding: 24px;
+        color: #d8d5d1;
+        font-family: system-ui, sans-serif;
+        line-height: 1.5;
+        max-width: 1240px;
+        margin: 0 auto;
+        overflow-wrap: break-word;
+      }
+      #seo-content a { color: #e06a55; text-decoration: underline; }
+      #seo-content ul,
+      #seo-content nav { list-style: none; margin: 0; padding: 0; }
+      #seo-content h1 { font-size: 1.75rem; font-weight: 700; color: #f0efeb; margin: 0 0 8px; }
+      #seo-content h2 { font-size: 1.125rem; font-weight: 600; color: #f0efeb; margin: 24px 0 8px; }
+      #seo-content p { margin: 0 0 12px; color: #b3b1a8; }
+      #seo-content .seo-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 12px;
+      }
+    </style>
+    <!-- Popunder partner script. async: must NOT block HTML parsing —
+         a synchronous script here delays first paint AND React mount by the
+         ad network's full response time (worst case seconds on mobile),
+         which used to leave the whole page (hero + Trending + Updates) blank.
+         The script self-injects its anchors when it eventually runs, so the
+         popunder behavior is unchanged; only its start becomes non-blocking. -->
+    <script async src="https://pl31102147.profitableratecpmnetwork.com/c8/ce/72/c8ce72a5a8e626dad922ab986b7f329d.js"></script>
+    <!-- Ad frequency cap: ONE visual ad per page view. When the visitor closes
+         it, every further body-level fixed ad iframe is removed until the next
+         page view (SPA route change or refresh). Never touches anything inside
+         #root — the app itself renders no fixed iframes. -->
+    <script>
+      (function () {
+        try {
+          var state = { shown: false, suppressed: false };
+          function isAdIframe(el) {
+            if (!el || el.tagName !== 'IFRAME') return false;
+            if (el.closest && el.closest('#root')) return false;
+            try {
+              if (getComputedStyle(el).position !== 'fixed') return false;
+            } catch (e) {
+              return false;
+            }
+            return true;
+          }
+          function scan() {
+            var iframes = document.querySelectorAll('body iframe');
+            for (var i = 0; i < iframes.length; i++) {
+              var f = iframes[i];
+              if (!isAdIframe(f)) continue;
+              if (state.suppressed) {
+                f.remove();
+                continue;
+              }
+              if (!state.shown) {
+                state.shown = true;
+                // enforce "only one": drop any sibling ad layers present in
+                // the same batch so a single page view shows a single ad
+                for (var j = 0; j < iframes.length; j++) {
+                  if (j !== i && isAdIframe(iframes[j])) iframes[j].remove();
+                }
+                watchForClose(f);
+                break;
+              }
+            }
+            hideAdHoverUrls();
+            sweepOverlays();
+          }
+
+          // The popunder script injects an invisible full-page anchor, so
+          // the browser status bar shows its long tracking URL whenever the
+          // mouse is anywhere over a page. Neutralize the HOVER DISPLAY
+          // without touching ad behavior: the href is stripped (no status
+          // text) and restored on mousedown/touchstart, so the actual click
+          // still goes through the ad's own anchor with its original URL,
+          // target and listeners — revenue path unchanged. Internal links
+          // are never touched.
+          function hideAdHoverUrls() {
+            var anchors = document.getElementsByTagName('a');
+            for (var k = 0; k < anchors.length; k++) {
+              var a = anchors[k];
+              if (a.dataset.hoverLocked === '1') continue;
+              var href = a.getAttribute('href') || '';
+              if (href.length > 80 && a.hostname !== location.hostname) {
+                a.dataset.hoverLocked = '1';
+                a.dataset.keepHref = href;
+                var show = function () {
+                  if (this.dataset.keepHref) this.setAttribute('href', this.dataset.keepHref);
+                };
+                var hide = function () { this.removeAttribute('href'); };
+                a.addEventListener('mousedown', show);
+                a.addEventListener('touchstart', show, { passive: true });
+                a.addEventListener('focus', show);
+                a.addEventListener('mouseleave', hide);
+                a.addEventListener('blur', hide);
+                a.removeAttribute('href');
+              }
+            }
+          }
+          // "Have to press twice" fix: the popunder injects an invisible
+          // full-viewport anchor that keeps swallowing taps after its pop
+          // attempt (especially when the popup is blocked — nothing visible
+          // happens, so the page feels stuck). The FIRST interaction still
+          // goes through the ad's own anchor (revenue path unchanged); every
+          // later pointer event passes through to the real UI.
+          function defuseFullPageAnchor(a) {
+            if (a.dataset.overlayDefused === '1') return;
+            a.dataset.overlayDefused = '1';
+            var pass = function () {
+              setTimeout(function () { a.style.pointerEvents = 'none'; }, 0);
+            };
+            a.addEventListener('pointerdown', pass, { capture: true, passive: true });
+            a.addEventListener('click', pass, { capture: true });
+          }
+          function sweepOverlays() {
+            var links = document.getElementsByTagName('a');
+            var vw = window.innerWidth, vh = window.innerHeight;
+            for (var m = 0; m < links.length; m++) {
+              var a = links[m];
+              if (a.dataset.overlayDefused === '1') continue;
+              if (a.closest && a.closest('#root')) continue;
+              var href = a.getAttribute('href') || '';
+              if (href.length <= 80 && a.hostname === location.hostname) continue;
+              var r = a.getBoundingClientRect();
+              if (r.width * r.height < 0.8 * vw * vh) continue;
+              try {
+                var pos = getComputedStyle(a).position;
+                if (pos !== 'fixed' && pos !== 'absolute') continue;
+              } catch (e) { continue; }
+              defuseFullPageAnchor(a);
+            }
+          }
+          function watchForClose(el) {
+            var mo = new MutationObserver(function () {
+              if (!document.documentElement.contains(el)) {
+                mo.disconnect();
+                suppress();
+              }
+            });
+            mo.observe(document.documentElement, { childList: true, subtree: true });
+          }
+          function suppress() {
+            state.suppressed = true;
+            document.documentElement.setAttribute('data-adcap', '1');
+            scan();
+          }
+          // one ad per PAGE VIEW: navigating to another page re-arms the cap
+          function reset() {
+            state.suppressed = false;
+            state.shown = false;
+            document.documentElement.removeAttribute('data-adcap');
+          }
+          var push = history.pushState;
+          history.pushState = function () {
+            var r = push.apply(this, arguments);
+            reset();
+            return r;
+          };
+          window.addEventListener('popstate', reset);
+          // rAF-coalesced: a page mount triggers dozens of mutation batches,
+          // and scan() queries every body iframe each time — one scan per
+          // frame keeps the cap behavior while cutting SPA navigation cost
+          var scanQueued = false;
+          var queueScan = function () {
+            if (scanQueued) return;
+            scanQueued = true;
+            requestAnimationFrame(function () {
+              scanQueued = false;
+              scan();
+            });
+          };
+          new MutationObserver(queueScan).observe(document.documentElement, { childList: true, subtree: true });
+          document.addEventListener('DOMContentLoaded', scan);
+        } catch (e) {}
+      })();
+    </script>
+    <script type="module" crossorigin src="/assets/index-DryuG25J.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DABcpq0e.css">
+    <meta name="description" content="The best psychological manhwa to read free — 130 series ranked by what readers follow this week, with new chapters updated daily on MANHWAS." />
+    <meta name="robots" content="index,follow" />
+    <meta property="og:title" content="Best Psychological Manhwa — Read Free Online | MANHWAS" />
+    <meta property="og:description" content="The best psychological manhwa to read free — 130 series ranked by what readers follow this week, with new chapters updated daily on MANHWAS." />
+    <meta property="og:url" content="https://manhwas.site/genres/psychological" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="MANHWAS" />
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://manhwas.site/"},{"@type":"ListItem","position":2,"name":"Genres","item":"https://manhwas.site/genres"},{"@type":"ListItem","position":3,"name":"Psychological","item":"https://manhwas.site/genres/psychological"}]}</script>
+  </head>
+  <body class="antialiased selection:bg-[#D95743] selection:text-white">
+    <div id="root"><div id="seo-content"><main><h1>Best Psychological Manhwa</h1>
+    <p>Browse 60 Psychological manhwa and manhua series — ranked by what readers are following this week.</p>
+    <p>The best psychological manhwa to read free — uneasy obsessions and mind games like Killing Stalking and I Love Amy.</p>
+    <ul class="seo-grid"><li><a href="/manhwa/bastard-hwang-youngchan"><strong>Bastard (HWANG Youngchan)</strong><span>Kim Carnby</span><span>Drama, Horror, Mystery</span></a></li><li><a href="/manhwa/the-horizon"><strong>The Horizon</strong><span>Jeong Ji-Hoon</span><span>Drama, Psychological, Romance</span></a></li><li><a href="/manhwa/revenge-of-the-sword-clans-hound"><strong>Revenge of the Sword Clan's Hound</strong><span>설아랑</span><span>Fantasy, Action, Psychological</span></a></li><li><a href="/manhwa/eternally-regressing-knight"><strong>Eternally Regressing Knight</strong><span>Lee Hyeon Min</span><span>Action, Fantasy, Psychological</span></a></li><li><a href="/manhwa/i-killed-an-academy-player"><strong>I Killed an Academy Player</strong><span>Salam Sallyeo (사람살려.)</span><span>Fantasy, Sci-Fi, Action</span></a></li><li><a href="/manhwa/to-be-you-even-just-for-a-day"><strong>To Be You, Even Just For a Day</strong><span>Sam</span><span>Drama, Fantasy, Romance</span></a></li><li><a href="/manhwa/shotgun-boy"><strong>Shotgun Boy</strong><span>Hong Pil</span><span>Psychological, Drama, Slice of Life</span></a></li><li><a href="/manhwa/the-way-to-protect-the-female-leads-older-brother"><strong>The Way to Protect the Female Lead's Older Brother</strong><span>Kin</span><span>Drama, Fantasy, Adventure</span></a></li><li><a href="/manhwa/how-to-win-my-husband-over"><strong>How to Win My Husband Over</strong><span>Kitty&amp;Spice (냥이와 향신료)</span><span>Fantasy, Historical, Psychological</span></a></li><li><a href="/manhwa/the-tutorial-is-too-hard"><strong>The Tutorial is Too Hard</strong><span>Gandara</span><span>Action, Adventure, Fantasy</span></a></li><li><a href="/manhwa/pigpen"><strong>PIGPEN</strong><span>Kim Carnby</span><span>Psychological, Thriller, Horror</span></a></li><li><a href="/manhwa/dice-the-cube-that-changes-everything"><strong>DICE: The Cube That Changes Everything</strong><span>Yun Hyeonseok (윤현석)</span><span>Action, Psychological, Romance</span></a></li><li><a href="/manhwa/kill-the-villainess"><strong>Kill the Villainess</strong><span>Sa Wolsaeng</span><span>Fantasy, Historical, Psychological</span></a></li><li><a href="/manhwa/the-villain-wants-to-live"><strong>The Villain Wants to Live</strong><span>Daon Creative</span><span>Fantasy, Action, Psychological</span></a></li><li><a href="/manhwa/my-school-life-pretending-to-be-a-worthless-person"><strong>My School Life Pretending To Be a Worthless Person</strong><span>Sand Fairy (샌드페어리)</span><span>Action, Psychological, Adventure</span></a></li><li><a href="/manhwa/surviving-romance"><strong>Surviving Romance</strong><span>Lee Yeon</span><span>Fantasy, Sci-Fi, Psychological</span></a></li><li><a href="/manhwa/medical-rebirth"><strong>Medical Rebirth</strong><span>Yuin</span><span>Sci-Fi, Psychological, Drama</span></a></li><li><a href="/manhwa/the-ember-knight"><strong>The Ember Knight</strong><span>Hwan Daeng</span><span>Action, Adventure, Fantasy</span></a></li><li><a href="/manhwa/marry-my-husband"><strong>Marry My Husband</strong><span>Sung Sojak</span><span>Fantasy, Psychological, Romance</span></a></li><li><a href="/manhwa/random-chat"><strong>Random Chat</strong><span>Park Eun Hyuk (박은혁)</span><span>Psychological, Romance, Comedy</span></a></li><li><a href="/manhwa/i-love-amy"><strong>I Love Amy</strong><span>Unun (언니)</span><span>Psychological, Romance</span></a></li><li><a href="/manhwa/terror-man"><strong>Terror Man</strong><span>Han Dongwoo (한동우)</span><span>Action, Psychological, Drama</span></a></li><li><a href="/manhwa/my-reason-to-die"><strong>My Reason to Die</strong><span>Yuju</span><span>Psychological, Romance, Drama</span></a></li><li><a href="/manhwa/hellper-2-killberos"><strong>Hellper 2 &lt;KillBeros&gt;</strong><span>Sakk</span><span>Thriller, Action, Psychological</span></a></li><li><a href="/manhwa/devil-returns-to-school-days"><strong>Devil Returns to School Days</strong><span>Team the JICK (팀 더 지크)</span><span>Fantasy, Sci-Fi, Action</span></a></li><li><a href="/manhwa/the-invincible-man"><strong>The Invincible Man</strong><span>No Kyoungchan (노경찬)</span><span>Action, Psychological, Drama</span></a></li><li><a href="/manhwa/the-problem-of-my-love-affair"><strong>The Problem of My Love Affair</strong><span>Heo Yun Hwa</span><span>Psychological, Romance, Comedy</span></a></li><li><a href="/manhua/memory-lost"><strong>Memory Lost</strong><span>Unknown</span><span>Drama, Mystery, Psychological</span></a></li><li><a href="/manhwa/tears-on-a-withered-flower"><strong>Tears on a Withered Flower</strong><span>Gae (개)</span><span>Psychological, Romance, Slice of Life</span></a></li><li><a href="/manhwa/destined-murderer"><strong>Destined Murderer</strong><span>Ghost Child</span><span>Psychological, Drama, Supernatural</span></a></li><li><a href="/manhwa/welcome-to-room-305"><strong>Welcome to Room #305!</strong><span>Wanan</span><span>Comedy, Drama, Psychological</span></a></li><li><a href="/manhwa/loplop"><strong>Loplop</strong><span>Chongtak</span><span>Action, Comedy, Drama</span></a></li><li><a href="/manhwa/fight-class-3"><strong>Fight Class 3</strong><span>2hakkk</span><span>Thriller, Action, Psychological</span></a></li><li><a href="/manhwa/my-girlfriend"><strong>My Girlfriend</strong><span>Park-Ssi (박씨)</span><span>Psychological, Drama, Horror</span></a></li><li><a href="/manhwa/nocturne-park-eun-ah"><strong>Nocturne (PARK Eun-Ah)</strong><span>Park Eun Ah</span><span>Drama, Psychological, Romance</span></a></li><li><a href="/manhwa/nineteen-twenty-one"><strong>Nineteen, Twenty-One</strong><span>Yohan</span><span>Psychological, Romance, Comedy</span></a></li><li><a href="/manhwa/a-regressors-tale-of-cultivation"><strong>A Regressor's Tale of Cultivation</strong><span>Eum Chung-Nan</span><span>Fantasy, Action, Psychological</span></a></li><li><a href="/manhwa/resetting-lady"><strong>Resetting Lady</strong><span>Baekwoo</span><span>Historical, Psychological, Romance</span></a></li><li><a href="/manhwa/villain-classroom"><strong>Villain Classroom</strong><span>Jooho</span><span>Psychological, Drama, Slice of Life</span></a></li><li><a href="/manhua/looking-for-clotho"><strong>Looking for Clotho</strong><span>Heimai</span><span>Drama, Psychological, Sci-Fi</span></a></li><li><a href="/manhua/the-missing-gate"><strong>The Missing Gate</strong><span>Tu Shan Jun Studios</span><span>Supernatural, Action, Adventure</span></a></li><li><a href="/manhwa/deathcord"><strong>DeathCord</strong><span>Buffering</span><span>Action, Psychological, Romance</span></a></li><li><a href="/manhwa/dr-frost"><strong>Dr. Frost</strong><span>Lee Jong-bum</span><span>Drama, Psychological</span></a></li><li><a href="/manhua/ping-pong-wang-zi"><strong>Ping Pong Wang Zi</strong><span>Ji Leniao</span><span>Psychological, Sports</span></a></li><li><a href="/manhwa/murim-psychopath"><strong>Murim Psychopath</strong><span>Gonbung</span><span>Action, Adventure, Fantasy</span></a></li><li><a href="/manhwa/the-villainess-needs-her-tyrant"><strong>The Villainess Needs Her Tyrant</strong><span>Eun Hae-yoon (은해윤)</span><span>Historical, Psychological, Romance</span></a></li><li><a href="/manhwa/got-dropped-into-a-ghost-story-still-gotta-work"><strong>Got Dropped into a Ghost Story, Still Gotta Work</strong><span>Todac_S (쓩늉)</span><span>Action, Psychological, Thriller</span></a></li><li><a href="/manhwa/abduction-school"><strong>Abduction School</strong><span>Ara (아라)</span><span>Horror, Mystery, Psychological</span></a></li><li><a href="/manhwa/blaze-comicgt"><strong>Blaze (ComicGT)</strong><span>Tamrin</span><span>Drama, Psychological, Slice of Life</span></a></li><li><a href="/manhwa/kitsch-year"><strong>Kitsch Year</strong><span>Dol-kong</span><span>Action, Comedy, Drama</span></a></li><li><a href="/manhwa/zomgan"><strong>ZomGan</strong><span>Ongoo (옹구)</span><span>Action, Psychological, Horror</span></a></li><li><a href="/manhwa/the-boy-of-death"><strong>The Boy of Death</strong><span>Ryu (류)</span><span>Action, Psychological, Fantasy</span></a></li><li><a href="/manhwa/bones"><strong>Bones</strong><span>Igeon</span><span>Action, Psychological, Thriller</span></a></li><li><a href="/manhwa/to-be-ordinary"><strong>To Be Ordinary!</strong><span>kkanaria (카나리아)</span><span>Psychological, Romance, Comedy</span></a></li><li><a href="/manhwa/heavenly-match"><strong>Heavenly Match</strong><span>Alic</span><span>Action, Adventure, Fantasy</span></a></li><li><a href="/manhwa/transparent-cohabitation"><strong>Transparent Cohabitation</strong><span>Jungsuh</span><span>Drama, Psychological, Romance</span></a></li><li><a href="/manhwa/zombie-funeral-services"><strong>Zombie Funeral Services</strong><span>Zephygaru (제피가루)</span><span>Drama, Horror, Psychological</span></a></li><li><a href="/manhwa/plaything"><strong>Plaything</strong><span>Q-Boy</span><span>Psychological, Drama</span></a></li><li><a href="/manhua/beauty-game"><strong>Beauty Game</strong><span>Jin Qiu</span><span>Drama, Mystery, Psychological</span></a></li><li><a href="/manhwa/dark-mortal"><strong>Dark Mortal</strong><span>Lee Jeonyeok</span><span>Action, Mystery, Psychological</span></a></li></ul>
+    <section><h2>Related Genres</h2><ul><li><a href="/genres/action">Best Action Manhwa</a></li><li><a href="/genres/adventure">Best Adventure Manhwa</a></li><li><a href="/genres/fantasy">Best Fantasy Manhwa</a></li><li><a href="/genres/romance">Best Romance Manhwa</a></li><li><a href="/genres/drama">Best Drama Manhwa</a></li><li><a href="/genres/horror">Best Horror Manhwa</a></li></ul></section>
+    <p><a href="/genres">All genres</a> · <a href="/catalog">Full catalog</a></p><p style="margin:24px 0;text-align:center;font-size:13px"><a href="https://www.profitableratecpmnetwork.com/rwke4e7k?key=2b2a096dea78bd8cb7bdc2b9ee370110" target="_blank" rel="noopener nofollow sponsored">Sponsored</a></p></main></div></div>
+    <script src="https://pl31102148.profitableratecpmnetwork.com/a4/a1/fe/a4a1fe30d63892bdc56fb6286e4439c3.js"></script>
+  </body>
+</html>
