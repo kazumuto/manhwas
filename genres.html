@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#141413" />
+    <meta name="google-adsense-account" content="ca-pub-9672720678512933" />
+    <link rel="icon" type="image/png" href="/logo1.png" />
+    <link rel="preload" as="image" href="/logo1.webp" type="image/webp" fetchpriority="high" />
+    <title>Browse Manhwa by Genre — Genre Directory | MANHWAS</title>
+    <link rel="canonical" href="https://manhwas.site/genres" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Cover CDN: every card/hero cover loads from here — preconnect removes
+         a full mobile TLS+DNS round-trip from the LCP image (the homepage
+         hero cover IS the LCP element; field data showed ~6s on mobile) -->
+    <link rel="preconnect" href="https://cdn.manhwas.site" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.manhwas.site">
+    <!-- Non-blocking font CSS: text paints in system-ui immediately and
+         swaps to Inter when loaded (the face uses font-display: swap).
+         The prerendered #seo-content block already uses system-ui, so the
+         crawler-visible content never waits on fonts. -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    </noscript>
+    <!-- critical pre-hydration styles: prevents white flash before React mounts -->
+    <style>
+      body { margin: 0; background: #141413; }
+      #seo-content {
+        padding: 24px;
+        color: #d8d5d1;
+        font-family: system-ui, sans-serif;
+        line-height: 1.5;
+        max-width: 1240px;
+        margin: 0 auto;
+        overflow-wrap: break-word;
+      }
+      #seo-content a { color: #e06a55; text-decoration: underline; }
+      #seo-content ul,
+      #seo-content nav { list-style: none; margin: 0; padding: 0; }
+      #seo-content h1 { font-size: 1.75rem; font-weight: 700; color: #f0efeb; margin: 0 0 8px; }
+      #seo-content h2 { font-size: 1.125rem; font-weight: 600; color: #f0efeb; margin: 24px 0 8px; }
+      #seo-content p { margin: 0 0 12px; color: #b3b1a8; }
+      #seo-content .seo-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 12px;
+      }
+      /* Pre-hydration cover images (LCP fix, 2026-09-28): the first 6 grid
+         cards carry real <img> tags so the LCP element paints before React
+         mounts. aspect-ratio reserves layout space (CLS-safe); the hydrated
+         app replaces this block on mount. */
+      #seo-content .seo-grid img {
+        width: 100%;
+        aspect-ratio: 3 / 4;
+        object-fit: cover;
+        border-radius: 10px;
+        margin: 8px 0 2px;
+        display: block;
+        background: #23231f;
+      }
+    </style>
+    <!-- Popunder partner script. async: must NOT block HTML parsing —
+         a synchronous script here delays first paint AND React mount by the
+         ad network's full response time (worst case seconds on mobile),
+         which used to leave the whole page (hero + Trending + Updates) blank.
+         The script self-injects its anchors when it eventually runs, so the
+         popunder behavior is unchanged; only its start becomes non-blocking. -->
+    <script async src="https://pl31102147.profitableratecpmnetwork.com/c8/ce/72/c8ce72a5a8e626dad922ab986b7f329d.js"></script>
+    <!-- Ad frequency cap: ONE visual ad per page view. When the visitor closes
+         it, every further body-level fixed ad iframe is removed until the next
+         page view (SPA route change or refresh). Never touches anything inside
+         #root — the app itself renders no fixed iframes. -->
+    <script src="/ad-cap.js"></script>
+    <script type="module" crossorigin src="/assets/index-CDdEe4op.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DiR7AAEs.css">
+    <meta name="description" content="Every manhwa genre in one directory — action, romance, fantasy, drama, comedy, and more. Browse series by category." />
+    <meta name="robots" content="index,follow" />
+    <meta property="og:title" content="Browse Manhwa by Genre — Genre Directory | MANHWAS" />
+    <meta property="og:description" content="Every manhwa genre in one directory — action, romance, fantasy, drama, comedy, and more. Browse series by category." />
+    <meta property="og:url" content="https://manhwas.site/genres" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="MANHWAS" />
+    <script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://manhwas.site/"},{"@type":"ListItem","position":2,"name":"Genres","item":"https://manhwas.site/genres"}]},{"@type":"WebPage","name":"Browse Manhwa by Genre — Genre Directory | MANHWAS","url":"https://manhwas.site/genres","dateModified":"2026-10-11"}]</script>
+  </head>
+  <body class="antialiased selection:bg-[#D95743] selection:text-white">
+    <div id="root"><div id="seo-content"><main><h1>Browse Manhwa by Genre</h1><p>Every genre in the catalog with its most popular titles.</p><p>Every series on MANHWAS is tagged by genre — high-speed action, reincarnation fantasy, slow-burn romance, and a dozen more — so you can jump straight to the kind of story you're in the mood for. Each genre page below ranks its most-followed series, links to full chapter lists, and updates automatically as new chapters drop.</p>
+    <ul><li><a href="/genres/action">Best Action Manhwa</a> — 1040 series. Bladework, martial ascension, and desperate last stands.</li><li><a href="/genres/adventure">Best Adventure Manhwa</a> — 789 series. Uncharted frontiers, guild expeditions, and long roads home.</li><li><a href="/genres/fantasy">Best Fantasy Manhwa</a> — 1127 series. Reincarnation, imperial court magic, ancient gods, and ethereal realms.</li><li><a href="/genres/romance">Best Romance Manhwa</a> — 934 series. Slow-burn courtships, contract marriages, and second chances.</li><li><a href="/genres/drama">Best Drama Manhwa</a> — 1292 series. Family dynasties, quiet heartbreak, and the weight of choices.</li><li><a href="/genres/horror">Best Horror Manhwa</a> — 99 series. Ghosts, exorcisms, divine pacts, and modern specters.</li><li><a href="/genres/mystery">Best Mystery Manhwa</a> — 97 series. Conspiracies, unsolved murders, and hidden occult identities.</li><li><a href="/genres/thriller">Best Thriller Manhwa</a> — 47 series. Survival games, relentless pursuit, and psychological warfare.</li><li><a href="/genres/sci-fi">Best Sci-Fi Manhwa</a> — 200 series. Cybernetic dystopias, orbital colonies, and AI ascendance.</li><li><a href="/genres/historical">Best Historical Manhwa</a> — 221 series. Dynastic politics, period romance, and military stratagems.</li><li><a href="/genres/comedy">Best Comedy Manhwa</a> — 771 series. Misunderstandings, overpowered slackers, and royal absurdities.</li><li><a href="/genres/slice-of-life">Best Slice of Life Manhwa</a> — 364 series. Small towns, warm kitchens, and the unhurried everyday.</li><li><a href="/genres/supernatural">Best Supernatural Manhwa</a> — 227 series. Spirit realms, inherited curses, and pacts sealed in blood.</li><li><a href="/genres/psychological">Best Psychological Manhwa</a> — 130 series. Mind games, morally gray protagonists, and internal conflict.</li><li><a href="/genres/sports">Best Sports Manhwa</a> — 22 series. Underdog archery, street fencing, and collegiate endurance sports.</li></ul>
+    <p>Not sure where to start? The <a href="/rankings">rankings</a> and <a href="/updates">latest updates</a> pages are the fastest way to see what's live right now, or browse the <a href="/catalog">full catalog</a> to see every title at once.</p><p style="margin:24px 0;text-align:center;font-size:13px"><a href="https://www.profitableratecpmnetwork.com/rwke4e7k?key=2b2a096dea78bd8cb7bdc2b9ee370110" target="_blank" rel="noopener nofollow sponsored">Sponsored</a></p></main></div></div>
+    <script src="https://pl31102148.profitableratecpmnetwork.com/a4/a1/fe/a4a1fe30d63892bdc56fb6286e4439c3.js"></script>
+  </body>
+</html>

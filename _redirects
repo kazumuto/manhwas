@@ -1,0 +1,8 @@
+# Enumerated SPA routes (same list as vercel.json — no catch-all on purpose:
+# unknown paths fall through to 404.html with a real 404 status).
+# Targets are "/" not "/index.html": Pages normalizes /index.html rewrites
+# with a 308 to /, which would break SPA routing.
+/search / 200
+/library / 200
+/account / 200
+/history / 200
