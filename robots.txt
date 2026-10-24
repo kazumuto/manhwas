@@ -1,0 +1,50 @@
+User-agent: *
+Allow: /
+Disallow: /account
+Disallow: /library
+Disallow: /history
+Disallow: /search
+Disallow: /api/
+Disallow: /admin/
+
+# AI / LLM crawlers — explicitly allowed (AI search discovery is wanted).
+# Broad crawlers used for AI index/training discovery: GPTBot (OpenAI),
+# ClaudeBot (Anthropic), Applebot-Extended (Apple Intelligence),
+# Amazonbot (Alexa), Bytespider (ByteDance), CCBot (Common Crawl),
+# ImagesiftBot (Hive), Diffbot, YouBot (You.com), Google-Extended
+# (Gemini/AI training), meta-externalagent (Meta AI).
+User-agent: GPTBot
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Perplexity-User
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: Applebot-Extended
+Allow: /
+User-agent: Amazonbot
+Allow: /
+User-agent: Bytespider
+Allow: /
+User-agent: CCBot
+Allow: /
+User-agent: ImagesiftBot
+Allow: /
+User-agent: Diffbot
+Allow: /
+User-agent: YouBot
+Allow: /
+User-agent: meta-externalagent
+Allow: /
+User-agent: FacebookBot
+Allow: /
+
+Sitemap: https://manhwas.site/sitemap.xml
+Sitemap: https://manhwas.site/sitemap-chapters.xml
