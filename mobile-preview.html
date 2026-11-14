@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>MANHWAS — Mobile Preview</title>
+<!-- Mobile emulation harness (e2e issue #3): the test env couldn't resize the
+     viewport. Media queries evaluate against an IFRAME's own viewport, so a
+     phone-sized same-origin frame renders the real mobile layout.
+     ponytail: static page suffices; swap for Playwright-based harness if
+     pixel-diff testing is ever needed. -->
+<style>
+  body{margin:0;font:14px/1.5 system-ui,sans-serif;background:#141413;color:#eee;display:flex;flex-direction:column;align-items:center;gap:10px;padding:14px}
+  .bar{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+  select,input,button{background:#262625;color:#eee;border:1px solid #3a3a38;border-radius:8px;padding:6px 10px;font:inherit}
+  button{cursor:pointer}button:hover{border-color:#d95743}
+  .stage{width:fit-content;height:calc(100vh - 76px);border:1px solid #3a3a38;border-radius:18px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,.5)}
+  iframe{border:0;width:100%;height:100%;background:#fff}
+</style>
+</head>
+<body>
+  <div class="bar">
+    <label>Device
+      <select id="device">
+        <option value="390x844">iPhone 14 — 390×844</option>
+        <option value="360x800">Android — 360×800</option>
+        <option value="414x896">iPhone 14 Pro Max — 414×896</option>
+        <option value="768x1024">Tablet — 768×1024</option>
+      </select>
+    </label>
+    <label>Path <input id="path" size="26" value="/genres"></label>
+    <button id="rotate" title="Swap width/height">⟳ Rotate</button>
+    <button id="go">Open</button>
+  </div>
+  <div class="stage" id="stage"><iframe id="frame" title="Mobile preview"></iframe></div>
+<script>
+  var $=function(id){return document.getElementById(id)};
+  var parts=(location.hash.slice(1)||'').split('|');
+  function apply(){
+    var wh=$('device').value.split('x'), w=+wh[0], h=+wh[1];
+    $('stage').style.width=w+'px'; $('stage').style.height=h+'px';
+    var p=$('path').value.trim()||'/';
+    $('frame').src=p+(p.includes('?')?'&':'?')+'mpv=1';
+    history.replaceState(null,'','#'+p);
+  }
+  $('device').onchange=apply;
+  $('go').onclick=apply;
+  $('path').onkeydown=function(e){if(e.key==='Enter')apply()};
+  $('rotate').onclick=function(){
+    var o=$('device'), sel=o.value.split('x');
+    var has=[].some.call(o.options,function(op){return op.value===sel[1]+'x'+sel[0]});
+    if(has){o.value=sel[1]+'x'+sel[0];apply()}
+    else{$('stage').style.width=sel[1]+'px';$('stage').style.height=sel[0]+'px'}
+  };
+  if(parts[0]) $('path').value=parts[0];
+  apply();
+</script>
+</body>
+</html>
